@@ -89,6 +89,8 @@ DateTime newDateTime = await RoundedDatePicker.show(context,
 ## Thai and Buddhist Year
 initialize thai date picker.
 ```
-DateTime newDateTime = await RoundedDatePicker.show(context, locale: Locale("th", "TH"), era: EraMode.BUDDHIST_YEAR);
+DateTime newDateTime = await RoundedDatePicker.show(context, 
+                                    locale: Locale("th", "TH"), 
+                                    era: EraMode.BUDDHIST_YEAR);
 ```
 ![Screenshot](screenshots/7.png)
