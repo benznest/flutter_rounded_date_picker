@@ -28,8 +28,8 @@ class _MyAppState extends State<MyApp> {
           GlobalWidgetsLocalizations.delegate,
         ],
         supportedLocales: [
-          const Locale('en', 'US'), // Thai
-//          const Locale('th', 'TH'), // Thai
+          const Locale('en', 'US'), // English
+          const Locale('th', 'TH'), // Thai
         ],
         home: Builder(builder: (context) {
           return Scaffold(
@@ -65,7 +65,8 @@ class _MyAppState extends State<MyApp> {
                   ),
                   FloatingActionButton.extended(
                       onPressed: () async {
-                        DateTime newDateTime = await RoundedDatePicker.show(context, borderRadius: 2);
+                        DateTime newDateTime = await RoundedDatePicker.show(context,
+                            initialDate: DateTime.now(), firstDate: DateTime(DateTime.now().year - 1), lastDate: DateTime(DateTime.now().year + 1), borderRadius: 2);
                         if (newDateTime != null) {
                           setState(() {
                             dateTime = newDateTime;
@@ -86,7 +87,8 @@ class _MyAppState extends State<MyApp> {
                   ),
                   FloatingActionButton.extended(
                       onPressed: () async {
-                        DateTime newDateTime = await RoundedDatePicker.show(context);
+                        DateTime newDateTime = await RoundedDatePicker.show(context,
+                            initialDate: DateTime.now(), firstDate: DateTime(DateTime.now().year - 1), lastDate: DateTime(DateTime.now().year + 1), borderRadius: 16);
                         if (newDateTime != null) {
                           setState(() {
                             dateTime = newDateTime;

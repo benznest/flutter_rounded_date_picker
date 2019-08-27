@@ -1217,7 +1217,7 @@ Future<DateTime> showRoundedDatePicker(
     ImageProvider imageHeader,
     String description = "",
     String fontFamily,
-    bool barrierDismissible = true,
+    bool barrierDismissible = false,
     Color background = Colors.transparent}) async {
   assert(initialDate != null);
   assert(firstDate != null);
@@ -1230,20 +1230,30 @@ Future<DateTime> showRoundedDatePicker(
   assert(context != null);
   assert(debugCheckHasMaterialLocalizations(context));
 
-  Widget child = Container(
-      color: background,
-      child: _DatePickerDialog(
-          initialDate: initialDate,
-          firstDate: firstDate,
-          lastDate: lastDate,
-          selectableDayPredicate: selectableDayPredicate,
-          initialDatePickerMode: initialDatePickerMode,
-          era: era,
-          locale: locale,
-          borderRadius: borderRadius,
-          imageHeader: imageHeader,
-          description: description,
-          fontFamily: fontFamily));
+  Widget child = GestureDetector(
+      onTap: () {
+        if (!barrierDismissible) {
+          Navigator.pop(context);
+        }
+      },
+      child: Container(
+          color: background,
+          child: GestureDetector(
+              onTap: () {
+                //
+              },
+              child: _DatePickerDialog(
+                  initialDate: initialDate,
+                  firstDate: firstDate,
+                  lastDate: lastDate,
+                  selectableDayPredicate: selectableDayPredicate,
+                  initialDatePickerMode: initialDatePickerMode,
+                  era: era,
+                  locale: locale,
+                  borderRadius: borderRadius,
+                  imageHeader: imageHeader,
+                  description: description,
+                  fontFamily: fontFamily))));
 
   if (textDirection != null) {
     child = Directionality(

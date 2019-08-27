@@ -16,7 +16,7 @@ class RoundedDatePicker {
       ImageProvider imageHeader,
       String description = "",
       String fontFamily,
-      bool barrierDismissible = true,
+      bool barrierDismissible = false,
       Color background = Colors.transparent}) {
     if (initialDate == null) {
       initialDate = DateTime.now();

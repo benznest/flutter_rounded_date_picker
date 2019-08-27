@@ -1,14 +1,49 @@
-# flutter_rounded_date_picker
+# Flutter Rounded Date Picker
+Select the date with rounded date picker.
 
-A new Flutter plugin.
 
-## Getting Started
+## Installing
+Add dependencies in pubspec.yaml file.
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+```
+dependencies:
+  flutter_localizations:
+    sdk: flutter
+  flutter_rounded_date_picker: 0.1.0
+```
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+## Initialize localizations
+Add localization delegates in MaterialApp Widget.
+```
+MaterialApp(
+    localizationsDelegates: [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+    ],
+    supportedLocales: [
+          const Locale('en', 'US'), // English
+          const Locale('th', 'TH'), // Thai
+    ],
+    ...
+```
+
+## Importing
+import package into your dart.
+```
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_rounded_date_picker/rounded_date_picker.dart';
+```
+
+## Show Date Picker
+Show date picker
+```
+DateTime newDateTime = await RoundedDatePicker.show(context,
+                            initialDate: DateTime.now(), 
+                            firstDate: DateTime(DateTime.now().year - 1), 
+                            lastDate: DateTime(DateTime.now().year + 1), 
+                            borderRadius: 16);
+```
+![Screenshot](screenshot/1.png)
+
+
+
