@@ -53,8 +53,27 @@ DateTime newDateTime = await RoundedDatePicker.show(context, theme: ThemeData(pr
 ```
 ![Screenshot](screenshots/2.png)
 
-Dark theme.
+Dark theme
 ```
 DateTime newDateTime = await RoundedDatePicker.show(context, theme: ThemeData.dark());
 ```
 ![Screenshot](screenshots/3.png)
+
+
+## Image Header 
+use image background on header also you can add description.
+```
+DateTime newDateTime = await RoundedDatePicker.show(context,
+                            theme: ThemeData(primarySwatch: Colors.blue),
+                            imageHeader: AssetImage("assets/images/calendar_header.jpg"),
+                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ");
+```
+![Screenshot](screenshots/4.png)
+
+## Custom Font in Date Picker 
+use image background on header also you can add description.
+```
+                        DateTime newDateTime = await RoundedDatePicker.show(context,
+                             fontFamily: "Mali");
+```
+![Screenshot](screenshots/5.png)
