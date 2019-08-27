@@ -122,7 +122,7 @@ class _MyAppState extends State<MyApp> {
                   ),
                   FloatingActionButton.extended(
                       onPressed: () async {
-                        DateTime newDateTime = await RoundedDatePicker.show(context, theme: ThemeData(primarySwatch: Colors.pink));
+                        DateTime newDateTime = await RoundedDatePicker.show(context,  theme: ThemeData(primarySwatch: Colors.pink));
                         if (newDateTime != null) {
                           setState(() {
                             dateTime = newDateTime;

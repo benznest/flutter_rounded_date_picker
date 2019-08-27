@@ -44,6 +44,17 @@ DateTime newDateTime = await RoundedDatePicker.show(context,
                             borderRadius: 16);
 ```
 ![Screenshot](screenshots/1.png)
+![Screenshot](screenshots/a1.gif)
 
+## Theme
+initialize theme in date picker.
+```
+DateTime newDateTime = await RoundedDatePicker.show(context, theme: ThemeData(primarySwatch: Colors.pink));
+```
+![Screenshot](screenshots/2.png)
 
-
+Dark theme.
+```
+DateTime newDateTime = await RoundedDatePicker.show(context, theme: ThemeData.dark());
+```
+![Screenshot](screenshots/3.png)

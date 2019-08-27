@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f9f9944-f66c-46c1-913f-9e30c85bf56e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/screenshots/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshots/a1.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/flutter_rounded_date_picker_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/flutter_rounded_date_picker_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/rounded_date_picker.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/rounded_date_picker.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -29,8 +30,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="597">
-              <caret line="43" column="57" lean-forward="true" selection-start-line="43" selection-start-column="57" selection-end-line="43" selection-end-column="57" />
+            <state relative-caret-position="648">
+              <caret line="50" column="3" lean-forward="true" selection-start-line="50" selection-start-column="3" selection-end-line="50" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -38,8 +39,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="89" column="84" selection-start-line="89" selection-start-column="84" selection-end-line="89" selection-end-column="84" />
+            <state relative-caret-position="459">
+              <caret line="126" column="39" lean-forward="true" selection-start-line="126" selection-start-column="39" selection-end-line="126" selection-end-column="39" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -197,6 +198,11 @@
             <path>
               <item name="flutter_rounded_date_picker" type="b2602c69:ProjectViewProjectNode" />
               <item name="flutter_rounded_date_picker" type="462c0819:PsiDirectoryNode" />
+              <item name="screenshots" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flutter_rounded_date_picker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flutter_rounded_date_picker" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -219,6 +225,7 @@
       <recent name="C:\Work\flutter project\flutter_rounded_date_picker\example\assets\images" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Work\flutter project\flutter_rounded_date_picker\screenshots" />
       <recent name="C:\Work\flutter project\flutter_rounded_date_picker\example\assets\images" />
       <recent name="C:\Work\flutter project\flutter_rounded_date_picker\example\assets\fonts" />
       <recent name="C:\Work\flutter project\flutter_rounded_date_picker\example\assets" />
@@ -255,7 +262,21 @@
       <option name="project" value="LOCAL" />
       <updated>1566910822276</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add readme.">
+      <created>1566912004554</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1566912004554</updated>
+    </task>
+    <task id="LOCAL-00003" summary="edit readme.">
+      <created>1566912039491</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1566912039491</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -292,7 +313,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="support font-family&#10;support image background header." />
-    <option name="LAST_COMMIT_MESSAGE" value="support font-family&#10;support image background header." />
+    <MESSAGE value="add readme." />
+    <MESSAGE value="edit readme." />
+    <option name="LAST_COMMIT_MESSAGE" value="edit readme." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/lib/flutter_rounded_date_picker.dart">
@@ -441,15 +464,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="597">
-          <caret line="43" column="57" lean-forward="true" selection-start-line="43" selection-start-column="57" selection-end-line="43" selection-end-column="57" />
+        <state relative-caret-position="648">
+          <caret line="50" column="3" lean-forward="true" selection-start-line="50" selection-start-column="3" selection-end-line="50" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="89" column="84" selection-start-line="89" selection-start-column="84" selection-end-line="89" selection-end-column="84" />
+        <state relative-caret-position="459">
+          <caret line="126" column="39" lean-forward="true" selection-start-line="126" selection-start-column="39" selection-end-line="126" selection-end-column="39" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
