@@ -40,6 +40,7 @@ class _MyAppState extends State<MyApp> {
             body: Container(
               padding: EdgeInsets.symmetric(horizontal: 32),
               child: ListView(
+                padding: EdgeInsets.only(bottom: 50),
                 children: <Widget>[
                   Container(
                     padding: EdgeInsets.all(16),
@@ -176,6 +177,19 @@ class _MyAppState extends State<MyApp> {
                         }
                       },
                       label: Text("Rounded Calendar and Custom Font")),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  FloatingActionButton.extended(
+                      onPressed: () async {
+                        DateTime newDateTime = await RoundedDatePicker.show(context, locale: Locale("zh","CN"), theme: ThemeData(primarySwatch: Colors.pink));
+                        if (newDateTime != null) {
+                          setState(() {
+                            dateTime = newDateTime;
+                          });
+                        }
+                      },
+                      label: Text("Rounded Calendar Chinese")),
                 ],
               ),
             ),

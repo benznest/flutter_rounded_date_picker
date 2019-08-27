@@ -73,7 +73,15 @@ DateTime newDateTime = await RoundedDatePicker.show(context,
 ## Custom Font in Date Picker 
 use image background on header also you can add description.
 ```
-                        DateTime newDateTime = await RoundedDatePicker.show(context,
-                             fontFamily: "Mali");
+DateTime newDateTime = await RoundedDatePicker.show(context,fontFamily: "Mali");
 ```
 ![Screenshot](screenshots/5.png)
+
+## Locale Date Picker
+initialize locale to date picker.
+```
+DateTime newDateTime = await RoundedDatePicker.show(context,
+                                        locale: Locale("zh","CN"),
+                                        theme: ThemeData(primarySwatch: Colors.pink));
+```
+![Screenshot](screenshots/6.png)
