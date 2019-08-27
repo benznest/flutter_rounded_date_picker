@@ -43,7 +43,7 @@ DateTime newDateTime = await RoundedDatePicker.show(context,
                             lastDate: DateTime(DateTime.now().year + 1), 
                             borderRadius: 16);
 ```
-![Screenshot](screenshot/1.png)
+![Screenshot](screenshots/1.png)
 
 
 
