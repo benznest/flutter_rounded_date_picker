@@ -74,7 +74,7 @@ class _MyAppState extends State<MyApp> {
                           });
                         }
                       },
-                      label: Text("Material English Calendar")),
+                      label: Text("Material Calendar (Original)")),
                   SizedBox(
                     height: 24,
                   ),
@@ -96,7 +96,7 @@ class _MyAppState extends State<MyApp> {
                           });
                         }
                       },
-                      label: Text("Rounded English Calendar")),
+                      label: Text("Rounded Calendar (English)")),
                   SizedBox(
                     height: 8,
                   ),
@@ -109,7 +109,20 @@ class _MyAppState extends State<MyApp> {
                           });
                         }
                       },
-                      label: Text("Rounded Thai Calendar")),
+                      label: Text("Rounded Calendar (Thai)")),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  FloatingActionButton.extended(
+                      onPressed: () async {
+                        DateTime newDateTime = await RoundedDatePicker.show(context, locale: Locale("zh", "CN"), theme: ThemeData(primarySwatch: Colors.pink));
+                        if (newDateTime != null) {
+                          setState(() {
+                            dateTime = newDateTime;
+                          });
+                        }
+                      },
+                      label: Text("Rounded Calendar (Chinese)")),
                   SizedBox(
                     height: 24,
                   ),
@@ -123,7 +136,7 @@ class _MyAppState extends State<MyApp> {
                   ),
                   FloatingActionButton.extended(
                       onPressed: () async {
-                        DateTime newDateTime = await RoundedDatePicker.show(context,  theme: ThemeData(primarySwatch: Colors.pink));
+                        DateTime newDateTime = await RoundedDatePicker.show(context, theme: ThemeData(primarySwatch: Colors.pink));
                         if (newDateTime != null) {
                           setState(() {
                             dateTime = newDateTime;
@@ -178,18 +191,26 @@ class _MyAppState extends State<MyApp> {
                       },
                       label: Text("Rounded Calendar and Custom Font")),
                   SizedBox(
+                    height: 24,
+                  ),
+                  Text(
+                    "Year Picker",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  SizedBox(
                     height: 8,
                   ),
                   FloatingActionButton.extended(
                       onPressed: () async {
-                        DateTime newDateTime = await RoundedDatePicker.show(context, locale: Locale("zh","CN"), theme: ThemeData(primarySwatch: Colors.pink));
+                        DateTime newDateTime = await RoundedDatePicker.show(context, initialDatePickerMode: DatePickerMode.year, theme: ThemeData(primarySwatch: Colors.green));
                         if (newDateTime != null) {
                           setState(() {
                             dateTime = newDateTime;
                           });
                         }
                       },
-                      label: Text("Rounded Calendar Chinese")),
+                      label: Text("Rounded Year Picker")),
                 ],
               ),
             ),

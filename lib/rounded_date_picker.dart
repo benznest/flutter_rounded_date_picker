@@ -1,8 +1,7 @@
 import 'dart:ui';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rounded_date_picker/era_mode.dart';
-import 'package:flutter_rounded_date_picker/flutter_rounded_date_picker_widget.dart';
+import 'package:flutter_rounded_date_picker/flutter_rounded_date_picker_widget.dart' as RoundedDatePickerWidget;
 
 class RoundedDatePicker {
   static show(BuildContext context,
@@ -11,6 +10,9 @@ class RoundedDatePicker {
       DateTime firstDate,
       DateTime lastDate,
       ThemeData theme,
+      SelectableDayPredicate selectableDayPredicate,
+      DatePickerMode initialDatePickerMode = DatePickerMode.day,
+      TextDirection textDirection,
       EraMode era = EraMode.CHRIST_YEAR,
       double borderRadius = 16,
       ImageProvider imageHeader,
@@ -34,12 +36,15 @@ class RoundedDatePicker {
       theme = ThemeData();
     }
 
-    Future<DateTime> selectedDate = showRoundedDatePicker(
+    Future<DateTime> selectedDate = RoundedDatePickerWidget.showRoundedDatePicker(
       context: context,
       locale: locale,
       initialDate: initialDate,
       firstDate: firstDate,
       lastDate: lastDate,
+      selectableDayPredicate: selectableDayPredicate,
+      initialDatePickerMode: initialDatePickerMode,
+      textDirection: textDirection,
       era: era,
       borderRadius: borderRadius,
       imageHeader: imageHeader,

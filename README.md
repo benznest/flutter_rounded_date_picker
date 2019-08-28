@@ -46,6 +46,15 @@ DateTime newDateTime = await RoundedDatePicker.show(context,
 ![Screenshot](screenshots/1.png)
 ![Screenshot](screenshots/a1.gif)
 
+## Show Year Picker
+Show year picker which you can specify a year start and end that allows users to choose.
+```
+DateTime newDateTime = await RoundedDatePicker.show(context, 
+                                    initialDatePickerMode: DatePickerMode.year, 
+                                    theme: ThemeData(primarySwatch: Colors.green));
+```
+![Screenshot](screenshots/8.png)
+
 ## Theme
 You can assign themes to the date picker by using ThemeData class and PrimarySwatch.
 ```
@@ -97,3 +106,5 @@ DateTime newDateTime = await RoundedDatePicker.show(context,
                                     era: EraMode.BUDDHIST_YEAR);
 ```
 ![Screenshot](screenshots/7.png)
+
+

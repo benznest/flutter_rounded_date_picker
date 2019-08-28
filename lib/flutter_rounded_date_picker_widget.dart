@@ -21,17 +21,6 @@ import 'package:flutter_rounded_date_picker/thai_date_utils.dart';
 /// Date picker UI mode for either showing a list of available years or a
 /// monthly calendar initially in the dialog shown by calling [showDatePicker].
 ///
-/// See also:
-///
-///  * [showDatePicker], which shows a dialog that contains a material design
-///    date picker.
-enum DatePickerMode {
-  /// Show a date picker UI for choosing a month and day.
-  day,
-
-  /// Show a date picker UI for choosing a year.
-  year,
-}
 
 const Duration _kMonthScrollDuration = Duration(milliseconds: 200);
 const double _kDayPickerRowHeight = 42.0;
