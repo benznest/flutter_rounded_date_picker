@@ -70,6 +70,21 @@ DateTime newDateTime = await RoundedDatePicker.show(context, theme: ThemeData.da
 ```
 ![Screenshot](screenshots/3.png)
 
+Custom Theme with ThemeData
+```
+DateTime newDateTime = await RoundedDatePicker.show(context,background: Colors.white,
+                            theme: ThemeData(
+                                primaryColor: Colors.red[400],
+                                accentColor: Colors.green[800],
+                                dialogBackgroundColor: Colors.purple[50],
+                                textTheme: TextTheme(
+                                    body1: TextStyle(color: Colors.red), 
+                                    caption: TextStyle(color: Colors.blue)),
+                                    disabledColor: Colors.orange, 
+                                accentTextTheme: TextTheme(
+                                    body2 : TextStyle(color: Colors.green[200]))));
+```
+![Screenshot](screenshots/9.png)
 
 ## Image Background Header 
 Use images as the header of the date picker and you can also add more details.

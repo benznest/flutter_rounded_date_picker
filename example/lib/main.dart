@@ -1,3 +1,5 @@
+import 'dart:ui' as prefix0;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_rounded_date_picker/rounded_date_picker.dart';
@@ -144,6 +146,24 @@ class _MyAppState extends State<MyApp> {
                         }
                       },
                       label: Text("Rounded Calendar with Theme")),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  FloatingActionButton.extended(
+                      onPressed: () async {
+                        DateTime newDateTime = await RoundedDatePicker.show(context,
+                            theme: ThemeData(
+                                primaryColor: Colors.red[400],
+                                accentColor: Colors.green[800],
+                                dialogBackgroundColor: Colors.purple[50],
+                                textTheme: TextTheme(body1: TextStyle(color: Colors.red), caption: TextStyle(color: Colors.blue)),disabledColor: Colors.orange, accentTextTheme: TextTheme(body2 : TextStyle(color: Colors.green[200]))));
+                        if (newDateTime != null) {
+                          setState(() {
+                            dateTime = newDateTime;
+                          });
+                        }
+                      },
+                      label: Text("Rounded Calendar with Custom Theme")),
                   SizedBox(
                     height: 8,
                   ),
