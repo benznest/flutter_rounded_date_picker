@@ -1,10 +1,11 @@
 import 'dart:ui' as prefix0;
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_rounded_date_picker/rounded_date_picker.dart';
 import 'package:flutter_rounded_date_picker/era_mode.dart';
-
+import 'package:flutter_rounded_date_picker/cupertino_rounded_date_picker.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
@@ -28,7 +29,10 @@ class _MyAppState extends State<MyApp> {
         localizationsDelegates: [
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
+          DefaultCupertinoLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
         ],
+        locale: Locale('th','TH'),
         supportedLocales: [
           const Locale('en', 'US'), // English
           const Locale('th', 'TH'), // Thai
@@ -231,6 +235,27 @@ class _MyAppState extends State<MyApp> {
                         }
                       },
                       label: Text("Rounded Year Picker")),
+                  SizedBox(
+                    height: 24,
+                  ),
+                  Text(
+                    "Cupertino Date Pciker ",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  FloatingActionButton.extended(
+                      onPressed: () async {
+                        DateTime newDateTime = await CupertinoRoundedDatePicker.show(context,era: EraMode.BUDDHIST_YEAR,fontFamily: "Mali");
+                        if (newDateTime != null) {
+                          setState(() {
+                            dateTime = newDateTime;
+                          });
+                        }
+                      },
+                      label: Text("Cupertino Rounded Date Picker")),
                 ],
               ),
             ),
