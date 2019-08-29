@@ -23,7 +23,8 @@ class CupertinoRoundedDatePicker {
       ImageProvider imageHeader,
       String description = "",
       String fontFamily,
-      Color background = Colors.transparent}) async {
+      Color background = Colors.white,
+      Color textColor = Colors.black54}) async {
     if (initialDate == null) {
       initialDate = DateTime.now();
     }
@@ -60,6 +61,8 @@ class CupertinoRoundedDatePicker {
               }
             },
             era: era,
+            background: background,
+            textColor:textColor,
             borderRadius: borderRadius,
             imageHeader: imageHeader,
             description: description,
