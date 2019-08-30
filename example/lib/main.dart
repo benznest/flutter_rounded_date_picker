@@ -36,7 +36,7 @@ class _MyAppState extends State<MyApp> {
           DefaultCupertinoLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
         ],
-        locale: Locale('en', 'US'),
+        locale: Locale('th', 'TH'),
         supportedLocales: [
           const Locale('en', 'US'), // English
           const Locale('th', 'TH'), // Thai
@@ -298,11 +298,11 @@ class _MyAppState extends State<MyApp> {
                         FloatingActionButton.extended(
                             onPressed: () async {
                               CupertinoRoundedDatePicker.show(context,
-                                  initialDatePickerMode: CupertinoDatePickerMode.date,
+                                  initialDatePickerMode: CupertinoDatePickerMode.time,
                                   era: EraMode.BUDDHIST_YEAR,
                                   fontFamily: "Mali",
                                   textColor: Colors.white,
-                                  background: Colors.red[300], onDateTimeChanged: (newDateTime) {
+                                  background: Colors.green[300], onDateTimeChanged: (newDateTime) {
                                 setState(() {
                                   dateTime = newDateTime;
                                 });
@@ -313,7 +313,7 @@ class _MyAppState extends State<MyApp> {
                           height: 24,
                         ),
                         Text(
-                          "Cupertino Duration Pciker ",
+                          "Cupertino Duration Picker ",
                           textAlign: TextAlign.center,
                           style: TextStyle(fontSize: 20),
                         ),
