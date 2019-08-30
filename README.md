@@ -133,7 +133,7 @@ Show date and duration picker iOS style.
 
 
 ## Installing 
-Add Flutter Cupertini Localizations in dependencies.
+Add Flutter Cupertino Localizations in dependencies pub.yaml.
 ```
 dependencies:
   flutter:
@@ -145,6 +145,7 @@ dependencies:
 
 ## Initialize localizations
 Add CupertinoLocalizations delegate to localizations delegate on your App.
+The cupertino date picker will use current app locale in picker.
 ```
 MaterialApp(
         debugShowCheckedModeBanner: false,
