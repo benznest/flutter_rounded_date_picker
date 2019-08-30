@@ -125,3 +125,72 @@ DateTime newDateTime = await RoundedDatePicker.show(context,
 ![Screenshot](screenshots/7.png)
 
 
+
+# Cupertino Date Picker
+
+## Installing 
+```
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  flutter_cupertino_localizations: 1.0.1   
+```
+
+## Initialize localizations
+```
+MaterialApp(
+        debugShowCheckedModeBanner: false,
+        localizationsDelegates: [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          DefaultCupertinoLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,  // Add global cupertino localiztions.
+        ],
+        locale: Locale('th', 'TH'),
+        supportedLocales: [
+          const Locale('en', 'US'), // English
+          const Locale('th', 'TH'), // Thai
+        ],
+```
+
+## Show Cupertino Date Picker
+```
+CupertinoRoundedDatePicker.show(context, 
+                                  fontFamily: "Mali",
+                                  textColor: Colors.white, 
+                                  background: Colors.red[300],
+                                  borderRadius: 16,
+                                  initialDatePickerMode: CupertinoDatePickerMode.date,
+                                  onDateTimeChanged: (newDateTime) {
+                                    //
+                                  });
+```
+![Screenshot](screenshots/10.png)
+
+More Cupertino Date Picker Mode
+```
+CupertinoDatePickerMode.date
+CupertinoDatePickerMode.dateAndTime
+CupertinoDatePickerMode.time
+```
+![Screenshot](screenshots/11.png)
+![Screenshot](screenshots/12.png)
+
+
+Thai and Buddhist Year 
+```
+/// Current locale is Thai.
+CupertinoRoundedDatePicker.show(context, 
+                                  fontFamily: "Mali",
+                                  textColor: Colors.white, 
+                                  era: EraMode.BUDDHIST_YEAR,
+                                  background: Colors.red[300],
+                                  borderRadius: 16,
+                                  initialDatePickerMode: CupertinoDatePickerMode.date,
+                                  onDateTimeChanged: (newDateTime) {
+                                    //
+                                  });
+```
+![Screenshot](screenshots/13.png)

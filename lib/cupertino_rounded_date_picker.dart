@@ -13,15 +13,12 @@ class CupertinoRoundedDatePicker {
       DateTime maximumDate,
       int minimumYear,
       int maximumYear,
-      ThemeData theme,
       Function(DateTime) onDateTimeChanged,
       int minuteInterval = 1,
       bool use24hFormat = false,
       CupertinoDatePickerMode initialDatePickerMode = CupertinoDatePickerMode.date,
       EraMode era = EraMode.CHRIST_YEAR,
       double borderRadius = 16,
-      ImageProvider imageHeader,
-      String description = "",
       String fontFamily,
       Color background = Colors.white,
       Color textColor = Colors.black54}) async {
@@ -45,10 +42,6 @@ class CupertinoRoundedDatePicker {
       maximumYear = DateTime.now().year + 1;
     }
 
-    if (theme == null) {
-      theme = ThemeData();
-    }
-
     showModalBottomSheet(
       backgroundColor: Colors.transparent,
         context: context,
@@ -64,8 +57,6 @@ class CupertinoRoundedDatePicker {
             background: background,
             textColor:textColor,
             borderRadius: borderRadius,
-            imageHeader: imageHeader,
-            description: description,
             fontFamily: fontFamily,
             initialDateTime: initialDate,
             mode: initialDatePickerMode,

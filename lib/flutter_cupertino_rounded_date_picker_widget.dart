@@ -182,8 +182,6 @@ class FlutterRoundedCupertinoDatePickerWidget extends StatefulWidget {
       this.use24hFormat = false,
       this.borderRadius = 16,
       this.era,
-      this.imageHeader,
-      this.description,
       this.fontFamily,
       this.background = Colors.white,
       this.textColor = Colors.black54})
@@ -270,8 +268,6 @@ class FlutterRoundedCupertinoDatePickerWidget extends StatefulWidget {
   final Color background;
   final Color textColor;
   final double borderRadius;
-  final ImageProvider imageHeader;
-  final String description;
   final String fontFamily;
 
   @override

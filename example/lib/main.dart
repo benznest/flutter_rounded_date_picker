@@ -36,7 +36,7 @@ class _MyAppState extends State<MyApp> {
           DefaultCupertinoLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
         ],
-        locale: Locale('th', 'TH'),
+        locale: Locale('en', 'US'),
         supportedLocales: [
           const Locale('en', 'US'), // English
           const Locale('th', 'TH'), // Thai
@@ -60,8 +60,7 @@ class _MyAppState extends State<MyApp> {
                           Text(
                             "Date Time selected",
                             textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 20, color: Colors.grey[600]),
+                            style: TextStyle(fontSize: 20, color: Colors.grey[600]),
                           ),
                           Text(
                             "$dateTime",
@@ -70,8 +69,7 @@ class _MyAppState extends State<MyApp> {
                           Text(
                             "Duration Selected",
                             textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 20, color: Colors.grey[600]),
+                            style: TextStyle(fontSize: 20, color: Colors.grey[600]),
                           ),
                           Text(
                             "$duration",
@@ -90,14 +88,8 @@ class _MyAppState extends State<MyApp> {
                         ),
                         FloatingActionButton.extended(
                             onPressed: () async {
-                              DateTime newDateTime =
-                                  await RoundedDatePicker.show(context,
-                                      initialDate: DateTime.now(),
-                                      firstDate:
-                                          DateTime(DateTime.now().year - 1),
-                                      lastDate:
-                                          DateTime(DateTime.now().year + 1),
-                                      borderRadius: 2);
+                              DateTime newDateTime = await RoundedDatePicker.show(context,
+                                  initialDate: DateTime.now(), firstDate: DateTime(DateTime.now().year - 1), lastDate: DateTime(DateTime.now().year + 1), borderRadius: 2);
                               if (newDateTime != null) {
                                 setState(() {
                                   dateTime = newDateTime;
@@ -118,14 +110,8 @@ class _MyAppState extends State<MyApp> {
                         ),
                         FloatingActionButton.extended(
                             onPressed: () async {
-                              DateTime newDateTime =
-                                  await RoundedDatePicker.show(context,
-                                      initialDate: DateTime.now(),
-                                      firstDate:
-                                          DateTime(DateTime.now().year - 1),
-                                      lastDate:
-                                          DateTime(DateTime.now().year + 1),
-                                      borderRadius: 16);
+                              DateTime newDateTime = await RoundedDatePicker.show(context,
+                                  initialDate: DateTime.now(), firstDate: DateTime(DateTime.now().year - 1), lastDate: DateTime(DateTime.now().year + 1), borderRadius: 16);
                               if (newDateTime != null) {
                                 setState(() {
                                   dateTime = newDateTime;
@@ -138,10 +124,7 @@ class _MyAppState extends State<MyApp> {
                         ),
                         FloatingActionButton.extended(
                             onPressed: () async {
-                              DateTime newDateTime =
-                                  await RoundedDatePicker.show(context,
-                                      locale: Locale("th", "TH"),
-                                      era: EraMode.BUDDHIST_YEAR);
+                              DateTime newDateTime = await RoundedDatePicker.show(context, locale: Locale("th", "TH"), era: EraMode.BUDDHIST_YEAR);
                               if (newDateTime != null) {
                                 setState(() {
                                   dateTime = newDateTime;
@@ -154,11 +137,7 @@ class _MyAppState extends State<MyApp> {
                         ),
                         FloatingActionButton.extended(
                             onPressed: () async {
-                              DateTime newDateTime =
-                                  await RoundedDatePicker.show(context,
-                                      locale: Locale("zh", "CN"),
-                                      theme: ThemeData(
-                                          primarySwatch: Colors.pink));
+                              DateTime newDateTime = await RoundedDatePicker.show(context, locale: Locale("zh", "CN"), theme: ThemeData(primarySwatch: Colors.pink));
                               if (newDateTime != null) {
                                 setState(() {
                                   dateTime = newDateTime;
@@ -179,10 +158,7 @@ class _MyAppState extends State<MyApp> {
                         ),
                         FloatingActionButton.extended(
                             onPressed: () async {
-                              DateTime newDateTime =
-                                  await RoundedDatePicker.show(context,
-                                      theme: ThemeData(
-                                          primarySwatch: Colors.pink));
+                              DateTime newDateTime = await RoundedDatePicker.show(context, theme: ThemeData(primarySwatch: Colors.pink));
                               if (newDateTime != null) {
                                 setState(() {
                                   dateTime = newDateTime;
@@ -195,22 +171,14 @@ class _MyAppState extends State<MyApp> {
                         ),
                         FloatingActionButton.extended(
                             onPressed: () async {
-                              DateTime newDateTime =
-                                  await RoundedDatePicker.show(context,
-                                      theme: ThemeData(
-                                          primaryColor: Colors.red[400],
-                                          accentColor: Colors.green[800],
-                                          dialogBackgroundColor:
-                                              Colors.purple[50],
-                                          textTheme: TextTheme(
-                                              body1:
-                                                  TextStyle(color: Colors.red),
-                                              caption: TextStyle(
-                                                  color: Colors.blue)),
-                                          disabledColor: Colors.orange,
-                                          accentTextTheme: TextTheme(
-                                              body2: TextStyle(
-                                                  color: Colors.green[200]))));
+                              DateTime newDateTime = await RoundedDatePicker.show(context,
+                                  theme: ThemeData(
+                                      primaryColor: Colors.red[400],
+                                      accentColor: Colors.green[800],
+                                      dialogBackgroundColor: Colors.purple[50],
+                                      textTheme: TextTheme(body1: TextStyle(color: Colors.red), caption: TextStyle(color: Colors.blue)),
+                                      disabledColor: Colors.orange,
+                                      accentTextTheme: TextTheme(body2: TextStyle(color: Colors.green[200]))));
                               if (newDateTime != null) {
                                 setState(() {
                                   dateTime = newDateTime;
@@ -223,9 +191,7 @@ class _MyAppState extends State<MyApp> {
                         ),
                         FloatingActionButton.extended(
                             onPressed: () async {
-                              DateTime newDateTime =
-                                  await RoundedDatePicker.show(context,
-                                      theme: ThemeData.dark());
+                              DateTime newDateTime = await RoundedDatePicker.show(context, theme: ThemeData.dark());
                               if (newDateTime != null) {
                                 setState(() {
                                   dateTime = newDateTime;
@@ -238,13 +204,10 @@ class _MyAppState extends State<MyApp> {
                         ),
                         FloatingActionButton.extended(
                             onPressed: () async {
-                              DateTime newDateTime = await RoundedDatePicker.show(
-                                  context,
+                              DateTime newDateTime = await RoundedDatePicker.show(context,
                                   theme: ThemeData(primarySwatch: Colors.blue),
-                                  imageHeader: AssetImage(
-                                      "assets/images/calendar_header.jpg"),
-                                  description:
-                                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ");
+                                  imageHeader: AssetImage("assets/images/calendar_header.jpg"),
+                                  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ");
                               if (newDateTime != null) {
                                 setState(() {
                                   dateTime = newDateTime;
@@ -257,14 +220,11 @@ class _MyAppState extends State<MyApp> {
                         ),
                         FloatingActionButton.extended(
                             onPressed: () async {
-                              DateTime newDateTime = await RoundedDatePicker.show(
-                                  context,
+                              DateTime newDateTime = await RoundedDatePicker.show(context,
                                   theme: ThemeData(primarySwatch: Colors.blue),
-                                  imageHeader: AssetImage(
-                                      "assets/images/calendar_header_rainy.jpg"),
+                                  imageHeader: AssetImage("assets/images/calendar_header_rainy.jpg"),
                                   fontFamily: "Mali",
-                                  description:
-                                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
+                                  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
                               if (newDateTime != null) {
                                 setState(() {
                                   dateTime = newDateTime;
@@ -285,12 +245,7 @@ class _MyAppState extends State<MyApp> {
                         ),
                         FloatingActionButton.extended(
                             onPressed: () async {
-                              DateTime newDateTime =
-                                  await RoundedDatePicker.show(context,
-                                      initialDatePickerMode:
-                                          DatePickerMode.year,
-                                      theme: ThemeData(
-                                          primarySwatch: Colors.green));
+                              DateTime newDateTime = await RoundedDatePicker.show(context, initialDatePickerMode: DatePickerMode.year, theme: ThemeData(primarySwatch: Colors.green));
                               if (newDateTime != null) {
                                 setState(() {
                                   dateTime = newDateTime;
@@ -311,9 +266,7 @@ class _MyAppState extends State<MyApp> {
                         ),
                         FloatingActionButton.extended(
                             onPressed: () async {
-                              DateTime newDateTime =
-                                  await CupertinoRoundedDatePicker.show(context,
-                                      fontFamily: "Mali");
+                              DateTime newDateTime = await CupertinoRoundedDatePicker.show(context, fontFamily: "Mali");
                               if (newDateTime != null) {
                                 setState(() {
                                   dateTime = newDateTime;
@@ -325,34 +278,26 @@ class _MyAppState extends State<MyApp> {
                           height: 8,
                         ),
                         FloatingActionButton.extended(
-                            onPressed: () async {
-                              DateTime newDateTime =
-                                  await CupertinoRoundedDatePicker.show(context,
-                                      era: EraMode.BUDDHIST_YEAR,
-                                      fontFamily: "Mali",
-                                      textColor: Colors.white,
-                                      background: Colors.red[300]);
-                              if (newDateTime != null) {
+                            onPressed: () {
+                              CupertinoRoundedDatePicker.show(context, era: EraMode.BUDDHIST_YEAR, fontFamily: "Mali", textColor: Colors.white, background: Colors.red[300],borderRadius: 16,initialDatePickerMode: CupertinoDatePickerMode.date,
+    onDateTimeChanged: (newDateTime) {
                                 setState(() {
                                   dateTime = newDateTime;
                                 });
-                              }
+                              });
                             },
-                            label: Text(
-                                "Cupertino Rounded Date Picker with Theme")),
+                            label: Text("Cupertino Rounded Date Picker with Theme")),
                         SizedBox(
                           height: 8,
                         ),
                         FloatingActionButton.extended(
                             onPressed: () async {
                               CupertinoRoundedDatePicker.show(context,
-                                  initialDatePickerMode:
-                                      CupertinoDatePickerMode.time,
+                                  initialDatePickerMode: CupertinoDatePickerMode.date,
                                   era: EraMode.BUDDHIST_YEAR,
                                   fontFamily: "Mali",
                                   textColor: Colors.white,
-                                  background: Colors.red[300],
-                                  onDateTimeChanged: (newDateTime) {
+                                  background: Colors.red[300], onDateTimeChanged: (newDateTime) {
                                 setState(() {
                                   dateTime = newDateTime;
                                 });
@@ -374,12 +319,10 @@ class _MyAppState extends State<MyApp> {
                             onPressed: () async {
                               CupertinoRoundedDurationPicker.show(context,
                                   initialTimerDuration: duration,
-                                  initialDurationPickerMode:
-                                      CupertinoTimerPickerMode.ms,
+                                  initialDurationPickerMode: CupertinoTimerPickerMode.ms,
                                   background: Colors.green[700],
                                   fontFamily: "Mali",
-                                  textColor: Colors.white,
-                                  onDurationChanged: (newDuration) {
+                                  textColor: Colors.white, onDurationChanged: (newDuration) {
                                 setState(() {
                                   duration = newDuration;
                                 });

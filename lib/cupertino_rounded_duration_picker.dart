@@ -3,8 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rounded_date_picker/era_mode.dart';
 import 'package:flutter_rounded_date_picker/flutter_cupertino_rounded_date_picker_widget.dart';
-import 'package:flutter_rounded_date_picker/flutter_rounded_date_picker_widget.dart'
-    as RoundedDatePickerWidget;
 
 class CupertinoRoundedDurationPicker {
   static show(BuildContext context,
