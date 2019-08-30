@@ -127,8 +127,11 @@ DateTime newDateTime = await RoundedDatePicker.show(context,
 
 
 # Cupertino Date Picker
+Show date and duration picker iOS style.
+
 
 ## Installing 
+Add Flutter Cupertini Localizations in dependencies.
 ```
 dependencies:
   flutter:
@@ -139,6 +142,7 @@ dependencies:
 ```
 
 ## Initialize localizations
+Add CupertinoLocalizations delegate to localizations delegate on your App.
 ```
 MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -148,7 +152,7 @@ MaterialApp(
           DefaultCupertinoLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,  // Add global cupertino localiztions.
         ],
-        locale: Locale('th', 'TH'),
+        locale: Locale('en', 'US'),  // Current locale
         supportedLocales: [
           const Locale('en', 'US'), // English
           const Locale('th', 'TH'), // Thai
@@ -156,6 +160,8 @@ MaterialApp(
 ```
 
 ## Show Cupertino Date Picker
+Call the method for displaying date picker. 
+The callback date time instance will be return with onDateTimeChange.
 ```
 CupertinoRoundedDatePicker.show(context, 
                                   fontFamily: "Mali",
@@ -167,7 +173,7 @@ CupertinoRoundedDatePicker.show(context,
                                     //
                                   });
 ```
-![Screenshot](screenshots/10.png)
+![Screenshot](screenshots/12.png)
 
 More Cupertino Date Picker Mode
 ```
@@ -175,13 +181,13 @@ CupertinoDatePickerMode.date
 CupertinoDatePickerMode.dateAndTime
 CupertinoDatePickerMode.time
 ```
+![Screenshot](screenshots/10.png)
 ![Screenshot](screenshots/11.png)
-![Screenshot](screenshots/12.png)
 
 
-Thai and Buddhist Year 
+using Thai and Buddhist Year 
 ```
-/// Current locale is Thai.
+/// Current locale is TH.
 CupertinoRoundedDatePicker.show(context, 
                                   fontFamily: "Mali",
                                   textColor: Colors.white, 
@@ -194,3 +200,26 @@ CupertinoRoundedDatePicker.show(context,
                                   });
 ```
 ![Screenshot](screenshots/13.png)
+
+
+## Cupertino Duration Picker
+in iOS , Flutter cupertino support duration and timer picker.
+```
+CupertinoRoundedDurationPicker.show(context, 
+                                initialTimerDuration: Duration(minute:10), 
+                                initialDurationPickerMode: CupertinoTimerPickerMode.hms, 
+                                fontFamily: "Mali",
+                                onDurationChanged: (newDuration) {
+                                    //
+                                });
+ ```
+![Screenshot](screenshots/14.png)
+
+More Cupertino Duration Picker Mode
+```
+CupertinoTimerPickerMode.hms
+CupertinoTimerPickerMode.hm
+CupertinoTimerPickerMode.ms
+```
+![Screenshot](screenshots/15.png)
+![Screenshot](screenshots/16.png)

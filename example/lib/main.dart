@@ -279,8 +279,13 @@ class _MyAppState extends State<MyApp> {
                         ),
                         FloatingActionButton.extended(
                             onPressed: () {
-                              CupertinoRoundedDatePicker.show(context, era: EraMode.BUDDHIST_YEAR, fontFamily: "Mali", textColor: Colors.white, background: Colors.red[300],borderRadius: 16,initialDatePickerMode: CupertinoDatePickerMode.date,
-    onDateTimeChanged: (newDateTime) {
+                              CupertinoRoundedDatePicker.show(context,
+                                  era: EraMode.BUDDHIST_YEAR,
+                                  fontFamily: "Mali",
+                                  textColor: Colors.white,
+                                  background: Colors.red[300],
+                                  borderRadius: 16,
+                                  initialDatePickerMode: CupertinoDatePickerMode.date, onDateTimeChanged: (newDateTime) {
                                 setState(() {
                                   dateTime = newDateTime;
                                 });
@@ -317,12 +322,8 @@ class _MyAppState extends State<MyApp> {
                         ),
                         FloatingActionButton.extended(
                             onPressed: () async {
-                              CupertinoRoundedDurationPicker.show(context,
-                                  initialTimerDuration: duration,
-                                  initialDurationPickerMode: CupertinoTimerPickerMode.ms,
-                                  background: Colors.green[700],
-                                  fontFamily: "Mali",
-                                  textColor: Colors.white, onDurationChanged: (newDuration) {
+                              CupertinoRoundedDurationPicker.show(context, initialTimerDuration: duration, initialDurationPickerMode: CupertinoTimerPickerMode.hms, fontFamily: "Mali",
+                                  onDurationChanged: (newDuration) {
                                 setState(() {
                                   duration = newDuration;
                                 });
