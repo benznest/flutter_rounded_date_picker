@@ -286,10 +286,10 @@ class _MyAppState extends State<MyApp> {
                                   background: Colors.red[300],
                                   borderRadius: 16,
                                   initialDatePickerMode: CupertinoDatePickerMode.date, onDateTimeChanged: (newDateTime) {
-                                setState(() {
-                                  dateTime = newDateTime;
-                                });
-                              });
+                                    setState(() {
+                                      dateTime = newDateTime;
+                                    });
+                                  });
                             },
                             label: Text("Cupertino Rounded Date Picker with Theme")),
                         SizedBox(
@@ -303,10 +303,10 @@ class _MyAppState extends State<MyApp> {
                                   fontFamily: "Mali",
                                   textColor: Colors.white,
                                   background: Colors.green[300], onDateTimeChanged: (newDateTime) {
-                                setState(() {
-                                  dateTime = newDateTime;
-                                });
-                              });
+                                    setState(() {
+                                      dateTime = newDateTime;
+                                    });
+                                  });
                             },
                             label: Text("Cupertino Rounded Time Picker")),
                         SizedBox(
@@ -324,10 +324,10 @@ class _MyAppState extends State<MyApp> {
                             onPressed: () async {
                               CupertinoRoundedDurationPicker.show(context, initialTimerDuration: duration, initialDurationPickerMode: CupertinoTimerPickerMode.hms, fontFamily: "Mali",
                                   onDurationChanged: (newDuration) {
-                                setState(() {
-                                  duration = newDuration;
-                                });
-                              });
+                                    setState(() {
+                                      duration = newDuration;
+                                    });
+                                  });
                             },
                             label: Text("Cupertino Rounded Duration Picker")),
                       ],
