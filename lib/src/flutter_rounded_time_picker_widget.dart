@@ -772,6 +772,7 @@ class _TimePickerHeader extends StatelessWidget {
     @required this.onChanged,
     @required this.use24HourDials,
     @required this.borderRadius,
+    this.imageHeader,
   })  : assert(selectedTime != null),
         assert(mode != null),
         assert(orientation != null),
@@ -784,6 +785,7 @@ class _TimePickerHeader extends StatelessWidget {
   final ValueChanged<TimeOfDay> onChanged;
   final bool use24HourDials;
   final double borderRadius;
+  final ImageProvider imageHeader;
 
   void _handleChangeMode(_TimePickerMode value) {
     if (value != mode) onModeChanged(value);
@@ -886,6 +888,9 @@ class _TimePickerHeader extends StatelessWidget {
       decoration: BoxDecoration(
         color: backgroundColor,
         borderRadius: borderRadiusData,
+        image: imageHeader != null
+            ? DecorationImage(image: imageHeader, fit: BoxFit.cover)
+            : null,
       ),
       child: CustomMultiChildLayout(
         delegate: _TimePickerHeaderLayout(orientation, format),
@@ -1547,7 +1552,6 @@ class _TimePickerDialog extends StatefulWidget {
     @required this.initialTime,
     this.borderRadius,
     this.imageHeader,
-    this.description,
     this.fontFamily,
     this.negativeBtn,
     this.positiveBtn,
@@ -1564,14 +1568,20 @@ class _TimePickerDialog extends StatefulWidget {
 
   ///  Header;
   final ImageProvider imageHeader;
-  final String description;
 
   /// Font
   final String fontFamily;
 
+  /// Custom 'CANCEL" button text
   final String negativeBtn;
+
+  /// Custom 'OK" button text
   final String positiveBtn;
+
+  /// Left button text
   final String additionalBtn;
+
+  /// Left button onPress callback
   final VoidCallback onAdditionalBtn;
 
   @override
@@ -1733,6 +1743,7 @@ class _TimePickerDialogState extends State<_TimePickerDialog> {
             onChanged: _handleTimeChanged,
             use24HourDials: use24HourDials,
             borderRadius: widget.borderRadius,
+            imageHeader: widget.imageHeader,
           );
 
           final radius = Radius.circular(widget.borderRadius);
@@ -1890,7 +1901,6 @@ Future<TimeOfDay> showRoundedTimePicker({
   Locale locale,
   double borderRadius = 16.0,
   ImageProvider imageHeader,
-  String description = "",
   String fontFamily,
   bool barrierDismissible = false,
   Color background = Colors.transparent,
@@ -1914,7 +1924,6 @@ Future<TimeOfDay> showRoundedTimePicker({
     initialTime: initialTime,
     borderRadius: borderRadius,
     imageHeader: imageHeader,
-    description: description,
     fontFamily: fontFamily,
     negativeBtn: negativeBtn,
     positiveBtn: positiveBtn,

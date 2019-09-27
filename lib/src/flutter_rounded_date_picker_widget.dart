@@ -61,6 +61,8 @@ class _DatePickerHeader extends StatelessWidget {
 
   ///  Header
   final ImageProvider imageHeader;
+
+  /// Header description
   final String description;
 
   /// Font
