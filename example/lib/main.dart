@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_rounded_date_picker/rounded_date_picker.dart';
+import 'package:flutter_rounded_date_picker/rounded_picker.dart';
 import 'package:flutter_rounded_date_picker/era_mode.dart';
 import 'package:flutter_rounded_date_picker/cupertino_rounded_date_picker.dart';
 import 'package:flutter_rounded_date_picker/cupertino_rounded_duration_picker.dart';
@@ -65,8 +65,8 @@ class _MyAppState extends State<MyApp> {
               const SizedBox(height: 16),
               FloatingActionButton.extended(
                 onPressed: () async {
-                  DateTime newDateTime = await RoundedDatePicker.show(
-                    context,
+                  DateTime newDateTime = await showRoundedDatePicker(
+                    context: context,
                     initialDate: DateTime.now(),
                     firstDate: DateTime(DateTime.now().year - 1),
                     lastDate: DateTime(DateTime.now().year + 1),
@@ -87,8 +87,8 @@ class _MyAppState extends State<MyApp> {
               const SizedBox(height: 8),
               FloatingActionButton.extended(
                 onPressed: () async {
-                  DateTime newDateTime = await RoundedDatePicker.show(
-                    context,
+                  DateTime newDateTime = await showRoundedDatePicker(
+                    context: context,
                     initialDate: DateTime.now(),
                     firstDate: DateTime(DateTime.now().year - 1),
                     lastDate: DateTime(DateTime.now().year + 1),
@@ -103,8 +103,8 @@ class _MyAppState extends State<MyApp> {
               const SizedBox(height: 8),
               FloatingActionButton.extended(
                   onPressed: () async {
-                    DateTime newDateTime = await RoundedDatePicker.show(
-                      context,
+                    DateTime newDateTime = await showRoundedDatePicker(
+                      context: context,
                       locale: Locale("th", "TH"),
                       era: EraMode.BUDDHIST_YEAR,
                     );
@@ -116,8 +116,8 @@ class _MyAppState extends State<MyApp> {
               const SizedBox(height: 8),
               FloatingActionButton.extended(
                   onPressed: () async {
-                    DateTime newDateTime = await RoundedDatePicker.show(
-                      context,
+                    DateTime newDateTime = await showRoundedDatePicker(
+                      context: context,
                       locale: Locale("zh", "CN"),
                       theme: ThemeData(primarySwatch: Colors.pink),
                     );
@@ -135,8 +135,8 @@ class _MyAppState extends State<MyApp> {
               const SizedBox(height: 8),
               FloatingActionButton.extended(
                   onPressed: () async {
-                    DateTime newDateTime = await RoundedDatePicker.show(
-                      context,
+                    DateTime newDateTime = await showRoundedDatePicker(
+                      context: context,
                       theme: ThemeData(primarySwatch: Colors.pink),
                     );
                     if (newDateTime != null) {
@@ -147,8 +147,8 @@ class _MyAppState extends State<MyApp> {
               const SizedBox(height: 8),
               FloatingActionButton.extended(
                 onPressed: () async {
-                  DateTime newDateTime = await RoundedDatePicker.show(
-                    context,
+                  DateTime newDateTime = await showRoundedDatePicker(
+                    context: context,
                     theme: ThemeData(
                       primaryColor: Colors.red[400],
                       accentColor: Colors.green[800],
@@ -172,8 +172,8 @@ class _MyAppState extends State<MyApp> {
               const SizedBox(height: 8),
               FloatingActionButton.extended(
                 onPressed: () async {
-                  DateTime newDateTime = await RoundedDatePicker.show(
-                    context,
+                  DateTime newDateTime = await showRoundedDatePicker(
+                    context: context,
                     theme: ThemeData.dark(),
                   );
                   if (newDateTime != null) {
@@ -185,8 +185,8 @@ class _MyAppState extends State<MyApp> {
               const SizedBox(height: 8),
               FloatingActionButton.extended(
                 onPressed: () async {
-                  DateTime newDateTime = await RoundedDatePicker.show(
-                    context,
+                  DateTime newDateTime = await showRoundedDatePicker(
+                    context: context,
                     theme: ThemeData(primarySwatch: Colors.blue),
                     imageHeader: AssetImage(
                       "assets/images/calendar_header.jpg",
@@ -203,8 +203,8 @@ class _MyAppState extends State<MyApp> {
               const SizedBox(height: 8),
               FloatingActionButton.extended(
                 onPressed: () async {
-                  DateTime newDateTime = await RoundedDatePicker.show(
-                    context,
+                  DateTime newDateTime = await showRoundedDatePicker(
+                    context: context,
                     theme: ThemeData(primarySwatch: Colors.blue),
                     imageHeader: AssetImage(
                       "assets/images/calendar_header_rainy.jpg",
@@ -228,8 +228,8 @@ class _MyAppState extends State<MyApp> {
               const SizedBox(height: 8),
               FloatingActionButton.extended(
                 onPressed: () async {
-                  DateTime newDateTime = await RoundedDatePicker.show(
-                    context,
+                  DateTime newDateTime = await showRoundedDatePicker(
+                    context: context,
                     initialDatePickerMode: DatePickerMode.year,
                     theme: ThemeData(primarySwatch: Colors.green),
                   );
