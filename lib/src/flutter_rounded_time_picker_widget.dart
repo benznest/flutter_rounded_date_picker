@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_rounded_date_picker/button_actions.dart';
+import 'package:flutter_rounded_date_picker/src/button_actions.dart';
 
 // Examples can assume:
 // BuildContext context;

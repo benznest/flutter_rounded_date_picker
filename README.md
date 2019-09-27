@@ -15,7 +15,7 @@ Add dependencies in pubspec.yaml file. Add 2 things in it including flutter_loca
 dependencies:
   flutter_localizations:
     sdk: flutter
-  flutter_rounded_date_picker: 0.2.0
+  flutter_rounded_date_picker: 0.3.0
 ```
 
 ## Importing
@@ -24,7 +24,7 @@ import packages into your dart.
 
 ```dart
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_rounded_date_picker/rounded_date_picker.dart';
+import 'package:flutter_rounded_date_picker/rounded_picker.dart';
 ```
 
 ## Initialize localizations

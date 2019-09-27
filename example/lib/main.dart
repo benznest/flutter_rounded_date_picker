@@ -2,9 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_rounded_date_picker/rounded_picker.dart';
-import 'package:flutter_rounded_date_picker/era_mode.dart';
-import 'package:flutter_rounded_date_picker/cupertino_rounded_date_picker.dart';
-import 'package:flutter_rounded_date_picker/cupertino_rounded_duration_picker.dart';
 
 void main() => runApp(MyApp());
 

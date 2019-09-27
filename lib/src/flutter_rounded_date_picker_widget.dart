@@ -10,9 +10,9 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/gestures.dart' show DragStartBehavior;
-import 'package:flutter_rounded_date_picker/button_actions.dart';
-import 'package:flutter_rounded_date_picker/era_mode.dart';
-import 'package:flutter_rounded_date_picker/thai_date_utils.dart';
+import 'package:flutter_rounded_date_picker/src/button_actions.dart';
+import 'package:flutter_rounded_date_picker/src/era_mode.dart';
+import 'package:flutter_rounded_date_picker/src/thai_date_utils.dart';
 
 // Examples can assume:
 // BuildContext context;
