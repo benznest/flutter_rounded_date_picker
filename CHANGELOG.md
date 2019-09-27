@@ -1,10 +1,17 @@
+# Changelog
+
+## 0.3.0
+
+* Add possibility to have a custom button on left.
+* Add Android style time picker.
+* Some code improvements.
+
 ## 0.2.0
 
-* support cupertino date time picker.
-* support cupertino duration picker.
-
+* Support cupertino date time picker.
+* Support cupertino duration picker.
 
 ## 0.1.0
 
-* support border radius date picker.
-* support thai buddhist year.
+* Support border radius date picker.
+* Support thai buddhist year.
