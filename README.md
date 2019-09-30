@@ -50,8 +50,8 @@ MaterialApp(
 Show date picker which you can specify a date that allows users to choose.
 
 ```dart
-DateTime newDateTime = await RoundedDatePicker.show(
-  context,
+DateTime newDateTime = await showRoundedDatePicker(
+  context: context,
   initialDate: DateTime.now(),
   firstDate: DateTime(DateTime.now().year - 1),
   lastDate: DateTime(DateTime.now().year + 1),
@@ -67,8 +67,8 @@ DateTime newDateTime = await RoundedDatePicker.show(
 Show year picker which you can specify a year start and end that allows users to choose.
 
 ```dart
-DateTime newDateTime = await RoundedDatePicker.show(
-  context,
+DateTime newDateTime = await showRoundedDatePicker(
+  context: context,
   initialDatePickerMode: DatePickerMode.year,
   theme: ThemeData(primarySwatch: Colors.green),
 );
@@ -81,7 +81,10 @@ DateTime newDateTime = await RoundedDatePicker.show(
 You can assign themes to the date picker by using ThemeData class and PrimarySwatch.
 
 ```dart
-DateTime newDateTime = await RoundedDatePicker.show(context, theme: ThemeData(primarySwatch: Colors.pink));
+DateTime newDateTime = await showRoundedDatePicker(
+  context: context,
+  theme: ThemeData(primarySwatch: Colors.pink),
+);
 ```
 
 ![Screenshot](screenshots/2.png)
@@ -89,7 +92,10 @@ DateTime newDateTime = await RoundedDatePicker.show(context, theme: ThemeData(pr
 Dark theme
 
 ```dart
-DateTime newDateTime = await RoundedDatePicker.show(context, theme: ThemeData.dark());
+DateTime newDateTime = await showRoundedDatePicker(
+  context: context,
+  theme: ThemeData.dark(),
+);
 ```
 
 ![Screenshot](screenshots/3.png)
@@ -97,8 +103,8 @@ DateTime newDateTime = await RoundedDatePicker.show(context, theme: ThemeData.da
 Custom Theme with ThemeData
 
 ```dart
-DateTime newDateTime = await RoundedDatePicker.show(
-  context,
+DateTime newDateTime = await showRoundedDatePicker(
+  context: context,
   background: Colors.white,
   theme: ThemeData(
     primaryColor: Colors.red[400],
@@ -125,8 +131,8 @@ Use images as the header of the date picker and you can also add more details.
 * You need to specify the path of images in your asset (pubspec.yaml).
 
 ```dart
-DateTime newDateTime = await RoundedDatePicker.show(
-  context,
+DateTime newDateTime = await showRoundedDatePicker(
+  context: context,
   theme: ThemeData(primarySwatch: Colors.blue),
   imageHeader: AssetImage("assets/images/calendar_header.jpg"),
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -142,7 +148,10 @@ You can adjust the Font-family in the date picker.
 * You need to specify the path of font in your fonts (pubspec.yaml).
 
 ```dart
-DateTime newDateTime = await RoundedDatePicker.show(context,fontFamily: "Mali");
+DateTime newDateTime = await showRoundedDatePicker(
+  context: context,
+  fontFamily: "Mali"
+);
 ```
 
 ![Screenshot](screenshots/5.png)
@@ -153,8 +162,8 @@ You can set the date picker locale. By specifying the language code and country 
 As of April 2019, this package supports about 52 languages.
 
 ```dart
-DateTime newDateTime = await RoundedDatePicker.show(
-  context,
+DateTime newDateTime = await showRoundedDatePicker(
+  context: context,
   locale: Locale("zh","CN"),
   theme: ThemeData(primarySwatch: Colors.pink),
 );
@@ -167,14 +176,27 @@ DateTime newDateTime = await RoundedDatePicker.show(
 If you are using Thai language And use the Buddhist era (543 BCE). Plugins that support these capabilities.
 
 ```dart
-DateTime newDateTime = await RoundedDatePicker.show(
-  context,
+DateTime newDateTime = await showRoundedDatePicker(
+  context: context,
   locale: Locale("th", "TH"),
   era: EraMode.BUDDHIST_YEAR,
 );
 ```
 
 ![Screenshot](screenshots/7.png)
+
+## Show Time Picker
+
+Show time picker, all feature of date picker is available (except description)
+
+```dart
+final timePicked = await showRoundedTimePicker(
+  context: context,
+  initialTime: TimeOfDay.now(),
+);
+```
+
+![Screenshot](screenshots/17.png)
 
 # Cupertino Date Picker
 

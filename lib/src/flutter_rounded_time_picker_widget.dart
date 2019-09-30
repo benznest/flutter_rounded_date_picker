@@ -1555,8 +1555,8 @@ class _TimePickerDialog extends StatefulWidget {
     this.fontFamily,
     this.negativeBtn,
     this.positiveBtn,
-    this.additionalBtn,
-    this.onAdditionalBtn,
+    this.leftBtn,
+    this.onLeftBtn,
   })  : assert(initialTime != null),
         super(key: key);
 
@@ -1579,10 +1579,10 @@ class _TimePickerDialog extends StatefulWidget {
   final String positiveBtn;
 
   /// Left button text
-  final String additionalBtn;
+  final String leftBtn;
 
   /// Left button onPress callback
-  final VoidCallback onAdditionalBtn;
+  final VoidCallback onLeftBtn;
 
   @override
   _TimePickerDialogState createState() => _TimePickerDialogState();
@@ -1726,8 +1726,8 @@ class _TimePickerDialogState extends State<_TimePickerDialog> {
       onNegative: _handleCancel,
       positiveBtn: widget.positiveBtn,
       onPositive: _handleOk,
-      leftBtn: widget.additionalBtn,
-      onLeftBtn: widget.onAdditionalBtn,
+      leftBtn: widget.leftBtn,
+      onLeftBtn: widget.onLeftBtn,
       localizations: localizations,
       textStyle: TextStyle(fontFamily: widget.fontFamily),
     );
@@ -1906,16 +1906,16 @@ Future<TimeOfDay> showRoundedTimePicker({
   Color background = Colors.transparent,
   String negativeBtn,
   String positiveBtn,
-  String additionalBtn,
-  VoidCallback onAdditionalBtn,
+  String leftBtn,
+  VoidCallback onLeftBtn,
 }) async {
   initialTime ??= TimeOfDay.now();
   theme ??= ThemeData();
 
   assert(initialTime != null);
   assert(
-    (additionalBtn == null) == (onAdditionalBtn == null),
-    "If you provide additionalBtn, you must provide onAdditionalBtn",
+    (leftBtn == null) == (onLeftBtn == null),
+    "If you provide leftBtn, you must provide onLeftBtn",
   );
   assert(context != null);
   assert(debugCheckHasMaterialLocalizations(context));
@@ -1927,8 +1927,8 @@ Future<TimeOfDay> showRoundedTimePicker({
     fontFamily: fontFamily,
     negativeBtn: negativeBtn,
     positiveBtn: positiveBtn,
-    additionalBtn: additionalBtn,
-    onAdditionalBtn: onAdditionalBtn,
+    leftBtn: leftBtn,
+    onLeftBtn: onLeftBtn,
   );
 
   Widget child = GestureDetector(
