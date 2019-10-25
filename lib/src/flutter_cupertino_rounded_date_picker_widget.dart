@@ -8,7 +8,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_rounded_date_picker/era_mode.dart';
+import 'package:flutter_rounded_date_picker/src/era_mode.dart';
 
 // Default aesthetic values obtained by comparing with iOS pickers.
 const double _kItemExtent = 32.0;
