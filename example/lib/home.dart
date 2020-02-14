@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rounded_date_picker/rounded_picker.dart';
+import 'package:flutter_rounded_date_picker/src/material_rounded_date_picker_style.dart';
+import 'package:flutter_rounded_date_picker/src/material_rounded_year_picker_style.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -125,6 +127,92 @@ class _HomeState extends State<Home> {
                   },
                   label: Text("Rounded Calendar (Chinese)"),
                 ),
+                const SizedBox(height: 12),
+                FloatingActionButton.extended(
+                  onPressed: () async {
+                    DateTime newDateTime = await showRoundedDatePicker(
+                        context: context,
+                        theme: ThemeData(primarySwatch: Colors.deepPurple),
+                        styleDatePicker: MaterialRoundedDatePickerStyle(
+                          textStyleDayButton: TextStyle(fontSize: 36, color: Colors.white),
+                          textStyleYearButton: TextStyle(
+                            fontSize: 52,
+                            color: Colors.white,
+                          ),
+                          textStyleDayHeader: TextStyle(
+                            fontSize: 24,
+                            color: Colors.white,
+                          ),
+                          textStyleCurrentDayOnCalendar: TextStyle(fontSize: 32, color: Colors.white, fontWeight: FontWeight.bold),
+                          textStyleDayOnCalendar: TextStyle(fontSize: 28, color: Colors.white),
+                          textStyleDayOnCalendarSelected: TextStyle(fontSize: 32, color: Colors.white, fontWeight: FontWeight.bold),
+                          textStyleDayOnCalendarDisabled: TextStyle(fontSize: 28, color: Colors.white.withOpacity(0.1)),
+                          textStyleMonthYearHeader: TextStyle(fontSize: 32, color: Colors.white, fontWeight: FontWeight.bold),
+                          paddingDatePicker: EdgeInsets.all(0),
+                          paddingMonthHeader: EdgeInsets.all(32),
+                          paddingActionBar: EdgeInsets.all(16),
+                          paddingDateYearHeader: EdgeInsets.all(32),
+                          sizeArrow: 50,
+                          colorArrowNext: Colors.white,
+                          colorArrowPrevious: Colors.white,
+                          marginLeftArrowPrevious: 16,
+                          marginTopArrowPrevious: 16,
+                          marginTopArrowNext: 16,
+                          marginRightArrowNext: 32,
+                          textStyleButtonAction: TextStyle(fontSize: 28, color: Colors.white),
+                          textStyleButtonPositive: TextStyle(fontSize: 28, color: Colors.white, fontWeight: FontWeight.bold),
+                          textStyleButtonNegative: TextStyle(fontSize: 28, color: Colors.white.withOpacity(0.5)),
+                          decorationDateSelected: BoxDecoration(color: Colors.orange[600], shape: BoxShape.circle),
+                          backgroundPicker: Colors.deepPurple[400],
+                          backgroundActionBar: Colors.deepPurple[300],
+                          backgroundHeaderMonth: Colors.deepPurple[300],
+                        ),
+                        styleYearPicker: MaterialRoundedYearPickerStyle(
+                          textStyleYear: TextStyle(fontSize: 40, color: Colors.white),
+                          textStyleYearSelected: TextStyle(fontSize: 56, color: Colors.white, fontWeight: FontWeight.bold),
+                          heightYearRow: 100,
+                          backgroundPicker: Colors.deepPurple[400],
+                        ),
+                        textActionButton: "ACTION",
+                        customWeekDays: ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"],
+                        builderDay: (DateTime dateTime, bool isCurrentDay, bool isSelected, TextStyle defaultTextStyle) {
+                          if (dateTime.day == 10) {
+                            return Center(
+                              child: Stack(
+                                children: <Widget>[
+                                  Container(
+                                    decoration: isSelected ? BoxDecoration(color: Colors.orange[600], shape: BoxShape.circle) : null,
+                                    child: Text(
+                                      dateTime.day.toString(),
+                                      style: defaultTextStyle,
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 10,
+                                    height: 10,
+                                    decoration: BoxDecoration(color: Colors.pink[300], shape: BoxShape.circle),
+                                  )
+                                ],
+                              ),
+                            );
+                          }
+
+                          return Container(
+                            decoration: isSelected ? BoxDecoration(color: Colors.orange[600], shape: BoxShape.circle) : null,
+                            child: Center(
+                              child: Text(
+                                dateTime.day.toString(),
+                                style: defaultTextStyle,
+                              ),
+                            ),
+                          );
+                        });
+                    if (newDateTime != null) {
+                      setState(() => dateTime = newDateTime);
+                    }
+                  },
+                  label: Text("Rounded Calendar with Custom style (Example on Pixel C)"),
+                ),
                 const SizedBox(height: 24),
                 const Text(
                   "Theme",
@@ -191,8 +279,7 @@ class _HomeState extends State<Home> {
                       imageHeader: AssetImage(
                         "assets/images/calendar_header.jpg",
                       ),
-                      description:
-                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     );
                     if (newDateTime != null) {
                       setState(() => dateTime = newDateTime);
@@ -210,8 +297,7 @@ class _HomeState extends State<Home> {
                         "assets/images/calendar_header_rainy.jpg",
                       ),
                       fontFamily: "Mali",
-                      description:
-                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     );
                     if (newDateTime != null) {
                       setState(() => dateTime = newDateTime);
@@ -224,10 +310,10 @@ class _HomeState extends State<Home> {
                   onPressed: () async {
                     DateTime newDateTime = await showRoundedDatePicker(
                       context: context,
-                      negativeBtn: "CUSTOM CANCEL",
-                      positiveBtn: "CUSTOM OK",
-                      leftBtn: "TODAY",
-                      onLeftBtn: () {
+                      textNegativeButton: "CUSTOM CANCEL",
+                      textPositiveButton: "CUSTOM OK",
+                      textActionButton: "TODAY",
+                      onTapActionButton: () {
                         Navigator.of(context).pop(DateTime.now());
                       },
                     );
@@ -296,8 +382,7 @@ class _HomeState extends State<Home> {
                 const SizedBox(height: 12),
                 FloatingActionButton.extended(
                   onPressed: () async {
-                    DateTime newDateTime =
-                        await CupertinoRoundedDatePicker.show(
+                    DateTime newDateTime = await CupertinoRoundedDatePicker.show(
                       context,
                       fontFamily: "Mali",
                     );
