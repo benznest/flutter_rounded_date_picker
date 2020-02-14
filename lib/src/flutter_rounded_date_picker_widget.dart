@@ -119,7 +119,9 @@ Future<DateTime> showRoundedDatePicker(
     MaterialRoundedDatePickerStyle styleDatePicker,
     MaterialRoundedYearPickerStyle styleYearPicker,
     List<String> customWeekDays,
-    BuilderDayOfDatePicker builderDay}) async {
+    BuilderDayOfDatePicker builderDay,
+    List<DateTime> listDateDisabled,
+    OnTapDay onTapDay}) async {
   initialDate ??= DateTime.now();
   firstDate ??= DateTime(initialDate.year - 1);
   lastDate ??= DateTime(initialDate.year + 1);
@@ -187,6 +189,8 @@ Future<DateTime> showRoundedDatePicker(
           styleYearPicker: styleYearPicker,
           customWeekDays: customWeekDays,
           builderDay: builderDay,
+          listDateDisabled: listDateDisabled,
+          onTapDay: onTapDay,
         ),
       ),
     ),

@@ -26,7 +26,6 @@ import 'package:flutter_rounded_date_picker/src/widgets/flutter_rounded_day_pick
 const Duration _kMonthScrollDuration = Duration(milliseconds: 200);
 
 class FlutterRoundedMonthPicker extends StatefulWidget {
-
   /// Creates a month picker.
   ///
   /// Rarely used directly. Instead, typically used as part of the dialog shown
@@ -45,7 +44,9 @@ class FlutterRoundedMonthPicker extends StatefulWidget {
       this.style,
       this.borderRadius = 0,
       this.customWeekDays,
-      this.builderDay})
+      this.builderDay,
+      this.listDateDisabled,
+      this.onTapDay})
       : assert(selectedDate != null),
         assert(onChanged != null),
         assert(!firstDate.isAfter(lastDate)),
@@ -89,12 +90,16 @@ class FlutterRoundedMonthPicker extends StatefulWidget {
 
   final BuilderDayOfDatePicker builderDay;
 
+  final List<DateTime> listDateDisabled;
+  final OnTapDay onTapDay;
+
   @override
   _FlutterRoundedMonthPickerState createState() => _FlutterRoundedMonthPickerState();
 }
 
 class _FlutterRoundedMonthPickerState extends State<FlutterRoundedMonthPicker> with SingleTickerProviderStateMixin {
-  static final Animatable<double> _chevronOpacityTween = Tween<double>(begin: 1.0, end: 0.0).chain(CurveTween(curve: Curves.easeInOut));
+  static final Animatable<double> _chevronOpacityTween =
+      Tween<double>(begin: 1.0, end: 0.0).chain(CurveTween(curve: Curves.easeInOut));
 
   @override
   void initState() {
@@ -183,8 +188,10 @@ class _FlutterRoundedMonthPickerState extends State<FlutterRoundedMonthPicker> w
       fontFamily: widget.fontFamily,
       style: widget.style,
       borderRadius: widget.borderRadius,
-        customWeekDays:widget.customWeekDays,
+      customWeekDays: widget.customWeekDays,
       builderDay: widget.builderDay,
+      listDateDisabled: widget.listDateDisabled,
+      onTapDay: widget.onTapDay,
     );
   }
 
@@ -250,7 +257,10 @@ class _FlutterRoundedMonthPickerState extends State<FlutterRoundedMonthPicker> w
     Orientation orientation = MediaQuery.of(context).orientation;
     return Container(
       decoration: BoxDecoration(
-          color: widget.style?.backgroundPicker, borderRadius: orientation == Orientation.landscape ? BorderRadius.only(topRight: Radius.circular(widget.borderRadius)) : null),
+          color: widget.style?.backgroundPicker,
+          borderRadius: orientation == Orientation.landscape
+              ? BorderRadius.only(topRight: Radius.circular(widget.borderRadius))
+              : null),
       // The month picker just adds month navigation to the day picker, so make
       // it the same height as the DayPicker
 //      height: _kMaxDayPickerHeight,
@@ -295,7 +305,9 @@ class _FlutterRoundedMonthPickerState extends State<FlutterRoundedMonthPicker> w
                     size: widget?.style?.sizeArrow,
                     color: widget?.style?.colorArrowPrevious,
                   ),
-                  tooltip: _isDisplayingFirstMonth ? null : '${localizations.previousMonthTooltip} ${localizations.formatMonthYear(_previousMonthDate)}',
+                  tooltip: _isDisplayingFirstMonth
+                      ? null
+                      : '${localizations.previousMonthTooltip} ${localizations.formatMonthYear(_previousMonthDate)}',
                   onPressed: _isDisplayingFirstMonth == true ? null : _handlePreviousMonth,
                 ),
               ),
@@ -316,7 +328,9 @@ class _FlutterRoundedMonthPickerState extends State<FlutterRoundedMonthPicker> w
                     size: widget?.style?.sizeArrow,
                     color: widget?.style?.colorArrowNext,
                   ),
-                  tooltip: _isDisplayingLastMonth ? null : '${localizations.nextMonthTooltip} ${localizations.formatMonthYear(_nextMonthDate)}',
+                  tooltip: _isDisplayingLastMonth
+                      ? null
+                      : '${localizations.nextMonthTooltip} ${localizations.formatMonthYear(_nextMonthDate)}',
                   onPressed: _isDisplayingLastMonth ? null : _handleNextMonth,
                 ),
               ),

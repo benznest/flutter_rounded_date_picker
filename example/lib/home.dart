@@ -143,11 +143,14 @@ class _HomeState extends State<Home> {
                             fontSize: 24,
                             color: Colors.white,
                           ),
-                          textStyleCurrentDayOnCalendar: TextStyle(fontSize: 32, color: Colors.white, fontWeight: FontWeight.bold),
+                          textStyleCurrentDayOnCalendar:
+                              TextStyle(fontSize: 32, color: Colors.white, fontWeight: FontWeight.bold),
                           textStyleDayOnCalendar: TextStyle(fontSize: 28, color: Colors.white),
-                          textStyleDayOnCalendarSelected: TextStyle(fontSize: 32, color: Colors.white, fontWeight: FontWeight.bold),
+                          textStyleDayOnCalendarSelected:
+                              TextStyle(fontSize: 32, color: Colors.white, fontWeight: FontWeight.bold),
                           textStyleDayOnCalendarDisabled: TextStyle(fontSize: 28, color: Colors.white.withOpacity(0.1)),
-                          textStyleMonthYearHeader: TextStyle(fontSize: 32, color: Colors.white, fontWeight: FontWeight.bold),
+                          textStyleMonthYearHeader:
+                              TextStyle(fontSize: 32, color: Colors.white, fontWeight: FontWeight.bold),
                           paddingDatePicker: EdgeInsets.all(0),
                           paddingMonthHeader: EdgeInsets.all(32),
                           paddingActionBar: EdgeInsets.all(16),
@@ -160,7 +163,8 @@ class _HomeState extends State<Home> {
                           marginTopArrowNext: 16,
                           marginRightArrowNext: 32,
                           textStyleButtonAction: TextStyle(fontSize: 28, color: Colors.white),
-                          textStyleButtonPositive: TextStyle(fontSize: 28, color: Colors.white, fontWeight: FontWeight.bold),
+                          textStyleButtonPositive:
+                              TextStyle(fontSize: 28, color: Colors.white, fontWeight: FontWeight.bold),
                           textStyleButtonNegative: TextStyle(fontSize: 28, color: Colors.white.withOpacity(0.5)),
                           decorationDateSelected: BoxDecoration(color: Colors.orange[600], shape: BoxShape.circle),
                           backgroundPicker: Colors.deepPurple[400],
@@ -169,36 +173,73 @@ class _HomeState extends State<Home> {
                         ),
                         styleYearPicker: MaterialRoundedYearPickerStyle(
                           textStyleYear: TextStyle(fontSize: 40, color: Colors.white),
-                          textStyleYearSelected: TextStyle(fontSize: 56, color: Colors.white, fontWeight: FontWeight.bold),
+                          textStyleYearSelected:
+                              TextStyle(fontSize: 56, color: Colors.white, fontWeight: FontWeight.bold),
                           heightYearRow: 100,
                           backgroundPicker: Colors.deepPurple[400],
                         ),
                         textActionButton: "ACTION",
                         customWeekDays: ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"],
-                        builderDay: (DateTime dateTime, bool isCurrentDay, bool isSelected, TextStyle defaultTextStyle) {
+                        listDateDisabled: [
+                          DateTime.now().subtract(Duration(days: 2)),
+                          DateTime.now().subtract(Duration(days: 4)),
+                          DateTime.now().subtract(Duration(days: 6)),
+                          DateTime.now().add(Duration(days: 2)),
+                          DateTime.now().add(Duration(days: 4)),
+                          DateTime.now().add(Duration(days: 6)),
+                        ],
+                        onTapDay: (DateTime dateTime, bool available) {
+                          if (!available) {
+                            showDialog(
+                                context: context,
+                                builder: (c) => CupertinoAlertDialog(title: Text("Cannot select this date."),actions: <Widget>[
+                                  CupertinoDialogAction(child: Text("OK"),onPressed: (){
+                                    Navigator.pop(context);
+                                  },)
+                                ],));
+                          }
+                          return available;
+                        },
+                        builderDay:
+                            (DateTime dateTime, bool isCurrentDay, bool isSelected, TextStyle defaultTextStyle) {
+                          if (isSelected) {
+                            return Container(
+                              decoration: BoxDecoration(color: Colors.orange[600], shape: BoxShape.circle),
+                              child: Center(
+                                child: Text(
+                                  dateTime.day.toString(),
+                                  style: defaultTextStyle,
+                                ),
+                              ),
+                            );
+                          }
+
                           if (dateTime.day == 10) {
-                            return Center(
-                              child: Stack(
-                                children: <Widget>[
-                                  Container(
-                                    decoration: isSelected ? BoxDecoration(color: Colors.orange[600], shape: BoxShape.circle) : null,
-                                    child: Text(
-                                      dateTime.day.toString(),
-                                      style: defaultTextStyle,
-                                    ),
-                                  ),
-                                  Container(
-                                    width: 10,
-                                    height: 10,
-                                    decoration: BoxDecoration(color: Colors.pink[300], shape: BoxShape.circle),
-                                  )
-                                ],
+                            return Container(
+                              decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.pink[300], width: 4), shape: BoxShape.circle),
+                              child: Center(
+                                child: Text(
+                                  dateTime.day.toString(),
+                                  style: defaultTextStyle,
+                                ),
+                              ),
+                            );
+                          }
+                          if (dateTime.day == 12) {
+                            return Container(
+                              decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.pink[300], width: 4), shape: BoxShape.circle),
+                              child: Center(
+                                child: Text(
+                                  dateTime.day.toString(),
+                                  style: defaultTextStyle,
+                                ),
                               ),
                             );
                           }
 
                           return Container(
-                            decoration: isSelected ? BoxDecoration(color: Colors.orange[600], shape: BoxShape.circle) : null,
                             child: Center(
                               child: Text(
                                 dateTime.day.toString(),
@@ -279,7 +320,8 @@ class _HomeState extends State<Home> {
                       imageHeader: AssetImage(
                         "assets/images/calendar_header.jpg",
                       ),
-                      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                      description:
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     );
                     if (newDateTime != null) {
                       setState(() => dateTime = newDateTime);
@@ -297,7 +339,8 @@ class _HomeState extends State<Home> {
                         "assets/images/calendar_header_rainy.jpg",
                       ),
                       fontFamily: "Mali",
-                      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                      description:
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     );
                     if (newDateTime != null) {
                       setState(() => dateTime = newDateTime);

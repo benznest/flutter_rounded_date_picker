@@ -31,7 +31,9 @@ class FlutterRoundedDatePickerDialog extends StatefulWidget {
       this.styleDatePicker,
       this.styleYearPicker,
       this.customWeekDays,
-      this.builderDay})
+      this.builderDay,
+      this.listDateDisabled,
+      this.onTapDay})
       : super(key: key);
 
   final DateTime initialDate;
@@ -69,6 +71,9 @@ class FlutterRoundedDatePickerDialog extends StatefulWidget {
   final List<String> customWeekDays;
 
   final BuilderDayOfDatePicker builderDay;
+
+  final List<DateTime> listDateDisabled;
+  final OnTapDay onTapDay;
 
   @override
   _FlutterRoundedDatePickerDialogState createState() => _FlutterRoundedDatePickerDialogState();
@@ -169,19 +174,22 @@ class _FlutterRoundedDatePickerDialogState extends State<FlutterRoundedDatePicke
     switch (_mode) {
       case DatePickerMode.day:
         return FlutterRoundedMonthPicker(
-            key: _pickerKey,
-            selectedDate: _selectedDate,
-            onChanged: _handleDayChanged,
-            firstDate: widget.firstDate,
-            lastDate: widget.lastDate,
-            era: widget.era,
-            locale: widget.locale,
-            selectableDayPredicate: widget.selectableDayPredicate,
-            fontFamily: widget.fontFamily,
-            style: widget.styleDatePicker,
-            borderRadius: widget.borderRadius,
-            customWeekDays: widget.customWeekDays,
-        builderDay: widget.builderDay,);
+          key: _pickerKey,
+          selectedDate: _selectedDate,
+          onChanged: _handleDayChanged,
+          firstDate: widget.firstDate,
+          lastDate: widget.lastDate,
+          era: widget.era,
+          locale: widget.locale,
+          selectableDayPredicate: widget.selectableDayPredicate,
+          fontFamily: widget.fontFamily,
+          style: widget.styleDatePicker,
+          borderRadius: widget.borderRadius,
+          customWeekDays: widget.customWeekDays,
+          builderDay: widget.builderDay,
+          listDateDisabled: widget.listDateDisabled,
+          onTapDay: widget.onTapDay,
+        );
       case DatePickerMode.year:
         return FlutterRoundedYearPicker(
           key: _pickerKey,
@@ -266,7 +274,7 @@ class _FlutterRoundedDatePickerDialogState extends State<FlutterRoundedDatePicke
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Flexible(flex: 1,child: header),
+                  Flexible(flex: 1, child: header),
                   Flexible(
                     flex: 2, // have the picker take up 2/3 of the dialog width
                     child: Column(

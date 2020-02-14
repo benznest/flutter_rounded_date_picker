@@ -29,7 +29,9 @@ const int _kMaxDayPickerRowCount = 6; // A 31 day month that starts on Saturday.
 // Two extra rows: one for the day-of-week header and one for the month header.
 const double _kMaxDayPickerHeight = _kDayPickerRowHeight * (_kMaxDayPickerRowCount + 2);
 
-typedef BuilderDayOfDatePicker = Widget Function(DateTime dateTime, bool isCurrentDay, bool selected,TextStyle defaultTextStyle);
+typedef BuilderDayOfDatePicker = Widget Function(
+    DateTime dateTime, bool isCurrentDay, bool selected, TextStyle defaultTextStyle);
+typedef OnTapDay = bool Function(DateTime dateTime, bool available);
 
 class _DayPickerGridDelegate extends SliverGridDelegate {
   const _DayPickerGridDelegate();
@@ -75,7 +77,9 @@ class FlutterRoundedDayPicker extends StatelessWidget {
       this.borderRadius,
       this.style,
       this.customWeekDays,
-      this.builderDay})
+      this.builderDay,
+      this.listDateDisabled,
+      this.onTapDay})
       : assert(selectedDate != null),
         assert(currentDate != null),
         assert(onChanged != null),
@@ -117,6 +121,8 @@ class FlutterRoundedDayPicker extends StatelessWidget {
   final MaterialRoundedDatePickerStyle style;
   final List<String> customWeekDays;
   final BuilderDayOfDatePicker builderDay;
+  final List<DateTime> listDateDisabled;
+  final OnTapDay onTapDay;
 
   /// Determines the way that drag start behavior is handled.
   ///
@@ -284,7 +290,16 @@ class FlutterRoundedDayPicker extends StatelessWidget {
         labels.add(Container());
       } else {
         final DateTime dayToBuild = DateTime(year, month, day);
-        final bool disabled = dayToBuild.isAfter(lastDate) || dayToBuild.isBefore(firstDate) || (selectableDayPredicate != null && !selectableDayPredicate(dayToBuild));
+        bool disabled = dayToBuild.isAfter(lastDate) ||
+            dayToBuild.isBefore(firstDate) ||
+            (selectableDayPredicate != null && !selectableDayPredicate(dayToBuild));
+
+        for (DateTime dt in listDateDisabled) {
+          if (dt.day == day && dt.month == month && dt.year == year) {
+            disabled = true;
+            break;
+          }
+        }
 
         BoxDecoration decoration;
         TextStyle itemStyle = style?.textStyleDayOnCalendar ??
@@ -321,7 +336,7 @@ class FlutterRoundedDayPicker extends StatelessWidget {
         }
         Widget dayWidget;
         if (builderDay != null) {
-          dayWidget = builderDay(dayToBuild, isCurrentDay, isSelectedDay , itemStyle);
+          dayWidget = builderDay(dayToBuild, isCurrentDay, isSelectedDay, itemStyle);
         }
 
         dayWidget = dayWidget ??
@@ -348,16 +363,21 @@ class FlutterRoundedDayPicker extends StatelessWidget {
               ),
             );
 
-        if (!disabled) {
-          dayWidget = GestureDetector(
-            behavior: HitTestBehavior.opaque,
-            onTap: () {
+        dayWidget = GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onTap: () {
+            bool allow = true;
+            if (onTapDay != null) {
+              allow = onTapDay(dayToBuild, !disabled);
+            }
+
+            if (allow) {
               onChanged(dayToBuild);
-            },
-            child: dayWidget,
-            dragStartBehavior: dragStartBehavior,
-          );
-        }
+            }
+          },
+          child: dayWidget,
+          dragStartBehavior: dragStartBehavior,
+        );
 
         labels.add(dayWidget);
       }
@@ -365,7 +385,8 @@ class FlutterRoundedDayPicker extends StatelessWidget {
 
     String monthYearHeader = "";
     if (locale != null && locale.languageCode.toLowerCase() == "th") {
-      monthYearHeader = "${ThaiDateUtils.getMonthNameFull(displayedMonth.month)} ${calculateYearEra(era, displayedMonth.year)}";
+      monthYearHeader =
+          "${ThaiDateUtils.getMonthNameFull(displayedMonth.month)} ${calculateYearEra(era, displayedMonth.year)}";
     } else {
       monthYearHeader = localizations.formatMonthYear(displayedMonth);
     }
@@ -376,7 +397,10 @@ class FlutterRoundedDayPicker extends StatelessWidget {
         children: <Widget>[
           Container(
             decoration: BoxDecoration(
-                color: style?.backgroundHeaderMonth, borderRadius: orientation == Orientation.landscape ? BorderRadius.only(topRight: Radius.circular(borderRadius)) : null),
+                color: style?.backgroundHeaderMonth,
+                borderRadius: orientation == Orientation.landscape
+                    ? BorderRadius.only(topRight: Radius.circular(borderRadius))
+                    : null),
             padding: style?.paddingMonthHeader,
 //            height: _kDayPickerRowHeight,
             child: Center(
