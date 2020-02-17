@@ -15,7 +15,7 @@ Add dependencies in pubspec.yaml file. Add 2 things in it including flutter_loca
 dependencies:
   flutter_localizations:
     sdk: flutter
-  flutter_rounded_date_picker: 0.3.0
+  flutter_rounded_date_picker: 1.0.0
 ```
 
 ## Importing
@@ -123,6 +123,199 @@ DateTime newDateTime = await showRoundedDatePicker(
 ```
 
 ![Screenshot](screenshots/9.png)
+
+
+## Customize Date Picker
+
+You can use styleDatePicker field for date picker style such as font size, weight, text color each part in the date picker.
+
+Example custom font size and padding for displaying on a Tablet. (Pixel C, iPad 9.7")
+```dart
+DateTime newDateTime = await showRoundedDatePicker(
+                        context: context,
+                        theme: ThemeData(primarySwatch: Colors.deepPurple),
+                        styleDatePicker: MaterialRoundedDatePickerStyle(
+                          textStyleDayButton: TextStyle(fontSize: 36, color: Colors.white),
+                          textStyleYearButton: TextStyle(
+                            fontSize: 52,
+                            color: Colors.white,
+                          ),
+                          textStyleDayHeader: TextStyle(
+                            fontSize: 24,
+                            color: Colors.white,
+                          ),
+                          textStyleCurrentDayOnCalendar:
+                              TextStyle(fontSize: 32, color: Colors.white, fontWeight: FontWeight.bold),
+                          textStyleDayOnCalendar: TextStyle(fontSize: 28, color: Colors.white),
+                          textStyleDayOnCalendarSelected:
+                              TextStyle(fontSize: 32, color: Colors.white, fontWeight: FontWeight.bold),
+                          textStyleDayOnCalendarDisabled: TextStyle(fontSize: 28, color: Colors.white.withOpacity(0.1)),
+                          textStyleMonthYearHeader:
+                              TextStyle(fontSize: 32, color: Colors.white, fontWeight: FontWeight.bold),
+                          paddingDatePicker: EdgeInsets.all(0),
+                          paddingMonthHeader: EdgeInsets.all(32),
+                          paddingActionBar: EdgeInsets.all(16),
+                          paddingDateYearHeader: EdgeInsets.all(32),
+                          sizeArrow: 50,
+                          colorArrowNext: Colors.white,
+                          colorArrowPrevious: Colors.white,
+                          marginLeftArrowPrevious: 16,
+                          marginTopArrowPrevious: 16,
+                          marginTopArrowNext: 16,
+                          marginRightArrowNext: 32,
+                          textStyleButtonAction: TextStyle(fontSize: 28, color: Colors.white),
+                          textStyleButtonPositive:
+                              TextStyle(fontSize: 28, color: Colors.white, fontWeight: FontWeight.bold),
+                          textStyleButtonNegative: TextStyle(fontSize: 28, color: Colors.white.withOpacity(0.5)),
+                          decorationDateSelected: BoxDecoration(color: Colors.orange[600], shape: BoxShape.circle),
+                          backgroundPicker: Colors.deepPurple[400],
+                          backgroundActionBar: Colors.deepPurple[300],
+                          backgroundHeaderMonth: Colors.deepPurple[300],
+                        ),
+                        styleYearPicker: MaterialRoundedYearPickerStyle(
+                          textStyleYear: TextStyle(fontSize: 40, color: Colors.white),
+                          textStyleYearSelected:
+                              TextStyle(fontSize: 56, color: Colors.white, fontWeight: FontWeight.bold),
+                          heightYearRow: 100,
+                          backgroundPicker: Colors.deepPurple[400],
+                        ));
+```  
+                   
+![Screenshot](screenshots/18.png)
+
+### Custom action button and text on button.
+
+Added the action button and the button's custom text.
+
+```dart
+DateTime newDateTime = await showRoundedDatePicker(
+                        ...
+                        textActionButton: "ACTION",
+                        onTapActionButton: (){
+                           //
+                        },
+                        textPositiveButton: "OK",
+                        textNegativeButton: "CANCEL");
+```  
+
+![Screenshot](screenshots/19.png)
+
+### Custom weekday header text.
+
+Customize the header of the weekday.
+
+```dart
+DateTime newDateTime = await showRoundedDatePicker(
+                        ...
+                        customWeekDays: ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]);
+```  
+
+![Screenshot](screenshots/20.png)
+
+### Custom disabled date.
+
+Add closed date cannot be selected.
+
+```dart
+DateTime newDateTime = await showRoundedDatePicker(
+                        ...
+                        listDateDisabled: [
+                                                  DateTime.now().subtract(Duration(days: 2)),
+                                                  DateTime.now().subtract(Duration(days: 4)),
+                                                  DateTime.now().subtract(Duration(days: 6)),
+                                                  DateTime.now().subtract(Duration(days: 8)),
+                                                  DateTime.now().subtract(Duration(days: 10)),
+                                                  DateTime.now().add(Duration(days: 2)),
+                                                  DateTime.now().add(Duration(days: 4)),
+                                                  DateTime.now().add(Duration(days: 6)),
+                                                  DateTime.now().add(Duration(days: 8)),
+                                                  DateTime.now().add(Duration(days: 10)),
+                                                ]);
+```  
+
+![Screenshot](screenshots/21.png)
+
+### Custom callback on tap day.
+
+Add callback when tap on day.
+
+```dart
+DateTime newDateTime = await showRoundedDatePicker(
+                        ...
+                        onTapDay: (DateTime dateTime, bool available) {
+                          if (!available) {
+                            showDialog(
+                                context: context,
+                                builder: (c) => CupertinoAlertDialog(title: Text("This date cannot be selected."),actions: <Widget>[
+                                  CupertinoDialogAction(child: Text("OK"),onPressed: (){
+                                    Navigator.pop(context);
+                                  },)
+                                ],));
+                          }
+                          return available;
+                        });
+```  
+
+![Screenshot](screenshots/a6.gif)
+
+### Custom builder day on date picker.
+
+Customize the display format of the day widget.
+
+```dart
+DateTime newDateTime = await showRoundedDatePicker(
+                        ...
+                        builderDay:
+                            (DateTime dateTime, bool isCurrentDay, bool isSelected, TextStyle defaultTextStyle) {
+                          if (isSelected) {
+                            return Container(
+                              decoration: BoxDecoration(color: Colors.orange[600], shape: BoxShape.circle),
+                              child: Center(
+                                child: Text(
+                                  dateTime.day.toString(),
+                                  style: defaultTextStyle,
+                                ),
+                              ),
+                            );
+                          }
+
+                          if (dateTime.day == 10) {
+                            return Container(
+                              decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.pink[300], width: 4), shape: BoxShape.circle),
+                              child: Center(
+                                child: Text(
+                                  dateTime.day.toString(),
+                                  style: defaultTextStyle,
+                                ),
+                              ),
+                            );
+                          }
+                          if (dateTime.day == 12) {
+                            return Container(
+                              decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.pink[300], width: 4), shape: BoxShape.circle),
+                              child: Center(
+                                child: Text(
+                                  dateTime.day.toString(),
+                                  style: defaultTextStyle,
+                                ),
+                              ),
+                            );
+                          }
+
+                          return Container(
+                            child: Center(
+                              child: Text(
+                                dateTime.day.toString(),
+                                style: defaultTextStyle,
+                              ),
+                            ),
+                          );
+                        });
+```  
+
+![Screenshot](screenshots/22.png)
 
 ## Image Background Header
 

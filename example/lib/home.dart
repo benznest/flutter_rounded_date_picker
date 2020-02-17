@@ -131,6 +131,7 @@ class _HomeState extends State<Home> {
                 FloatingActionButton.extended(
                   onPressed: () async {
                     DateTime newDateTime = await showRoundedDatePicker(
+                      background: Colors.white,
                         context: context,
                         theme: ThemeData(primarySwatch: Colors.deepPurple),
                         styleDatePicker: MaterialRoundedDatePickerStyle(
@@ -179,20 +180,29 @@ class _HomeState extends State<Home> {
                           backgroundPicker: Colors.deepPurple[400],
                         ),
                         textActionButton: "ACTION",
+                        onTapActionButton: (){
+                           //
+                        },
+                        textPositiveButton: "OK",
+                        textNegativeButton: "CANCEL",
                         customWeekDays: ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"],
                         listDateDisabled: [
                           DateTime.now().subtract(Duration(days: 2)),
                           DateTime.now().subtract(Duration(days: 4)),
                           DateTime.now().subtract(Duration(days: 6)),
+                          DateTime.now().subtract(Duration(days: 8)),
+                          DateTime.now().subtract(Duration(days: 10)),
                           DateTime.now().add(Duration(days: 2)),
                           DateTime.now().add(Duration(days: 4)),
                           DateTime.now().add(Duration(days: 6)),
+                          DateTime.now().add(Duration(days: 8)),
+                          DateTime.now().add(Duration(days: 10)),
                         ],
                         onTapDay: (DateTime dateTime, bool available) {
                           if (!available) {
                             showDialog(
                                 context: context,
-                                builder: (c) => CupertinoAlertDialog(title: Text("Cannot select this date."),actions: <Widget>[
+                                builder: (c) => CupertinoAlertDialog(title: Text("This date cannot be selected."),actions: <Widget>[
                                   CupertinoDialogAction(child: Text("OK"),onPressed: (){
                                     Navigator.pop(context);
                                   },)
@@ -247,7 +257,8 @@ class _HomeState extends State<Home> {
                               ),
                             ),
                           );
-                        });
+                        }
+                        );
                     if (newDateTime != null) {
                       setState(() => dateTime = newDateTime);
                     }
