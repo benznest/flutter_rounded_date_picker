@@ -180,8 +180,12 @@ DateTime newDateTime = await showRoundedDatePicker(
                           backgroundPicker: Colors.deepPurple[400],
                         ));
 ```  
-                   
+        
 ![Screenshot](screenshots/18.png)
+
+![Screenshot](screenshots/23.png)
+
+![Screenshot](screenshots/24.png)
 
 ### Custom action button and text on button.
 
