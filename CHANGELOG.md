@@ -1,4 +1,9 @@
 # Changelog
+## 1.0.1
+* Fix bug era.
+
+## 1.0.0
+* Add custom style and builder for date picker on tablet.
 
 ## 0.3.0
 
