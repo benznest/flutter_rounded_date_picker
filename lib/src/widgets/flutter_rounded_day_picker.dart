@@ -387,8 +387,8 @@ class FlutterRoundedDayPicker extends StatelessWidget {
       monthYearHeader = "${ThaiDateUtils.getMonthNameFull(displayedMonth.month)} ${calculateYearEra(era, displayedMonth.year)}";
     } else if (era == EraMode.BUDDHIST_YEAR) {
       monthYearHeader = localizations.formatMonthYear(displayedMonth);
-      monthYearHeader = monthYearHeader.replaceAll(RegExp("\\d"), "").replaceAll(RegExp(" "), "");
-      monthYearHeader = "$monthYearHeader ${calculateYearEra(era, displayedMonth.year)}";
+      monthYearHeader = monthYearHeader.replaceAll(RegExp("\\d"), "");
+      monthYearHeader = "$monthYearHeader ${calculateYearEra(era, displayedMonth.year)}".replaceAll(RegExp("  "), " ");
     } else {
       monthYearHeader = localizations.formatMonthYear(displayedMonth);
     }
