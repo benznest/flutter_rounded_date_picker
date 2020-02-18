@@ -236,7 +236,7 @@ class _FlutterRoundedDatePickerDialogState extends State<FlutterRoundedDatePicke
     final Dialog dialog = Dialog(
       child: OrientationBuilder(builder: (BuildContext context, Orientation orientation) {
         assert(orientation != null);
-        final Widget header = FlutterRoundedDatePickerHeader(
+            final Widget header = FlutterRoundedDatePickerHeader(
             selectedDate: _selectedDate,
             mode: _mode,
             onModeChanged: _handleModeChanged,

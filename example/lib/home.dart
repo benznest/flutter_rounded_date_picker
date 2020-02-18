@@ -134,6 +134,7 @@ class _HomeState extends State<Home> {
                       background: Colors.white,
                         context: context,
                         theme: ThemeData(primarySwatch: Colors.deepPurple),
+                        era: EraMode.BUDDHIST_YEAR,
                         styleDatePicker: MaterialRoundedDatePickerStyle(
                           textStyleDayButton: TextStyle(fontSize: 36, color: Colors.white),
                           textStyleYearButton: TextStyle(
