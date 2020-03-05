@@ -85,7 +85,7 @@ class FlutterRoundedDayPicker extends StatelessWidget {
         assert(displayedMonth != null),
         assert(dragStartBehavior != null),
         assert(!firstDate.isAfter(lastDate)),
-        assert(selectedDate.isAfter(firstDate) || selectedDate.isAtSameMomentAs(firstDate)),
+//        assert(selectedDate.isAfter(firstDate) || selectedDate.isAtSameMomentAs(firstDate)),
         super(key: key);
 
   /// The currently selected date.
@@ -366,6 +366,13 @@ class FlutterRoundedDayPicker extends StatelessWidget {
           behavior: HitTestBehavior.opaque,
           onTap: () {
             bool allow = true;
+
+            if((dayToBuild.isAtSameMomentAs(firstDate) || dayToBuild.isAfter(firstDate)) && (dayToBuild.isAtSameMomentAs(lastDate) || dayToBuild.isBefore(lastDate))){
+              allow = true;
+            }else{
+              allow = false;
+            }
+
             if (onTapDay != null) {
               allow = onTapDay(dayToBuild, !disabled);
             }

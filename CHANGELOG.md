@@ -1,4 +1,7 @@
 # Changelog
+## 1.0.4
+* fix error when select date that before first date / last date.
+
 ## 1.0.3
 * Fix bug era.
 

@@ -106,6 +106,9 @@ class _HomeState extends State<Home> {
                       context: context,
                       locale: Locale("th", "TH"),
                       era: EraMode.BUDDHIST_YEAR,
+                      initialDate: DateTime.now(),
+                      firstDate: DateTime.now().subtract(Duration(days: 3)),
+                      lastDate: DateTime.now().add(Duration(days: 3)),
                     );
                     if (newDateTime != null) {
                       setState(() => dateTime = newDateTime);
