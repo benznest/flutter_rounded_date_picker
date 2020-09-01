@@ -15,7 +15,7 @@ Add dependencies in pubspec.yaml file. Add 2 things in it including flutter_loca
 dependencies:
   flutter_localizations:
     sdk: flutter
-  flutter_rounded_date_picker: 1.0.4
+  flutter_rounded_date_picker: 1.0.5
 ```
 
 ## Importing

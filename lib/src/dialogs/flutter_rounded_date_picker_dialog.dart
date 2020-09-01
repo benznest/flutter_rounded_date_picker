@@ -13,6 +13,7 @@ import 'package:flutter_rounded_date_picker/src/widgets/flutter_rounded_year_pic
 class FlutterRoundedDatePickerDialog extends StatefulWidget {
   const FlutterRoundedDatePickerDialog(
       {Key key,
+      this.height,
       this.initialDate,
       this.firstDate,
       this.lastDate,
@@ -41,6 +42,9 @@ class FlutterRoundedDatePickerDialog extends StatefulWidget {
   final DateTime lastDate;
   final SelectableDayPredicate selectableDayPredicate;
   final DatePickerMode initialDatePickerMode;
+
+  /// double height.
+  final double height;
 
   /// Custom era year.
   final EraMode era;
@@ -236,7 +240,7 @@ class _FlutterRoundedDatePickerDialogState extends State<FlutterRoundedDatePicke
     final Dialog dialog = Dialog(
       child: OrientationBuilder(builder: (BuildContext context, Orientation orientation) {
         assert(orientation != null);
-            final Widget header = FlutterRoundedDatePickerHeader(
+        final Widget header = FlutterRoundedDatePickerHeader(
             selectedDate: _selectedDate,
             mode: _mode,
             onModeChanged: _handleModeChanged,
@@ -259,7 +263,13 @@ class _FlutterRoundedDatePickerDialogState extends State<FlutterRoundedDatePicke
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   header,
-                  Flexible(child: picker),
+                  if (widget.height == null)
+                    Flexible(child: picker)
+                  else
+                    SizedBox(
+                      height: widget.height,
+                      child: picker,
+                    ),
                   actions,
                 ],
               ),

@@ -269,6 +269,25 @@ class _HomeState extends State<Home> {
                   },
                   label: Text("Rounded Calendar with Custom style (Example on Pixel C)"),
                 ),
+                const SizedBox(height: 12),
+                FloatingActionButton.extended(
+                  onPressed: () async {
+                    DateTime newDateTime = await showRoundedDatePicker(
+                      context: context,
+                      locale: Locale('en', 'US'),
+                      initialDate: DateTime.now().subtract(Duration(days: 1)),
+                      firstDate: DateTime(DateTime.now().year - 1),
+                      lastDate: DateTime(DateTime.now().year + 1),
+                      listDateDisabled:[DateTime.now()],
+                      height: 320,
+                      borderRadius: 50,
+                    );
+                    if (newDateTime != null) {
+                      setState(() => dateTime = newDateTime);
+                    }
+                  },
+                  label: const Text("Rounded Calendar disabled date"),
+                ),
                 const SizedBox(height: 24),
                 const Text(
                   "Theme",
@@ -506,6 +525,7 @@ class _HomeState extends State<Home> {
                   },
                   label: const Text("Cupertino Rounded Duration Picker"),
                 ),
+                const SizedBox(height: 12),
               ],
             ),
           ),

@@ -367,7 +367,10 @@ class FlutterRoundedDayPicker extends StatelessWidget {
           onTap: () {
             bool allow = true;
 
-            if((dayToBuild.isAtSameMomentAs(firstDate) || dayToBuild.isAfter(firstDate)) && (dayToBuild.isAtSameMomentAs(lastDate) || dayToBuild.isBefore(lastDate))){
+            if(disabled){
+              allow = false;
+            }
+            else if((dayToBuild.isAtSameMomentAs(firstDate) || dayToBuild.isAfter(firstDate)) && (dayToBuild.isAtSameMomentAs(lastDate) || dayToBuild.isBefore(lastDate))){
               allow = true;
             }else{
               allow = false;
