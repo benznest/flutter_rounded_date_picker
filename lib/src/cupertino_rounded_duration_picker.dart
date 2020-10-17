@@ -20,7 +20,7 @@ class CupertinoRoundedDurationPicker {
   }) async {
     initialTimerDuration ??= Duration(minutes: 10);
 
-    showModalBottomSheet(
+    return await showModalBottomSheet(
       backgroundColor: Colors.transparent,
       context: context,
       builder: (context) {

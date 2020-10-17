@@ -1,4 +1,8 @@
 # Changelog
+
+## 1.0.5+1
+* Fix bug
+
 ## 1.0.5
 * add height field for fix height of date picker.
 * fix bugs disable date still be selected.

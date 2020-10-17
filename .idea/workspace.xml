@@ -58,11 +58,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/screenshots" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -243,6 +244,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2500" height="398" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1598942542163" />
+    <state x="266" y="163" key="SettingsEditor" timestamp="1602956755798">
+      <screen x="0" y="0" width="3840" height="1040" />
+    </state>
+    <state x="266" y="163" key="SettingsEditor/0.0.3840.1040@0.0.3840.1040" timestamp="1602956755798" />
     <state x="975" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1598940585804">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

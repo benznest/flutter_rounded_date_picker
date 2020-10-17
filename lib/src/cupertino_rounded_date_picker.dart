@@ -30,7 +30,7 @@ class CupertinoRoundedDatePicker {
     minimumYear ??= DateTime.now().year - 1;
     maximumYear ??= DateTime.now().year + 1;
 
-    showModalBottomSheet(
+    return await showModalBottomSheet(
       backgroundColor: Colors.transparent,
       context: context,
       builder: (context) {
