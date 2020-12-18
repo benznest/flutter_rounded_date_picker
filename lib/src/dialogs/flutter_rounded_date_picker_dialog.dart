@@ -34,6 +34,8 @@ class FlutterRoundedDatePickerDialog extends StatefulWidget {
       this.customWeekDays,
       this.builderDay,
       this.listDateDisabled,
+      this.builderActions,
+      this.showHeader = false,
       this.onTapDay})
       : super(key: key);
 
@@ -42,6 +44,10 @@ class FlutterRoundedDatePickerDialog extends StatefulWidget {
   final DateTime lastDate;
   final SelectableDayPredicate selectableDayPredicate;
   final DatePickerMode initialDatePickerMode;
+
+  ///Modified
+  final bool showHeader;
+  final Widget builderActions;
 
   /// double height.
   final double height;
@@ -80,10 +86,12 @@ class FlutterRoundedDatePickerDialog extends StatefulWidget {
   final OnTapDay onTapDay;
 
   @override
-  _FlutterRoundedDatePickerDialogState createState() => _FlutterRoundedDatePickerDialogState();
+  _FlutterRoundedDatePickerDialogState createState() =>
+      _FlutterRoundedDatePickerDialogState();
 }
 
-class _FlutterRoundedDatePickerDialogState extends State<FlutterRoundedDatePickerDialog> {
+class _FlutterRoundedDatePickerDialogState
+    extends State<FlutterRoundedDatePickerDialog> {
   @override
   void initState() {
     super.initState();
@@ -214,43 +222,52 @@ class _FlutterRoundedDatePickerDialogState extends State<FlutterRoundedDatePicke
     final ThemeData theme = Theme.of(context);
     final Widget picker = _buildPicker();
 
-    final Widget actions = FlutterRoundedButtonAction(
-      textButtonNegative: widget.textNegativeButton,
-      textButtonPositive: widget.textPositiveButton,
-      onTapButtonNegative: _handleCancel,
-      onTapButtonPositive: _handleOk,
-      textActionButton: widget.textActionButton,
-      onTapButtonAction: widget.onTapActionButton,
-      localizations: localizations,
-      textStyleButtonNegative: widget.styleDatePicker?.textStyleButtonNegative,
-      textStyleButtonPositive: widget.styleDatePicker?.textStyleButtonPositive,
-      textStyleButtonAction: widget.styleDatePicker?.textStyleButtonAction,
-      borderRadius: widget.borderRadius,
-      paddingActionBar: widget.styleDatePicker?.paddingActionBar,
-      background: widget.styleDatePicker?.backgroundActionBar,
-    );
+    final Widget actions = widget.builderActions ??
+        FlutterRoundedButtonAction(
+          textButtonNegative: widget.textNegativeButton,
+          textButtonPositive: widget.textPositiveButton,
+          onTapButtonNegative: _handleCancel,
+          onTapButtonPositive: _handleOk,
+          textActionButton: widget.textActionButton,
+          onTapButtonAction: widget.onTapActionButton,
+          localizations: localizations,
+          textStyleButtonNegative:
+              widget.styleDatePicker?.textStyleButtonNegative,
+          textStyleButtonPositive:
+              widget.styleDatePicker?.textStyleButtonPositive,
+          textStyleButtonAction: widget.styleDatePicker?.textStyleButtonAction,
+          borderRadius: widget.borderRadius,
+          paddingActionBar: widget.styleDatePicker?.paddingActionBar,
+          background: widget.styleDatePicker?.backgroundActionBar,
+        );
 
     Color backgroundPicker = theme.dialogBackgroundColor;
     if (_mode == DatePickerMode.day) {
-      backgroundPicker = widget.styleDatePicker?.backgroundPicker ?? theme.dialogBackgroundColor;
+      backgroundPicker = widget.styleDatePicker?.backgroundPicker ??
+          theme.dialogBackgroundColor;
     } else {
-      backgroundPicker = widget.styleYearPicker?.backgroundPicker ?? theme.dialogBackgroundColor;
+      backgroundPicker = widget.styleYearPicker?.backgroundPicker ??
+          theme.dialogBackgroundColor;
     }
 
     final Dialog dialog = Dialog(
-      child: OrientationBuilder(builder: (BuildContext context, Orientation orientation) {
+      child: OrientationBuilder(
+          builder: (BuildContext context, Orientation orientation) {
         assert(orientation != null);
-        final Widget header = FlutterRoundedDatePickerHeader(
-            selectedDate: _selectedDate,
-            mode: _mode,
-            onModeChanged: _handleModeChanged,
-            orientation: orientation,
-            era: widget.era,
-            borderRadius: widget.borderRadius,
-            imageHeader: widget.imageHeader,
-            description: widget.description,
-            fontFamily: widget.fontFamily,
-            style: widget.styleDatePicker);
+        final Widget header = widget.showHeader
+            ? FlutterRoundedDatePickerHeader(
+                selectedDate: _selectedDate,
+                mode: _mode,
+                onModeChanged: _handleModeChanged,
+                orientation: orientation,
+                era: widget.era,
+                borderRadius: widget.borderRadius,
+                imageHeader: widget.imageHeader,
+                description: widget.description,
+                fontFamily: widget.fontFamily,
+                style: widget.styleDatePicker,
+              )
+            : Container();
         switch (orientation) {
           case Orientation.portrait:
             return Container(
