@@ -128,6 +128,7 @@ Future<DateTime> showRoundedDatePicker(
     Duration transitionDuration = const Duration(milliseconds: 300),
     EdgeInsets dialogPadding =
         const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+    Color barrierColor,
     OnTapDay onTapDay}) async {
   initialDate ??= DateTime.now();
   firstDate ??= DateTime(initialDate.year - 1);
@@ -223,7 +224,7 @@ Future<DateTime> showRoundedDatePicker(
 
   return await showGeneralDialog<DateTime>(
     context: context,
-    barrierColor: Colors.black.withOpacity(0.5),
+    barrierColor: barrierColor ?? Colors.black.withOpacity(0.5),
     barrierDismissible: barrierDismissible,
     barrierLabel: MaterialLocalizations.of(context).modalBarrierDismissLabel,
     pageBuilder: (_, __, ___) => Theme(
