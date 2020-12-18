@@ -293,7 +293,7 @@ class _FlutterRoundedMonthPickerState extends State<FlutterRoundedMonthPicker> w
 
           /// Arrow Left
           PositionedDirectional(
-            top: widget.style?.marginLeftArrowPrevious ?? 0.0,
+            top: widget.style?.marginTopArrowPrevious ?? 0.0,
             start: widget.style?.marginLeftArrowPrevious ?? 8.0,
             child: Semantics(
               sortKey: _MonthPickerSortKey.previousMonth,
