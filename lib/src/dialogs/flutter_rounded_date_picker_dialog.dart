@@ -36,6 +36,7 @@ class FlutterRoundedDatePickerDialog extends StatefulWidget {
       this.listDateDisabled,
       this.builderActions,
       this.showHeader = false,
+      this.dialogPadding,
       this.onTapDay})
       : super(key: key);
 
@@ -48,6 +49,7 @@ class FlutterRoundedDatePickerDialog extends StatefulWidget {
   ///Modified
   final bool showHeader;
   final Widget builderActions;
+  final EdgeInsets dialogPadding;
 
   /// double height.
   final double height;
@@ -251,6 +253,8 @@ class _FlutterRoundedDatePickerDialogState
     }
 
     final Dialog dialog = Dialog(
+      insetPadding: widget.dialogPadding ??
+          EdgeInsets.symmetric(horizontal: 24, vertical: 24),
       child: OrientationBuilder(
           builder: (BuildContext context, Orientation orientation) {
         assert(orientation != null);

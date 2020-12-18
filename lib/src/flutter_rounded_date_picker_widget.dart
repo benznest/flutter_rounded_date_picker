@@ -126,6 +126,8 @@ Future<DateTime> showRoundedDatePicker(
     bool showHeader = false,
     Alignment alignment = Alignment.bottomCenter,
     Duration transitionDuration = const Duration(milliseconds: 300),
+    EdgeInsets dialogPadding =
+        const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
     OnTapDay onTapDay}) async {
   initialDate ??= DateTime.now();
   firstDate ??= DateTime(initialDate.year - 1);
@@ -198,6 +200,7 @@ Future<DateTime> showRoundedDatePicker(
           onTapDay: onTapDay,
           showHeader: showHeader,
           builderActions: builderActions,
+          dialogPadding: dialogPadding,
         ),
       ),
     ),
