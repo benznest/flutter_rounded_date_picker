@@ -121,6 +121,7 @@ class _FlutterRoundedDatePickerDialogState extends State<FlutterRoundedDatePicke
         HapticFeedback.vibrate();
         break;
       case TargetPlatform.iOS:
+      default:
         break;
     }
   }

@@ -1,7 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rounded_date_picker/src/era_mode.dart';
-import 'package:flutter_rounded_date_picker/src/material_rounded_date_picker_style.dart';
 import 'package:flutter_rounded_date_picker/src/material_rounded_year_picker_style.dart';
 
 /// A scrollable list of years to allow picking a year.
@@ -88,7 +87,7 @@ class _FlutterRoundedYearPickerState extends State<FlutterRoundedYearPicker> {
   Widget build(BuildContext context) {
     assert(debugCheckHasMaterial(context));
     final ThemeData themeData = Theme.of(context);
-    final TextStyle style = themeData.textTheme.body1.copyWith(
+    final TextStyle style = themeData.textTheme.bodyText2.copyWith(
       fontFamily: widget.fontFamily,
     );
     return ListView.builder(
@@ -101,7 +100,7 @@ class _FlutterRoundedYearPickerState extends State<FlutterRoundedYearPicker> {
         final bool isSelected = year == widget.selectedDate.year;
         final TextStyle itemStyle = isSelected
             ? (widget.style?.textStyleYearSelected ??
-                themeData.textTheme.headline.copyWith(
+                themeData.textTheme.headline5.copyWith(
                   color: themeData.accentColor,
                   fontFamily: widget.fontFamily,
                 ))
