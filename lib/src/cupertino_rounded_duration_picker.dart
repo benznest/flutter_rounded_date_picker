@@ -7,14 +7,14 @@ import 'package:flutter_rounded_date_picker/src/flutter_cupertino_rounded_date_p
 class CupertinoRoundedDurationPicker {
   static show(
     BuildContext context, {
-    Function(Duration) onDurationChanged,
+    Function(Duration)? onDurationChanged,
     int minuteInterval = 1,
-    Duration initialTimerDuration,
+    Duration? initialTimerDuration,
     CupertinoTimerPickerMode initialDurationPickerMode =
         CupertinoTimerPickerMode.hm,
     EraMode era = EraMode.CHRIST_YEAR,
     double borderRadius = 16,
-    String fontFamily,
+    String? fontFamily,
     Color background = Colors.white,
     Color textColor = Colors.black54,
   }) async {
@@ -34,7 +34,7 @@ class CupertinoRoundedDurationPicker {
           textColor: textColor,
           borderRadius: borderRadius,
           fontFamily: fontFamily,
-          initialTimerDuration: initialTimerDuration,
+          initialTimerDuration: initialTimerDuration!,
           mode: initialDurationPickerMode,
           minuteInterval: minuteInterval,
         );

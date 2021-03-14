@@ -4,27 +4,24 @@ import 'package:flutter_rounded_date_picker/src/material_rounded_date_picker_sty
 
 class FlutterRoundedDatePickerHeader extends StatelessWidget {
   const FlutterRoundedDatePickerHeader(
-      {Key key,
-        @required this.selectedDate,
-        @required this.mode,
-        @required this.onModeChanged,
-        @required this.orientation,
-        this.era,
-        this.borderRadius,
+      {Key? key,
+        required this.selectedDate,
+        required this.mode,
+        required this.onModeChanged,
+        required this.orientation,
+        required this.era,
+        required this.borderRadius,
         this.imageHeader,
         this.description = "",
         this.fontFamily,
         this.style})
-      : assert(selectedDate != null),
-        assert(mode != null),
-        assert(orientation != null),
-        super(key: key);
+      : super(key: key);
 
   final DateTime selectedDate;
   final DatePickerMode mode;
   final ValueChanged<DatePickerMode> onModeChanged;
   final Orientation orientation;
-  final MaterialRoundedDatePickerStyle style;
+  final MaterialRoundedDatePickerStyle? style;
 
   /// Era custom
   final EraMode era;
@@ -33,13 +30,13 @@ class FlutterRoundedDatePickerHeader extends StatelessWidget {
   final double borderRadius;
 
   ///  Header
-  final ImageProvider imageHeader;
+  final ImageProvider? imageHeader;
 
   /// Header description
   final String description;
 
   /// Font
-  final String fontFamily;
+  final String? fontFamily;
 
   void _handleChangeMode(DatePickerMode value) {
     if (value != mode) onModeChanged(value);
@@ -50,8 +47,8 @@ class FlutterRoundedDatePickerHeader extends StatelessWidget {
     final MaterialLocalizations localizations = MaterialLocalizations.of(context);
     final ThemeData themeData = Theme.of(context);
     final TextTheme headerTextTheme = themeData.primaryTextTheme;
-    Color dayColor;
-    Color yearColor;
+    Color? dayColor;
+    Color? yearColor;
     switch (themeData.primaryColorBrightness) {
       case Brightness.light:
         dayColor = mode == DatePickerMode.day ? Colors.black87 : Colors.black54;
@@ -72,30 +69,32 @@ class FlutterRoundedDatePickerHeader extends StatelessWidget {
     }
 
     final TextStyle dayStyle =
-        style?.textStyleDayButton ?? headerTextTheme.headline4.copyWith(color: dayColor, fontFamily: fontFamily);
+        style?.textStyleDayButton ?? headerTextTheme.headline4!.copyWith(color: dayColor, fontFamily: fontFamily);
     final TextStyle yearStyle =
-        style?.textStyleYearButton ?? headerTextTheme.subtitle1.copyWith(color: yearColor, fontFamily: fontFamily);
+        style?.textStyleYearButton ?? headerTextTheme.subtitle1!.copyWith(color: yearColor, fontFamily: fontFamily);
 
     Color backgroundColor;
     switch (themeData.brightness) {
-      case Brightness.light:
-        backgroundColor = themeData.primaryColor;
-        break;
       case Brightness.dark:
         backgroundColor = themeData.backgroundColor;
+        break;
+      case Brightness.light:
+      default:
+        backgroundColor = themeData.primaryColor;
         break;
     }
 
     EdgeInsets padding;
     MainAxisAlignment mainAxisAlignment;
     switch (orientation) {
-      case Orientation.portrait:
-        padding = style?.paddingDateYearHeader ?? EdgeInsets.all(16.0);
-        mainAxisAlignment = MainAxisAlignment.center;
-        break;
       case Orientation.landscape:
         padding = style?.paddingDateYearHeader ?? EdgeInsets.all(8.0);
         mainAxisAlignment = MainAxisAlignment.start;
+        break;
+      case Orientation.portrait:
+      default:
+        padding = style?.paddingDateYearHeader ?? EdgeInsets.all(16.0);
+        mainAxisAlignment = MainAxisAlignment.center;
         break;
     }
 
@@ -152,7 +151,7 @@ class FlutterRoundedDatePickerHeader extends StatelessWidget {
 
     return Container(
       decoration: BoxDecoration(
-        image: imageHeader != null ? DecorationImage(image: imageHeader, fit: BoxFit.cover) : null,
+        image: imageHeader != null ? DecorationImage(image: imageHeader!, fit: BoxFit.cover) : null,
         color: backgroundColor,
         borderRadius: borderRadiusData,
       ),
@@ -187,15 +186,15 @@ class FlutterRoundedDatePickerHeader extends StatelessWidget {
 
 class _DateHeaderButton extends StatelessWidget {
   const _DateHeaderButton({
-    Key key,
+    Key? key,
     this.onTap,
     this.color,
     this.child,
   }) : super(key: key);
 
-  final VoidCallback onTap;
-  final Color color;
-  final Widget child;
+  final VoidCallback? onTap;
+  final Color? color;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {

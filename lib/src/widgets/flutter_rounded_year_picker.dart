@@ -25,18 +25,16 @@ class FlutterRoundedYearPicker extends StatefulWidget {
   /// Rarely used directly. Instead, typically used as part of the dialog shown
   /// by [showDatePicker].
   FlutterRoundedYearPicker(
-      {Key key,
-      @required this.selectedDate,
-      @required this.onChanged,
-      @required this.firstDate,
-      @required this.lastDate,
-      this.era = EraMode.CHRIST_YEAR,
+      {Key? key,
+      required this.selectedDate,
+      required this.onChanged,
+      required this.firstDate,
+      required this.lastDate,
+      required this.era,
       this.fontFamily,
       this.dragStartBehavior = DragStartBehavior.start,
       this.style})
-      : assert(selectedDate != null),
-        assert(onChanged != null),
-        assert(!firstDate.isAfter(lastDate)),
+      : assert(!firstDate.isAfter(lastDate)),
         super(key: key);
 
   /// The currently selected date.
@@ -60,18 +58,18 @@ class FlutterRoundedYearPicker extends StatefulWidget {
   final EraMode era;
 
   /// Font
-  final String fontFamily;
+  final String? fontFamily;
 
   /// style
-  final MaterialRoundedYearPickerStyle style;
+  final MaterialRoundedYearPickerStyle? style;
 
   @override
   _FlutterRoundedYearPickerState createState() => _FlutterRoundedYearPickerState();
 }
 
 class _FlutterRoundedYearPickerState extends State<FlutterRoundedYearPicker> {
-  double _itemExtent;
-  ScrollController scrollController;
+  late double _itemExtent;
+  ScrollController? scrollController;
 
   @override
   void initState() {
@@ -87,7 +85,7 @@ class _FlutterRoundedYearPickerState extends State<FlutterRoundedYearPicker> {
   Widget build(BuildContext context) {
     assert(debugCheckHasMaterial(context));
     final ThemeData themeData = Theme.of(context);
-    final TextStyle style = themeData.textTheme.bodyText2.copyWith(
+    final TextStyle style = themeData.textTheme.bodyText2!.copyWith(
       fontFamily: widget.fontFamily,
     );
     return ListView.builder(
@@ -100,7 +98,7 @@ class _FlutterRoundedYearPickerState extends State<FlutterRoundedYearPicker> {
         final bool isSelected = year == widget.selectedDate.year;
         final TextStyle itemStyle = isSelected
             ? (widget.style?.textStyleYearSelected ??
-                themeData.textTheme.headline5.copyWith(
+                themeData.textTheme.headline5!.copyWith(
                   color: themeData.accentColor,
                   fontFamily: widget.fontFamily,
                 ))
