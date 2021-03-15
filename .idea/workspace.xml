@@ -1,15 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="5f9f9944-f66c-46c1-913f-9e30c85bf56e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/home.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/dialogs/flutter_rounded_date_picker_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/dialogs/flutter_rounded_date_picker_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/flutter_cupertino_rounded_date_picker_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/flutter_cupertino_rounded_date_picker_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/flutter_rounded_button_action.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/flutter_rounded_button_action.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/flutter_rounded_date_picker_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/flutter_rounded_date_picker_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/flutter_rounded_time_picker_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/flutter_rounded_time_picker_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/flutter_rounded_date_picker_header.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/flutter_rounded_date_picker_header.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/widgets/flutter_rounded_day_picker.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/flutter_rounded_day_picker.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/flutter_rounded_month_picker.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/flutter_rounded_month_picker.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/flutter_rounded_year_picker.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/flutter_rounded_year_picker.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,23 +53,6 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>543</find>
-      <find>calcu</find>
-      <find>Format</find>
-      <find>circul</find>
-      <find>YearP</find>
-      <find>cir</find>
-      <find>circu</find>
-      <find>Text</find>
-      <find>Text(</find>
-      <find>Gesture</find>
-      <find>disabled</find>
-      <find>Image</find>
-      <find>gest</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="UPDATE_TYPE" value="REBASE" />
     <option name="ROOT_SYNC" value="SYNC" />
@@ -54,28 +63,28 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/example/android/app/src/main/res/drawable" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Work\flutter project\flutter_rounded_date_picker\example\assets\images" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\felix\StudioProjects\flutter_rounded_date_picker\example\android\app\src\main\res\drawable" />
       <recent name="C:\Work\flutter project\flutter_rounded_date_picker\screenshots" />
       <recent name="C:\Work\flutter project\flutter_rounded_date_picker\example\assets\images" />
       <recent name="C:\Work\flutter project\flutter_rounded_date_picker\example\assets\fonts" />
       <recent name="C:\Work\flutter project\flutter_rounded_date_picker\example\assets" />
-      <recent name="C:\Work\flutter project\flutter_rounded_date_picker\lib" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Work\flutter project\flutter_rounded_date_picker\example\assets\images" />
     </key>
   </component>
   <component name="RunManager">
@@ -214,47 +223,42 @@
       <option name="project" value="LOCAL" />
       <updated>1582028623398</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="fix warnings">
+      <created>1615673321672</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1615673321672</updated>
+    </task>
+    <task id="LOCAL-00019" summary="update example project to flutter embedding 2">
+      <created>1615673503906</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1615673503907</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="support font-family&#10;support image background header." />
     <MESSAGE value="add readme." />
     <MESSAGE value="edit readme." />
-    <option name="LAST_COMMIT_MESSAGE" value="edit readme." />
+    <MESSAGE value="fix warnings" />
+    <MESSAGE value="update example project to flutter embedding 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="update example project to flutter embedding 2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="881" y="291" key="CommitChangelistDialog2" timestamp="1598942574381">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="646" y="223" key="RollbackChangesDialog" timestamp="1615673243979">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="881" y="291" key="CommitChangelistDialog2/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1598942574381" />
-    <state width="2500" height="398" key="GridCell.Tab.0.bottom" timestamp="1598942542163">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="646" y="223" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615673243979" />
+    <state x="668" y="253" width="585" height="534" key="find.popup" timestamp="1615675412829">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="2500" height="398" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1598942542163" />
-    <state width="2500" height="398" key="GridCell.Tab.0.center" timestamp="1598942542163">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2500" height="398" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1598942542163" />
-    <state width="2500" height="398" key="GridCell.Tab.0.left" timestamp="1598942542163">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2500" height="398" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1598942542163" />
-    <state width="2500" height="398" key="GridCell.Tab.0.right" timestamp="1598942542163">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2500" height="398" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1598942542163" />
-    <state x="266" y="163" key="SettingsEditor" timestamp="1602956755798">
-      <screen x="0" y="0" width="3840" height="1040" />
-    </state>
-    <state x="266" y="163" key="SettingsEditor/0.0.3840.1040@0.0.3840.1040" timestamp="1602956755798" />
-    <state x="975" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1598940585804">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="975" y="524" key="com.intellij.ide.util.TipDialog/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1598940585804" />
-    <state x="943" y="319" width="672" height="678" key="search.everywhere.popup" timestamp="1598941396961">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="943" y="319" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1598941396961" />
+    <state x="668" y="253" width="585" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1615675412829" />
   </component>
 </project>

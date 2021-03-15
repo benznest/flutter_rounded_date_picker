@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 
 class FlutterRoundedButtonAction extends StatelessWidget {
-  final String textButtonNegative;
-  final String textButtonPositive;
-  final String textActionButton;
-  final VoidCallback onTapButtonNegative; // Default is "Cancel" button.
-  final VoidCallback onTapButtonPositive; // Default is "OK" button.
-  final VoidCallback onTapButtonAction; // Default is "Action" button which will be on the left.
-  final TextStyle textStyleButtonAction;
-  final TextStyle textStyleButtonPositive;
-  final TextStyle textStyleButtonNegative;
+  final String? textButtonNegative;
+  final String? textButtonPositive;
+  final String? textActionButton;
+  final VoidCallback? onTapButtonNegative; // Default is "Cancel" button.
+  final VoidCallback? onTapButtonPositive; // Default is "OK" button.
+  final VoidCallback? onTapButtonAction; // Default is "Action" button which will be on the left.
+  final TextStyle? textStyleButtonAction;
+  final TextStyle? textStyleButtonPositive;
+  final TextStyle? textStyleButtonNegative;
   final MaterialLocalizations localizations;
   final double borderRadius;
-  final EdgeInsets paddingActionBar;
-  final Color background;
+  final EdgeInsets? paddingActionBar;
+  final Color? background;
 
   const FlutterRoundedButtonAction(
-      {Key key,
-      @required this.localizations,
+      {Key? key,
+      required this.localizations,
       this.textButtonNegative,
       this.textButtonPositive,
       this.textActionButton,
@@ -27,19 +27,12 @@ class FlutterRoundedButtonAction extends StatelessWidget {
       this.textStyleButtonPositive,
       this.textStyleButtonNegative,
       this.textStyleButtonAction,
-      this.borderRadius,
+      required this.borderRadius,
       this.paddingActionBar,
       this.background})
       : super(key: key);
 
-  List<Widget> _buildActionsButton(bool isActionButton) {
-    final Widget leftButton = isActionButton
-        ? FlatButton(
-            child: Text(textActionButton, style: textStyleButtonAction),
-            onPressed: onTapButtonAction,
-          )
-        : null;
-
+  List<Widget> _buildActionsButton() {
     final Widget negativeButton = FlatButton(
       child: Text(
         textButtonNegative ?? localizations.cancelButtonLabel,
@@ -56,7 +49,11 @@ class FlutterRoundedButtonAction extends StatelessWidget {
       onPressed: onTapButtonPositive,
     );
 
-    if (isActionButton) {
+    if (textActionButton != null) {
+      final Widget leftButton = FlatButton(
+        child: Text(textActionButton!, style: textStyleButtonAction),
+        onPressed: onTapButtonAction,
+      );
       return [
         leftButton,
         Row(children: <Widget>[negativeButton, positiveButton])
@@ -77,7 +74,7 @@ class FlutterRoundedButtonAction extends StatelessWidget {
               orientation == Orientation.landscape ? BorderRadius.only(bottomRight: Radius.circular(borderRadius)) : BorderRadius.vertical(bottom: Radius.circular(borderRadius))),
       child: ButtonBar(
         alignment: textActionButton != null ? MainAxisAlignment.spaceBetween : MainAxisAlignment.end,
-        children: _buildActionsButton(textActionButton != null),
+        children: _buildActionsButton(),
       ),
     );
   }

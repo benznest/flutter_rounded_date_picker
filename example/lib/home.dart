@@ -317,12 +317,12 @@ class _HomeState extends State<Home> {
                         accentColor: Colors.green[800],
                         dialogBackgroundColor: Colors.purple[50],
                         textTheme: TextTheme(
-                          body1: TextStyle(color: Colors.red),
+                          bodyText2: TextStyle(color: Colors.red),
                           caption: TextStyle(color: Colors.blue),
                         ),
                         disabledColor: Colors.orange,
                         accentTextTheme: TextTheme(
-                          body2: TextStyle(color: Colors.green[200]),
+                          bodyText1: TextStyle(color: Colors.green[200]),
                         ),
                       ),
                     );

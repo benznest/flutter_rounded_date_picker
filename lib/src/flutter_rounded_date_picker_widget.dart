@@ -3,19 +3,14 @@
 // found in the LICENSE file.
 
 import 'dart:async';
-import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter/gestures.dart' show DragStartBehavior;
-import 'package:flutter_rounded_date_picker/src/flutter_rounded_button_action.dart';
 import 'package:flutter_rounded_date_picker/src/dialogs/flutter_rounded_date_picker_dialog.dart';
 import 'package:flutter_rounded_date_picker/src/era_mode.dart';
 import 'package:flutter_rounded_date_picker/src/material_rounded_date_picker_style.dart';
 import 'package:flutter_rounded_date_picker/src/material_rounded_year_picker_style.dart';
-import 'package:flutter_rounded_date_picker/src/thai_date_utils.dart';
 import 'package:flutter_rounded_date_picker/src/widgets/flutter_rounded_day_picker.dart';
 
 // Examples can assume:
@@ -95,42 +90,39 @@ typedef SelectableDayPredicate = bool Function(DateTime day);
 ///    a year.
 ///
 
-Future<DateTime> showRoundedDatePicker(
-    {@required BuildContext context,
-    double height,
-    DateTime initialDate,
-    DateTime firstDate,
-    DateTime lastDate,
-    SelectableDayPredicate selectableDayPredicate,
+Future<DateTime?> showRoundedDatePicker(
+    {required BuildContext context,
+    double? height,
+    DateTime? initialDate,
+    DateTime? firstDate,
+    DateTime? lastDate,
+    SelectableDayPredicate? selectableDayPredicate,
     DatePickerMode initialDatePickerMode = DatePickerMode.day,
-    Locale locale,
-    TextDirection textDirection,
-    ThemeData theme,
+    Locale? locale,
+    TextDirection? textDirection,
+    ThemeData? theme,
     double borderRadius = 16,
     EraMode era = EraMode.CHRIST_YEAR,
-    ImageProvider imageHeader,
+    ImageProvider? imageHeader,
     String description = "",
-    String fontFamily,
+    String? fontFamily,
     bool barrierDismissible = false,
     Color background = Colors.transparent,
-    String textNegativeButton,
-    String textPositiveButton,
-    String textActionButton,
-    VoidCallback onTapActionButton,
-    MaterialRoundedDatePickerStyle styleDatePicker,
-    MaterialRoundedYearPickerStyle styleYearPicker,
-    List<String> customWeekDays,
-    BuilderDayOfDatePicker builderDay,
-    List<DateTime> listDateDisabled,
-    OnTapDay onTapDay}) async {
+    String? textNegativeButton,
+    String? textPositiveButton,
+    String? textActionButton,
+    VoidCallback? onTapActionButton,
+    MaterialRoundedDatePickerStyle? styleDatePicker,
+    MaterialRoundedYearPickerStyle? styleYearPicker,
+    List<String>? customWeekDays,
+    BuilderDayOfDatePicker? builderDay,
+    List<DateTime>? listDateDisabled,
+    OnTapDay? onTapDay}) async {
   initialDate ??= DateTime.now();
   firstDate ??= DateTime(initialDate.year - 1);
   lastDate ??= DateTime(initialDate.year + 1);
   theme ??= ThemeData();
 
-  assert(initialDate != null);
-  assert(firstDate != null);
-  assert(lastDate != null);
   assert(
     !initialDate.isBefore(firstDate),
     'initialDate must be on or after firstDate',
@@ -148,14 +140,9 @@ Future<DateTime> showRoundedDatePicker(
     'Provided initialDate must satisfy provided selectableDayPredicate',
   );
   assert(
-    initialDatePickerMode != null,
-    'initialDatePickerMode must not be null',
-  );
-  assert(
     (onTapActionButton != null && textActionButton != null) || onTapActionButton == null,
     "If you provide onLeftBtn, you must provide leftBtn",
   );
-  assert(context != null);
   assert(debugCheckHasMaterialLocalizations(context));
 
   Widget child = GestureDetector(
@@ -216,6 +203,6 @@ Future<DateTime> showRoundedDatePicker(
   return await showDialog<DateTime>(
     context: context,
     barrierDismissible: barrierDismissible,
-    builder: (_) => Theme(data: theme, child: child),
+    builder: (_) => Theme(data: theme!, child: child),
   );
 }

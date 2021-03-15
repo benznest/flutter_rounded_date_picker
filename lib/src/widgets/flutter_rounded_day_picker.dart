@@ -26,8 +26,6 @@ import 'dart:math' as math;
 const _DayPickerGridDelegate _kDayPickerGridDelegate = _DayPickerGridDelegate();
 const double _kDayPickerRowHeight = 42.0;
 const int _kMaxDayPickerRowCount = 6; // A 31 day month that starts on Saturday.
-// Two extra rows: one for the day-of-week header and one for the month header.
-const double _kMaxDayPickerHeight = _kDayPickerRowHeight * (_kMaxDayPickerRowCount + 2);
 
 typedef BuilderDayOfDatePicker = Widget Function(DateTime dateTime, bool isCurrentDay, bool selected, TextStyle defaultTextStyle);
 typedef OnTapDay = bool Function(DateTime dateTime, bool available);
@@ -61,30 +59,25 @@ class FlutterRoundedDayPicker extends StatelessWidget {
   ///
   /// Rarely used directly. Instead, typically used as part of a [MonthPicker].
   FlutterRoundedDayPicker(
-      {Key key,
-      @required this.selectedDate,
-      @required this.currentDate,
-      @required this.onChanged,
-      @required this.firstDate,
-      @required this.lastDate,
-      @required this.displayedMonth,
+      {Key? key,
+      required this.selectedDate,
+      required this.currentDate,
+      required this.onChanged,
+      required this.firstDate,
+      required this.lastDate,
+      required this.displayedMonth,
       this.selectableDayPredicate,
       this.dragStartBehavior = DragStartBehavior.start,
-      this.era,
+      required this.era,
       this.locale,
       this.fontFamily,
-      this.borderRadius,
+      required this.borderRadius,
       this.style,
       this.customWeekDays,
       this.builderDay,
       this.listDateDisabled,
       this.onTapDay})
-      : assert(selectedDate != null),
-        assert(currentDate != null),
-        assert(onChanged != null),
-        assert(displayedMonth != null),
-        assert(dragStartBehavior != null),
-        assert(!firstDate.isAfter(lastDate)),
+      : assert(!firstDate.isAfter(lastDate)),
 //        assert(selectedDate.isAfter(firstDate) || selectedDate.isAtSameMomentAs(firstDate)),
         super(key: key);
 
@@ -109,19 +102,19 @@ class FlutterRoundedDayPicker extends StatelessWidget {
   final DateTime displayedMonth;
 
   /// Optional user supplied predicate function to customize selectable days.
-  final SelectableDayPredicate selectableDayPredicate;
+  final SelectableDayPredicate? selectableDayPredicate;
 
   final EraMode era;
-  final Locale locale;
+  final Locale? locale;
 
-  final String fontFamily;
+  final String? fontFamily;
 
   final double borderRadius;
-  final MaterialRoundedDatePickerStyle style;
-  final List<String> customWeekDays;
-  final BuilderDayOfDatePicker builderDay;
-  final List<DateTime> listDateDisabled;
-  final OnTapDay onTapDay;
+  final MaterialRoundedDatePickerStyle? style;
+  final List<String>? customWeekDays;
+  final BuilderDayOfDatePicker? builderDay;
+  final List<DateTime>? listDateDisabled;
+  final OnTapDay? onTapDay;
 
   /// Determines the way that drag start behavior is handled.
   ///
@@ -160,7 +153,7 @@ class FlutterRoundedDayPicker extends StatelessWidget {
   /// 4 5 6 7 8 9 10
   /// ```
   List<Widget> _getDayHeaders(
-    TextStyle headerStyle,
+    TextStyle? headerStyle,
     MaterialLocalizations localizations,
   ) {
     final List<Widget> result = <Widget>[];
@@ -169,7 +162,7 @@ class FlutterRoundedDayPicker extends StatelessWidget {
         result.add(ExcludeSemantics(
           child: Center(
               child: Text(
-            i < customWeekDays.length ? customWeekDays[i] : "",
+            i < customWeekDays!.length ? customWeekDays![i] : "",
             style: headerStyle,
           )),
         ));
@@ -289,10 +282,10 @@ class FlutterRoundedDayPicker extends StatelessWidget {
         labels.add(Container());
       } else {
         final DateTime dayToBuild = DateTime(year, month, day);
-        bool disabled = dayToBuild.isAfter(lastDate) || dayToBuild.isBefore(firstDate) || (selectableDayPredicate != null && !selectableDayPredicate(dayToBuild));
+        bool disabled = dayToBuild.isAfter(lastDate) || dayToBuild.isBefore(firstDate) || (selectableDayPredicate != null && !selectableDayPredicate!(dayToBuild));
 
         if (listDateDisabled != null) {
-          for (DateTime dt in listDateDisabled) {
+          for (DateTime dt in listDateDisabled!) {
             if (dt.day == day && dt.month == month && dt.year == year) {
               disabled = true;
               break;
@@ -300,9 +293,9 @@ class FlutterRoundedDayPicker extends StatelessWidget {
           }
         }
 
-        BoxDecoration decoration;
+        BoxDecoration? decoration;
         TextStyle itemStyle = style?.textStyleDayOnCalendar ??
-            themeData.textTheme.body1.copyWith(
+            themeData.textTheme.bodyText2!.copyWith(
               fontFamily: fontFamily,
             );
 
@@ -311,7 +304,7 @@ class FlutterRoundedDayPicker extends StatelessWidget {
         if (isSelectedDay) {
           // The selected day gets a circle background highlight, and a contrasting text color.
           itemStyle = style?.textStyleDayOnCalendarSelected ??
-              themeData.accentTextTheme.body2.copyWith(
+              themeData.accentTextTheme.bodyText1!.copyWith(
                 fontFamily: fontFamily,
               );
           decoration = style?.decorationDateSelected ??
@@ -321,21 +314,21 @@ class FlutterRoundedDayPicker extends StatelessWidget {
               );
         } else if (disabled) {
           itemStyle = style?.textStyleDayOnCalendarDisabled ??
-              themeData.textTheme.body1.copyWith(
+              themeData.textTheme.bodyText2!.copyWith(
                 color: themeData.disabledColor,
                 fontFamily: fontFamily,
               );
         } else if (isCurrentDay) {
           // The current day gets a different text color.
           itemStyle = style?.textStyleCurrentDayOnCalendar ??
-              themeData.textTheme.body2.copyWith(
+              themeData.textTheme.bodyText1!.copyWith(
                 color: themeData.accentColor,
                 fontFamily: fontFamily,
               );
         }
-        Widget dayWidget;
+        Widget? dayWidget;
         if (builderDay != null) {
-          dayWidget = builderDay(dayToBuild, isCurrentDay, isSelectedDay, itemStyle);
+          dayWidget = builderDay!(dayToBuild, isCurrentDay, isSelectedDay, itemStyle);
         }
 
         dayWidget = dayWidget ??
@@ -377,7 +370,7 @@ class FlutterRoundedDayPicker extends StatelessWidget {
             }
 
             if (onTapDay != null) {
-              allow = onTapDay(dayToBuild, !disabled);
+              allow = onTapDay!(dayToBuild, !disabled);
             }
 
             if (allow) {
@@ -393,7 +386,7 @@ class FlutterRoundedDayPicker extends StatelessWidget {
     }
 
     String monthYearHeader = "";
-    if (locale != null && locale.languageCode.toLowerCase() == "th") {
+    if (locale != null && locale!.languageCode.toLowerCase() == "th") {
       monthYearHeader = "${ThaiDateUtils.getMonthNameFull(displayedMonth.month)} ${calculateYearEra(era, displayedMonth.year)}";
     } else if (era == EraMode.BUDDHIST_YEAR) {
       monthYearHeader = localizations.formatMonthYear(displayedMonth);
@@ -418,7 +411,7 @@ class FlutterRoundedDayPicker extends StatelessWidget {
                 child: Text(
                   monthYearHeader,
                   style: style?.textStyleMonthYearHeader ??
-                      themeData.textTheme.subhead.copyWith(
+                      themeData.textTheme.subtitle1!.copyWith(
                         fontFamily: fontFamily,
                       ),
                 ),

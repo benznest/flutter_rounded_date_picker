@@ -7,20 +7,20 @@ import 'package:flutter_rounded_date_picker/src/flutter_cupertino_rounded_date_p
 class CupertinoRoundedDatePicker {
   static show(
     BuildContext context, {
-    Locale locale,
-    DateTime initialDate,
-    DateTime minimumDate,
-    DateTime maximumDate,
-    int minimumYear,
-    int maximumYear,
-    Function(DateTime) onDateTimeChanged,
+    Locale? locale,
+    DateTime? initialDate,
+    DateTime? minimumDate,
+    DateTime? maximumDate,
+    int? minimumYear,
+    int? maximumYear,
+    Function(DateTime)? onDateTimeChanged,
     int minuteInterval = 1,
     bool use24hFormat = false,
     CupertinoDatePickerMode initialDatePickerMode =
         CupertinoDatePickerMode.date,
     EraMode era = EraMode.CHRIST_YEAR,
     double borderRadius = 16,
-    String fontFamily,
+    String? fontFamily,
     Color background = Colors.white,
     Color textColor = Colors.black54,
   }) async {
@@ -52,7 +52,7 @@ class CupertinoRoundedDatePicker {
           minimumDate: minimumDate,
           maximumDate: maximumDate,
           maximumYear: maximumYear,
-          minimumYear: minimumYear,
+          minimumYear: minimumYear!,
         );
       },
     );
