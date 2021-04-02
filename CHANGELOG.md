@@ -1,4 +1,10 @@
 # Changelog
+## 2.0.1
+* Fix bug about "cancel button doesn't return null". (issues/37).
+* Fix error example project.
+
+## 2.0.0
+* Migrate to null safety (Thx @felixgabler)
 
 ## 1.0.5+1
 * Fix bug

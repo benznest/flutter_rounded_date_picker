@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_rounded_date_picker/rounded_picker.dart';
+import 'package:flutter_rounded_date_picker/flutter_rounded_date_picker.dart';
 import 'package:flutter_rounded_date_picker/src/flutter_rounded_button_action.dart';
 import 'package:flutter_rounded_date_picker/src/material_rounded_date_picker_style.dart';
 import 'package:flutter_rounded_date_picker/src/material_rounded_year_picker_style.dart';
@@ -167,7 +167,7 @@ class _FlutterRoundedDatePickerDialogState extends State<FlutterRoundedDatePicke
   }
 
   void _handleCancel() {
-    Navigator.of(context).pop(widget.initialDate);
+    Navigator.of(context).pop();
   }
 
   void _handleOk() {

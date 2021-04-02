@@ -26,16 +26,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f9f9944-f66c-46c1-913f-9e30c85bf56e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/example/android/app/src/main/res/values/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/rounded_picker.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/flutter_rounded_date_picker.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/dialogs/flutter_rounded_date_picker_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/dialogs/flutter_rounded_date_picker_dialog.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/flutter_cupertino_rounded_date_picker_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/flutter_cupertino_rounded_date_picker_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/flutter_rounded_button_action.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/flutter_rounded_button_action.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/flutter_rounded_date_picker_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/flutter_rounded_date_picker_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/flutter_rounded_time_picker_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/flutter_rounded_time_picker_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/flutter_rounded_date_picker_header.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/flutter_rounded_date_picker_header.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/flutter_rounded_day_picker.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/flutter_rounded_day_picker.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/flutter_rounded_month_picker.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/flutter_rounded_month_picker.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/flutter_rounded_year_picker.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/flutter_rounded_year_picker.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,6 +47,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_4_API_30]" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -71,7 +73,7 @@
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/example/android/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/example/android" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -241,6 +243,15 @@
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
@@ -252,6 +263,30 @@
     <option name="LAST_COMMIT_MESSAGE" value="update example project to flutter embedding 2" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="93" y="93" width="1095" height="495" key="AVDManager" timestamp="1615780006377">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="93" y="93" width="1095" height="495" key="AVDManager/0.0.1280.680/0.1080.1920.515@0.0.1280.680" timestamp="1615780006377" />
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1617339209711">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680/0.1080.1920.515@0.0.1280.680" timestamp="1617339209711" />
+    <state width="1282" height="57" key="GridCell.Tab.0.bottom" timestamp="1617339212005">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1282" height="57" key="GridCell.Tab.0.bottom/0.0.1280.680/0.1080.1920.515@0.0.1280.680" timestamp="1617339212005" />
+    <state width="1282" height="57" key="GridCell.Tab.0.center" timestamp="1617339212005">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1282" height="57" key="GridCell.Tab.0.center/0.0.1280.680/0.1080.1920.515@0.0.1280.680" timestamp="1617339212005" />
+    <state width="1282" height="57" key="GridCell.Tab.0.left" timestamp="1617339212004">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1282" height="57" key="GridCell.Tab.0.left/0.0.1280.680/0.1080.1920.515@0.0.1280.680" timestamp="1617339212004" />
+    <state width="1282" height="57" key="GridCell.Tab.0.right" timestamp="1617339212005">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1282" height="57" key="GridCell.Tab.0.right/0.0.1280.680/0.1080.1920.515@0.0.1280.680" timestamp="1617339212005" />
     <state x="646" y="223" key="RollbackChangesDialog" timestamp="1615673243979">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
