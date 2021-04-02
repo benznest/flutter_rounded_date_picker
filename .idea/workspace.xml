@@ -271,26 +271,30 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680/0.1080.1920.515@0.0.1280.680" timestamp="1617339209711" />
-    <state width="1282" height="57" key="GridCell.Tab.0.bottom" timestamp="1617339212005">
+    <state width="1282" height="166" key="GridCell.Tab.0.bottom" timestamp="1617339765915">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1282" height="57" key="GridCell.Tab.0.bottom/0.0.1280.680/0.1080.1920.515@0.0.1280.680" timestamp="1617339212005" />
-    <state width="1282" height="57" key="GridCell.Tab.0.center" timestamp="1617339212005">
+    <state width="1282" height="166" key="GridCell.Tab.0.bottom/0.0.1280.680/0.1080.1920.515@0.0.1280.680" timestamp="1617339765915" />
+    <state width="1282" height="166" key="GridCell.Tab.0.center" timestamp="1617339765915">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1282" height="57" key="GridCell.Tab.0.center/0.0.1280.680/0.1080.1920.515@0.0.1280.680" timestamp="1617339212005" />
-    <state width="1282" height="57" key="GridCell.Tab.0.left" timestamp="1617339212004">
+    <state width="1282" height="166" key="GridCell.Tab.0.center/0.0.1280.680/0.1080.1920.515@0.0.1280.680" timestamp="1617339765915" />
+    <state width="1282" height="166" key="GridCell.Tab.0.left" timestamp="1617339765915">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1282" height="57" key="GridCell.Tab.0.left/0.0.1280.680/0.1080.1920.515@0.0.1280.680" timestamp="1617339212004" />
-    <state width="1282" height="57" key="GridCell.Tab.0.right" timestamp="1617339212005">
+    <state width="1282" height="166" key="GridCell.Tab.0.left/0.0.1280.680/0.1080.1920.515@0.0.1280.680" timestamp="1617339765915" />
+    <state width="1282" height="166" key="GridCell.Tab.0.right" timestamp="1617339765915">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1282" height="57" key="GridCell.Tab.0.right/0.0.1280.680/0.1080.1920.515@0.0.1280.680" timestamp="1617339212005" />
+    <state width="1282" height="166" key="GridCell.Tab.0.right/0.0.1280.680/0.1080.1920.515@0.0.1280.680" timestamp="1617339765915" />
     <state x="646" y="223" key="RollbackChangesDialog" timestamp="1615673243979">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="646" y="223" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615673243979" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1617340034142">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680/0.1080.1920.515@0.0.1280.680" timestamp="1617340034142" />
     <state x="668" y="253" width="585" height="534" key="find.popup" timestamp="1615675412829">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
