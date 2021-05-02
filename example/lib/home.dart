@@ -110,6 +110,9 @@ class _HomeState extends State<Home> {
                       initialDate: DateTime.now(),
                       firstDate: DateTime.now().subtract(Duration(days: 3)),
                       lastDate: DateTime.now().add(Duration(days: 3)),
+                      styleDatePicker: MaterialRoundedDatePickerStyle(
+                        paddingMonthHeader: EdgeInsets.all(8)
+                      )
                     );
                     if (newDateTime != null) {
                       setState(() => dateTime = newDateTime);
@@ -137,7 +140,7 @@ class _HomeState extends State<Home> {
                     DateTime newDateTime = await showRoundedDatePicker(
                       background: Colors.white,
                         context: context,
-                        theme: ThemeData(primarySwatch: Colors.deepPurple),
+                        // theme: ThemeData(primarySwatch: Colors.deepPurple),
                         era: EraMode.BUDDHIST_YEAR,
                         styleDatePicker: MaterialRoundedDatePickerStyle(
                           textStyleDayButton: TextStyle(fontSize: 36, color: Colors.white),
@@ -176,6 +179,7 @@ class _HomeState extends State<Home> {
                           backgroundPicker: Colors.deepPurple[400],
                           backgroundActionBar: Colors.deepPurple[300],
                           backgroundHeaderMonth: Colors.deepPurple[300],
+                          backgroundHeader: Colors.deepPurple[400],
                         ),
                         styleYearPicker: MaterialRoundedYearPickerStyle(
                           textStyleYear: TextStyle(fontSize: 40, color: Colors.white),

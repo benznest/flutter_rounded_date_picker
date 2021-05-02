@@ -23,6 +23,7 @@ class MaterialRoundedDatePickerStyle {
   Color? colorArrowNext;
   Color? backgroundPicker;
   Color? backgroundActionBar;
+  Color? backgroundHeader;
   Color? backgroundHeaderMonth;
   TextStyle? textStyleButtonPositive;
   TextStyle? textStyleButtonNegative;
@@ -54,6 +55,7 @@ class MaterialRoundedDatePickerStyle {
     this.colorArrowPrevious,
     this.backgroundActionBar,
     this.backgroundPicker,
+    this.backgroundHeader,
     this.backgroundHeaderMonth,
   });
 }

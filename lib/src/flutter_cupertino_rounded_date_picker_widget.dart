@@ -898,7 +898,7 @@ class _CupertinoDatePickerDateState
 
         String strYear = localizations.datePickerYear(index);
         if (widget.era == EraMode.BUDDHIST_YEAR) {
-          strYear = calculateYearEra(widget.era, index).toString();
+          strYear = calculateYearEra(widget.era!, index).toString();
         }
 
         return itemPositioningBuilder(
