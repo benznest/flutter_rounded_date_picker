@@ -34,7 +34,8 @@ class FlutterRoundedDatePickerDialog extends StatefulWidget {
       this.customWeekDays,
       this.builderDay,
       this.listDateDisabled,
-      this.onTapDay})
+      this.onTapDay,
+      this.onMonthChange})
       : super(key: key);
 
   final DateTime initialDate;
@@ -79,11 +80,15 @@ class FlutterRoundedDatePickerDialog extends StatefulWidget {
   final List<DateTime>? listDateDisabled;
   final OnTapDay? onTapDay;
 
+  final ValueSetter<DateTime>? onMonthChange;
+
   @override
-  _FlutterRoundedDatePickerDialogState createState() => _FlutterRoundedDatePickerDialogState();
+  _FlutterRoundedDatePickerDialogState createState() =>
+      _FlutterRoundedDatePickerDialogState();
 }
 
-class _FlutterRoundedDatePickerDialogState extends State<FlutterRoundedDatePickerDialog> {
+class _FlutterRoundedDatePickerDialogState
+    extends State<FlutterRoundedDatePickerDialog> {
   @override
   void initState() {
     super.initState();
@@ -152,6 +157,8 @@ class _FlutterRoundedDatePickerDialogState extends State<FlutterRoundedDatePicke
     }
     if (value == _selectedDate) return;
 
+    if (widget.onMonthChange != null) widget.onMonthChange!(value);
+
     _vibrate();
     setState(() {
       _mode = DatePickerMode.day;
@@ -190,22 +197,22 @@ class _FlutterRoundedDatePickerDialogState extends State<FlutterRoundedDatePicke
       case DatePickerMode.day:
       default:
         return FlutterRoundedMonthPicker(
-          key: _pickerKey,
-          selectedDate: _selectedDate,
-          onChanged: _handleDayChanged,
-          firstDate: widget.firstDate,
-          lastDate: widget.lastDate,
-          era: widget.era,
-          locale: widget.locale,
-          selectableDayPredicate: widget.selectableDayPredicate,
-          fontFamily: widget.fontFamily,
-          style: widget.styleDatePicker,
-          borderRadius: widget.borderRadius,
-          customWeekDays: widget.customWeekDays,
-          builderDay: widget.builderDay,
-          listDateDisabled: widget.listDateDisabled,
-          onTapDay: widget.onTapDay,
-        );
+            key: _pickerKey,
+            selectedDate: _selectedDate,
+            onChanged: _handleDayChanged,
+            firstDate: widget.firstDate,
+            lastDate: widget.lastDate,
+            era: widget.era,
+            locale: widget.locale,
+            selectableDayPredicate: widget.selectableDayPredicate,
+            fontFamily: widget.fontFamily,
+            style: widget.styleDatePicker,
+            borderRadius: widget.borderRadius,
+            customWeekDays: widget.customWeekDays,
+            builderDay: widget.builderDay,
+            listDateDisabled: widget.listDateDisabled,
+            onTapDay: widget.onTapDay,
+            onMonthChange: widget.onMonthChange);
     }
   }
 
@@ -232,13 +239,16 @@ class _FlutterRoundedDatePickerDialogState extends State<FlutterRoundedDatePicke
 
     Color backgroundPicker = theme.dialogBackgroundColor;
     if (_mode == DatePickerMode.day) {
-      backgroundPicker = widget.styleDatePicker?.backgroundPicker ?? theme.dialogBackgroundColor;
+      backgroundPicker = widget.styleDatePicker?.backgroundPicker ??
+          theme.dialogBackgroundColor;
     } else {
-      backgroundPicker = widget.styleYearPicker?.backgroundPicker ?? theme.dialogBackgroundColor;
+      backgroundPicker = widget.styleYearPicker?.backgroundPicker ??
+          theme.dialogBackgroundColor;
     }
 
     final Dialog dialog = Dialog(
-      child: OrientationBuilder(builder: (BuildContext context, Orientation orientation) {
+      child: OrientationBuilder(
+          builder: (BuildContext context, Orientation orientation) {
         final Widget header = FlutterRoundedDatePickerHeader(
             selectedDate: _selectedDate,
             mode: _mode,

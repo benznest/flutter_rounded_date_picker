@@ -46,7 +46,8 @@ class FlutterRoundedMonthPicker extends StatefulWidget {
       this.customWeekDays,
       this.builderDay,
       this.listDateDisabled,
-      this.onTapDay})
+      this.onTapDay,
+      this.onMonthChange})
       : assert(!firstDate.isAfter(lastDate)),
 //        assert(selectedDate.isAfter(firstDate) || selectedDate.isAtSameMomentAs(firstDate)),
         super(key: key);
@@ -91,13 +92,18 @@ class FlutterRoundedMonthPicker extends StatefulWidget {
   final List<DateTime>? listDateDisabled;
   final OnTapDay? onTapDay;
 
+  final ValueSetter<DateTime>? onMonthChange;
+
   @override
-  _FlutterRoundedMonthPickerState createState() => _FlutterRoundedMonthPickerState();
+  _FlutterRoundedMonthPickerState createState() =>
+      _FlutterRoundedMonthPickerState();
 }
 
-class _FlutterRoundedMonthPickerState extends State<FlutterRoundedMonthPicker> with SingleTickerProviderStateMixin {
+class _FlutterRoundedMonthPickerState extends State<FlutterRoundedMonthPicker>
+    with SingleTickerProviderStateMixin {
   static final Animatable<double> _chevronOpacityTween =
-      Tween<double>(begin: 1.0, end: 0.0).chain(CurveTween(curve: Curves.easeInOut));
+      Tween<double>(begin: 1.0, end: 0.0)
+          .chain(CurveTween(curve: Curves.easeInOut));
 
   @override
   void initState() {
@@ -147,7 +153,8 @@ class _FlutterRoundedMonthPickerState extends State<FlutterRoundedMonthPicker> w
 
   void _updateCurrentDate() {
     _todayDate = DateTime.now();
-    final DateTime tomorrow = DateTime(_todayDate.year, _todayDate.month, _todayDate.day + 1);
+    final DateTime tomorrow =
+        DateTime(_todayDate.year, _todayDate.month, _todayDate.day + 1);
     Duration timeUntilTomorrow = tomorrow.difference(_todayDate);
     // so we don't miss it by rounding
     timeUntilTomorrow += const Duration(seconds: 1);
@@ -158,7 +165,9 @@ class _FlutterRoundedMonthPickerState extends State<FlutterRoundedMonthPicker> w
   }
 
   static int _monthDelta(DateTime startDate, DateTime endDate) {
-    return (endDate.year - startDate.year) * 12 + endDate.month - startDate.month;
+    return (endDate.year - startDate.year) * 12 +
+        endDate.month -
+        startDate.month;
   }
 
   /// Add months to a month truncated date.
@@ -203,6 +212,7 @@ class _FlutterRoundedMonthPickerState extends State<FlutterRoundedMonthPicker> w
         duration: _kMonthScrollDuration,
         curve: Curves.ease,
       );
+      if (widget.onMonthChange != null) widget.onMonthChange!(_nextMonthDate);
     }
   }
 
@@ -216,6 +226,8 @@ class _FlutterRoundedMonthPickerState extends State<FlutterRoundedMonthPicker> w
         duration: _kMonthScrollDuration,
         curve: Curves.ease,
       );
+      if (widget.onMonthChange != null)
+        widget.onMonthChange!(_previousMonthDate);
     }
   }
 
@@ -257,7 +269,8 @@ class _FlutterRoundedMonthPickerState extends State<FlutterRoundedMonthPicker> w
       decoration: BoxDecoration(
           color: widget.style?.backgroundPicker,
           borderRadius: orientation == Orientation.landscape
-              ? BorderRadius.only(topRight: Radius.circular(widget.borderRadius))
+              ? BorderRadius.only(
+                  topRight: Radius.circular(widget.borderRadius))
               : null),
       // The month picker just adds month navigation to the day picker, so make
       // it the same height as the DayPicker
@@ -306,7 +319,9 @@ class _FlutterRoundedMonthPickerState extends State<FlutterRoundedMonthPicker> w
                   tooltip: _isDisplayingFirstMonth
                       ? null
                       : '${localizations.previousMonthTooltip} ${localizations.formatMonthYear(_previousMonthDate)}',
-                  onPressed: _isDisplayingFirstMonth == true ? null : _handlePreviousMonth,
+                  onPressed: _isDisplayingFirstMonth == true
+                      ? null
+                      : _handlePreviousMonth,
                 ),
               ),
             ),
