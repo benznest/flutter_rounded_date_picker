@@ -43,7 +43,7 @@ class FlutterRoundedYearPicker extends StatefulWidget {
   final DateTime selectedDate;
 
   /// Called when the user picks a year.
-  final ValueChanged<DateTime> onChanged;
+  final Function onChanged;
 
   /// The earliest date the user is permitted to pick.
   final DateTime firstDate;
@@ -64,7 +64,8 @@ class FlutterRoundedYearPicker extends StatefulWidget {
   final MaterialRoundedYearPickerStyle? style;
 
   @override
-  _FlutterRoundedYearPickerState createState() => _FlutterRoundedYearPickerState();
+  _FlutterRoundedYearPickerState createState() =>
+      _FlutterRoundedYearPickerState();
 }
 
 class _FlutterRoundedYearPickerState extends State<FlutterRoundedYearPicker> {
@@ -77,7 +78,8 @@ class _FlutterRoundedYearPickerState extends State<FlutterRoundedYearPicker> {
     _itemExtent = widget.style?.heightYearRow ?? 50;
     scrollController = ScrollController(
       // Move the initial scroll position to the currently selected date's year.
-      initialScrollOffset: (widget.selectedDate.year - widget.firstDate.year) * _itemExtent,
+      initialScrollOffset:
+          (widget.selectedDate.year - widget.firstDate.year) * _itemExtent,
     );
   }
 

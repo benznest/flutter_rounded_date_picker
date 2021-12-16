@@ -118,7 +118,7 @@ Future<DateTime?> showRoundedDatePicker(
     BuilderDayOfDatePicker? builderDay,
     List<DateTime>? listDateDisabled,
     OnTapDay? onTapDay,
-    ValueSetter<DateTime>? onMonthChange}) async {
+    Function? onMonthChange}) async {
   initialDate ??= DateTime.now();
   firstDate ??= DateTime(initialDate.year - 1);
   lastDate ??= DateTime(initialDate.year + 1);

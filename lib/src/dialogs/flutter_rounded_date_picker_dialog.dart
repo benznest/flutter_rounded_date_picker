@@ -80,7 +80,7 @@ class FlutterRoundedDatePickerDialog extends StatefulWidget {
   final List<DateTime>? listDateDisabled;
   final OnTapDay? onTapDay;
 
-  final ValueSetter<DateTime>? onMonthChange;
+  final Function? onMonthChange;
 
   @override
   _FlutterRoundedDatePickerDialogState createState() =>
@@ -149,7 +149,7 @@ class _FlutterRoundedDatePickerDialogState
     });
   }
 
-  void _handleYearChanged(DateTime value) {
+  Future<void> _handleYearChanged(DateTime value) async {
     if (value.isBefore(widget.firstDate)) {
       value = widget.firstDate;
     } else if (value.isAfter(widget.lastDate)) {
@@ -157,7 +157,7 @@ class _FlutterRoundedDatePickerDialogState
     }
     if (value == _selectedDate) return;
 
-    if (widget.onMonthChange != null) widget.onMonthChange!(value);
+    if (widget.onMonthChange != null) await widget.onMonthChange!(value);
 
     _vibrate();
     setState(() {
@@ -187,7 +187,7 @@ class _FlutterRoundedDatePickerDialogState
         return FlutterRoundedYearPicker(
           key: _pickerKey,
           selectedDate: _selectedDate,
-          onChanged: _handleYearChanged,
+          onChanged: (DateTime date) async => await _handleYearChanged(date),
           firstDate: widget.firstDate,
           lastDate: widget.lastDate,
           era: widget.era,
