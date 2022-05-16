@@ -919,7 +919,7 @@ class _CupertinoDatePickerDateState
     final int desiredDay =
         DateTime(selectedYear, selectedMonth, selectedDay).day;
     if (desiredDay != selectedDay) {
-      SchedulerBinding.instance!.addPostFrameCallback((Duration timestamp) {
+      SchedulerBinding.instance.addPostFrameCallback((Duration timestamp) {
         dayController.animateToItem(
           // The next valid date is also the amount of days overflown.
           dayController.selectedItem - desiredDay,
