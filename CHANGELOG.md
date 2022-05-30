@@ -1,4 +1,7 @@
 # Changelog
+## 3.0.0
+* Fixed SchedulerBinding.instance with nullable change.
+
 ## 2.0.2
 * add backgroundHeaderMonth field in MaterialRoundedDatePickerStyle
 
