@@ -122,7 +122,7 @@ class _FlutterRoundedMonthPickerState extends State<FlutterRoundedMonthPicker>
     _chevronOpacityAnimation = _chevronOpacityController.drive(
       _chevronOpacityTween,
     );
-    WidgetsBinding.instance!.addPostFrameCallback((timeStamp) async {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       await _onMonthChange(_currentDisplayedMonthDate);
     });
   }
@@ -134,7 +134,7 @@ class _FlutterRoundedMonthPickerState extends State<FlutterRoundedMonthPicker>
       final int monthPage = _monthDelta(widget.firstDate, widget.selectedDate);
       _dayPickerController = PageController(initialPage: monthPage);
       _handleMonthPageChanged(monthPage);
-      WidgetsBinding.instance!.addPostFrameCallback((timeStamp) async {
+      WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
         await _onMonthChange(_currentDisplayedMonthDate);
       });
     }

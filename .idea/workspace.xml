@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -19,51 +22,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f9f9944-f66c-46c1-913f-9e30c85bf56e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/example/android/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/android/app/src/main/java/com/benzneststudios/flutter_rounded_date_picker_example/MainActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/android/app/src/main/res/drawable-v21/launch_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/android/app/src/main/res/values-night/styles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/test/widget_test.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/web/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/web/icons/Icon-192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/web/icons/Icon-512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/web/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/web/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/windows/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/windows/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/windows/flutter/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/windows/flutter/generated_plugin_registrant.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/windows/flutter/generated_plugins.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/windows/runner/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/windows/runner/Runner.rc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/windows/runner/flutter_window.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/windows/runner/flutter_window.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/windows/runner/main.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/windows/runner/resource.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/windows/runner/resources/app_icon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/windows/runner/run_loop.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/windows/runner/run_loop.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/windows/runner/runner.exe.manifest" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/windows/runner/utils.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/windows/runner/utils.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/windows/runner/win32_window.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/windows/runner/win32_window.h" afterDir="false" />
+    <list default="true" id="5f9f9944-f66c-46c1-913f-9e30c85bf56e" name="Default Changelist" comment="add backgroundHeaderMonth field in MaterialRoundedDatePickerStyle">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/home.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/flutter_cupertino_rounded_date_picker_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/flutter_cupertino_rounded_date_picker_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/material_rounded_date_picker_style.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/material_rounded_date_picker_style.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/flutter_rounded_date_picker_header.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/flutter_rounded_date_picker_header.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/example/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/windows/flutter/generated_plugin_registrant.h" beforeDir="false" afterPath="$PROJECT_DIR$/example/windows/flutter/generated_plugin_registrant.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/example/windows/flutter/generated_plugins.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/cupertino_rounded_date_picker.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/cupertino_rounded_date_picker.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/cupertino_rounded_duration_picker.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/cupertino_rounded_duration_picker.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/flutter_rounded_month_picker.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/flutter_rounded_month_picker.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,9 +50,8 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="UPDATE_TYPE" value="REBASE" />
-    <option name="ROOT_SYNC" value="SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="ProjectId" id="1gtj2hrCJk7tegPgXQWQwmF7HvZ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -93,8 +61,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
@@ -120,6 +91,7 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -264,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615673503907</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="add backgroundHeaderMonth field in MaterialRoundedDatePickerStyle">
+      <created>1619948878123</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1619948878124</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -285,57 +264,7 @@
     <MESSAGE value="edit readme." />
     <MESSAGE value="fix warnings" />
     <MESSAGE value="update example project to flutter embedding 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="update example project to flutter embedding 2" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="93" y="93" width="1095" height="495" key="AVDManager" timestamp="1615780006377">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="93" y="93" width="1095" height="495" key="AVDManager/0.0.1280.680/0.1080.1920.515@0.0.1280.680" timestamp="1615780006377" />
-    <state x="1263" y="147" key="FileChooserDialogImpl" timestamp="1619944060093">
-      <screen x="0" y="0" width="3840" height="1040" />
-    </state>
-    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680/0.1080.1920.515@0.0.1280.680" timestamp="1617339209711" />
-    <state x="1263" y="147" key="FileChooserDialogImpl/0.0.3840.1040@0.0.3840.1040" timestamp="1619944060093" />
-    <state width="1691" height="253" key="GridCell.Tab.0.bottom" timestamp="1619948360872">
-      <screen x="0" y="0" width="3840" height="1040" />
-    </state>
-    <state width="1282" height="166" key="GridCell.Tab.0.bottom/0.0.1280.680/0.1080.1920.515@0.0.1280.680" timestamp="1617339765915" />
-    <state width="1691" height="253" key="GridCell.Tab.0.bottom/0.0.3840.1040@0.0.3840.1040" timestamp="1619948360872" />
-    <state width="1691" height="253" key="GridCell.Tab.0.center" timestamp="1619948360871">
-      <screen x="0" y="0" width="3840" height="1040" />
-    </state>
-    <state width="1282" height="166" key="GridCell.Tab.0.center/0.0.1280.680/0.1080.1920.515@0.0.1280.680" timestamp="1617339765915" />
-    <state width="1691" height="253" key="GridCell.Tab.0.center/0.0.3840.1040@0.0.3840.1040" timestamp="1619948360871" />
-    <state width="1691" height="253" key="GridCell.Tab.0.left" timestamp="1619948360871">
-      <screen x="0" y="0" width="3840" height="1040" />
-    </state>
-    <state width="1282" height="166" key="GridCell.Tab.0.left/0.0.1280.680/0.1080.1920.515@0.0.1280.680" timestamp="1617339765915" />
-    <state width="1691" height="253" key="GridCell.Tab.0.left/0.0.3840.1040@0.0.3840.1040" timestamp="1619948360871" />
-    <state width="1691" height="253" key="GridCell.Tab.0.right" timestamp="1619948360871">
-      <screen x="0" y="0" width="3840" height="1040" />
-    </state>
-    <state width="1282" height="166" key="GridCell.Tab.0.right/0.0.1280.680/0.1080.1920.515@0.0.1280.680" timestamp="1617339765915" />
-    <state width="1691" height="253" key="GridCell.Tab.0.right/0.0.3840.1040@0.0.3840.1040" timestamp="1619948360871" />
-    <state x="646" y="223" key="RollbackChangesDialog" timestamp="1615673243979">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="646" y="223" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615673243979" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1617340034142">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680/0.1080.1920.515@0.0.1280.680" timestamp="1617340034142" />
-    <state x="456" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1619939418547">
-      <screen x="0" y="0" width="3840" height="1040" />
-    </state>
-    <state x="456" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.3840.1040@0.0.3840.1040" timestamp="1619939418547" />
-    <state x="668" y="253" width="585" height="534" key="find.popup" timestamp="1615675412829">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="668" y="253" width="585" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1615675412829" />
-    <state x="539" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1619947423795">
-      <screen x="0" y="0" width="3840" height="1040" />
-    </state>
-    <state x="539" y="229" width="672" height="678" key="search.everywhere.popup/0.0.3840.1040@0.0.3840.1040" timestamp="1619947423795" />
+    <MESSAGE value="add backgroundHeaderMonth field in MaterialRoundedDatePickerStyle" />
+    <option name="LAST_COMMIT_MESSAGE" value="add backgroundHeaderMonth field in MaterialRoundedDatePickerStyle" />
   </component>
 </project>
