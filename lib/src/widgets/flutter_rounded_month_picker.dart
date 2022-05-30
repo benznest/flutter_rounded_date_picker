@@ -46,7 +46,8 @@ class FlutterRoundedMonthPicker extends StatefulWidget {
       this.customWeekDays,
       this.builderDay,
       this.listDateDisabled,
-      this.onTapDay})
+      this.onTapDay,
+      this.onMonthChange})
       : assert(!firstDate.isAfter(lastDate)),
 //        assert(selectedDate.isAfter(firstDate) || selectedDate.isAtSameMomentAs(firstDate)),
         super(key: key);
@@ -91,13 +92,18 @@ class FlutterRoundedMonthPicker extends StatefulWidget {
   final List<DateTime>? listDateDisabled;
   final OnTapDay? onTapDay;
 
+  final Function? onMonthChange;
+
   @override
-  _FlutterRoundedMonthPickerState createState() => _FlutterRoundedMonthPickerState();
+  _FlutterRoundedMonthPickerState createState() =>
+      _FlutterRoundedMonthPickerState();
 }
 
-class _FlutterRoundedMonthPickerState extends State<FlutterRoundedMonthPicker> with SingleTickerProviderStateMixin {
+class _FlutterRoundedMonthPickerState extends State<FlutterRoundedMonthPicker>
+    with SingleTickerProviderStateMixin {
   static final Animatable<double> _chevronOpacityTween =
-      Tween<double>(begin: 1.0, end: 0.0).chain(CurveTween(curve: Curves.easeInOut));
+      Tween<double>(begin: 1.0, end: 0.0)
+          .chain(CurveTween(curve: Curves.easeInOut));
 
   @override
   void initState() {
@@ -116,6 +122,9 @@ class _FlutterRoundedMonthPickerState extends State<FlutterRoundedMonthPicker> w
     _chevronOpacityAnimation = _chevronOpacityController.drive(
       _chevronOpacityTween,
     );
+    WidgetsBinding.instance!.addPostFrameCallback((timeStamp) async {
+      await _onMonthChange(_currentDisplayedMonthDate);
+    });
   }
 
   @override
@@ -125,6 +134,9 @@ class _FlutterRoundedMonthPickerState extends State<FlutterRoundedMonthPicker> w
       final int monthPage = _monthDelta(widget.firstDate, widget.selectedDate);
       _dayPickerController = PageController(initialPage: monthPage);
       _handleMonthPageChanged(monthPage);
+      WidgetsBinding.instance!.addPostFrameCallback((timeStamp) async {
+        await _onMonthChange(_currentDisplayedMonthDate);
+      });
     }
   }
 
@@ -147,7 +159,8 @@ class _FlutterRoundedMonthPickerState extends State<FlutterRoundedMonthPicker> w
 
   void _updateCurrentDate() {
     _todayDate = DateTime.now();
-    final DateTime tomorrow = DateTime(_todayDate.year, _todayDate.month, _todayDate.day + 1);
+    final DateTime tomorrow =
+        DateTime(_todayDate.year, _todayDate.month, _todayDate.day + 1);
     Duration timeUntilTomorrow = tomorrow.difference(_todayDate);
     // so we don't miss it by rounding
     timeUntilTomorrow += const Duration(seconds: 1);
@@ -158,7 +171,9 @@ class _FlutterRoundedMonthPickerState extends State<FlutterRoundedMonthPicker> w
   }
 
   static int _monthDelta(DateTime startDate, DateTime endDate) {
-    return (endDate.year - startDate.year) * 12 + endDate.month - startDate.month;
+    return (endDate.year - startDate.year) * 12 +
+        endDate.month -
+        startDate.month;
   }
 
   /// Add months to a month truncated date.
@@ -193,7 +208,7 @@ class _FlutterRoundedMonthPickerState extends State<FlutterRoundedMonthPicker> w
     );
   }
 
-  void _handleNextMonth() {
+  Future<void> _handleNextMonth() async {
     if (!_isDisplayingLastMonth) {
       SemanticsService.announce(
         localizations.formatMonthYear(_nextMonthDate),
@@ -206,7 +221,7 @@ class _FlutterRoundedMonthPickerState extends State<FlutterRoundedMonthPicker> w
     }
   }
 
-  void _handlePreviousMonth() {
+  Future<void> _handlePreviousMonth() async {
     if (!_isDisplayingFirstMonth) {
       SemanticsService.announce(
         localizations.formatMonthYear(_previousMonthDate),
@@ -250,6 +265,11 @@ class _FlutterRoundedMonthPickerState extends State<FlutterRoundedMonthPicker> w
     });
   }
 
+  Future<void> _onMonthChange(DateTime newMonth) async {
+    if (widget.onMonthChange != null) await widget.onMonthChange!(newMonth);
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     Orientation orientation = MediaQuery.of(context).orientation;
@@ -257,7 +277,8 @@ class _FlutterRoundedMonthPickerState extends State<FlutterRoundedMonthPicker> w
       decoration: BoxDecoration(
           color: widget.style?.backgroundPicker,
           borderRadius: orientation == Orientation.landscape
-              ? BorderRadius.only(topRight: Radius.circular(widget.borderRadius))
+              ? BorderRadius.only(
+                  topRight: Radius.circular(widget.borderRadius))
               : null),
       // The month picker just adds month navigation to the day picker, so make
       // it the same height as the DayPicker
@@ -283,7 +304,10 @@ class _FlutterRoundedMonthPickerState extends State<FlutterRoundedMonthPicker> w
                   scrollDirection: Axis.horizontal,
                   itemCount: _monthDelta(widget.firstDate, widget.lastDate) + 1,
                   itemBuilder: _buildItems,
-                  onPageChanged: _handleMonthPageChanged,
+                  onPageChanged: (int monthPage) async {
+                    _handleMonthPageChanged(monthPage);
+                    await _onMonthChange(_currentDisplayedMonthDate);
+                  },
                 ),
               ),
             ),
@@ -306,7 +330,9 @@ class _FlutterRoundedMonthPickerState extends State<FlutterRoundedMonthPicker> w
                   tooltip: _isDisplayingFirstMonth
                       ? null
                       : '${localizations.previousMonthTooltip} ${localizations.formatMonthYear(_previousMonthDate)}',
-                  onPressed: _isDisplayingFirstMonth == true ? null : _handlePreviousMonth,
+                  onPressed: () async => _isDisplayingFirstMonth == true
+                      ? null
+                      : await _handlePreviousMonth(),
                 ),
               ),
             ),
@@ -329,7 +355,8 @@ class _FlutterRoundedMonthPickerState extends State<FlutterRoundedMonthPicker> w
                   tooltip: _isDisplayingLastMonth
                       ? null
                       : '${localizations.nextMonthTooltip} ${localizations.formatMonthYear(_nextMonthDate)}',
-                  onPressed: _isDisplayingLastMonth ? null : _handleNextMonth,
+                  onPressed: () async =>
+                      _isDisplayingLastMonth ? null : await _handleNextMonth(),
                 ),
               ),
             ),

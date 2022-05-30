@@ -117,7 +117,8 @@ Future<DateTime?> showRoundedDatePicker(
     List<String>? customWeekDays,
     BuilderDayOfDatePicker? builderDay,
     List<DateTime>? listDateDisabled,
-    OnTapDay? onTapDay}) async {
+    OnTapDay? onTapDay,
+    Function? onMonthChange}) async {
   initialDate ??= DateTime.now();
   firstDate ??= DateTime(initialDate.year - 1);
   lastDate ??= DateTime(initialDate.year + 1);
@@ -140,7 +141,8 @@ Future<DateTime?> showRoundedDatePicker(
     'Provided initialDate must satisfy provided selectableDayPredicate',
   );
   assert(
-    (onTapActionButton != null && textActionButton != null) || onTapActionButton == null,
+    (onTapActionButton != null && textActionButton != null) ||
+        onTapActionButton == null,
     "If you provide onLeftBtn, you must provide leftBtn",
   );
   assert(debugCheckHasMaterialLocalizations(context));
@@ -180,6 +182,7 @@ Future<DateTime?> showRoundedDatePicker(
           builderDay: builderDay,
           listDateDisabled: listDateDisabled,
           onTapDay: onTapDay,
+          onMonthChange: onMonthChange,
         ),
       ),
     ),
