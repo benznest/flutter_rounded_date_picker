@@ -33,7 +33,7 @@ class FlutterRoundedButtonAction extends StatelessWidget {
       : super(key: key);
 
   List<Widget> _buildActionsButton() {
-    final Widget negativeButton = FlatButton(
+    final Widget negativeButton = TextButton(
       child: Text(
         textButtonNegative ?? localizations.cancelButtonLabel,
         style: textStyleButtonNegative,
@@ -41,7 +41,7 @@ class FlutterRoundedButtonAction extends StatelessWidget {
       onPressed: onTapButtonNegative,
     );
 
-    final Widget positiveButton = FlatButton(
+    final Widget positiveButton = TextButton(
       child: Text(
         textButtonPositive ?? localizations.okButtonLabel,
         style: textStyleButtonPositive,
@@ -50,7 +50,7 @@ class FlutterRoundedButtonAction extends StatelessWidget {
     );
 
     if (textActionButton != null) {
-      final Widget leftButton = FlatButton(
+      final Widget leftButton = TextButton(
         child: Text(textActionButton!, style: textStyleButtonAction),
         onPressed: onTapButtonAction,
       );
