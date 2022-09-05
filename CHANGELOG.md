@@ -1,4 +1,7 @@
 # Changelog
+## 3.0.2
+* Fixed warning Flutter 3.3
+
 ## 3.0.1
 * Fixed dragable Cupertino date picker.
 * Fixed warning Flutter 3.0.
