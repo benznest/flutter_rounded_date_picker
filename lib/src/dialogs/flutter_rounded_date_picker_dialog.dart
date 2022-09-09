@@ -34,7 +34,8 @@ class FlutterRoundedDatePickerDialog extends StatefulWidget {
       this.listDateDisabled,
       this.onTapDay,
       this.onMonthChange,
-      this.headerDecoration})
+      this.headerDecoration, 
+      this.separator})
       : super(key: key);
 
   final DateTime initialDate;
@@ -83,6 +84,9 @@ class FlutterRoundedDatePickerDialog extends StatefulWidget {
 
   // Decoration of the header container
   final BoxDecoration? headerDecoration;
+
+  /// Separator for the header
+  final Widget? separator;
 
   @override
   _FlutterRoundedDatePickerDialogState createState() =>
@@ -303,6 +307,7 @@ class _FlutterRoundedDatePickerDialogState
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   header,
+                  widget.separator ?? SizedBox(),
                   if (widget.height == null)
                     Flexible(child: picker)
                   else

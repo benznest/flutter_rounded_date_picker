@@ -212,13 +212,6 @@ class FlutterRoundedDatePickerHeader extends StatelessWidget {
               ),
             ),
           ),
-          FractionallySizedBox(
-            widthFactor: 1,
-            child: Container(
-              color: Colors.black54,
-              height: 1,
-            ),
-          )
         ],
       ),
     );
