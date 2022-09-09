@@ -16,7 +16,8 @@ class FlutterRoundedDatePickerHeader extends StatelessWidget {
       this.fontFamily,
       this.style, 
       this.yearColor, 
-      this.dayColor
+      this.dayColor, 
+      this.headerDecoration
     })
       : super(key: key);
 
@@ -46,6 +47,9 @@ class FlutterRoundedDatePickerHeader extends StatelessWidget {
 
   /// Day text color
   final Color? dayColor;
+
+  // Decoration of the header container
+  final BoxDecoration? headerDecoration;
 
   void _handleChangeMode(DatePickerMode value) {
     if (value != mode) onModeChanged(value);
@@ -179,13 +183,17 @@ class FlutterRoundedDatePickerHeader extends StatelessWidget {
     }
 
     return Container(
-      decoration: BoxDecoration(
-        image: imageHeader != null
-            ? DecorationImage(image: imageHeader!, fit: BoxFit.cover)
-            : null,
-        color: backgroundColor,
-        borderRadius: borderRadiusData,
-      ),
+      decoration: headerDecoration != null
+          ? headerDecoration?.copyWith(
+              borderRadius: borderRadiusData,
+            )
+          : BoxDecoration(
+              image: imageHeader != null
+                  ? DecorationImage(image: imageHeader!, fit: BoxFit.cover)
+                  : null,
+              color: backgroundColor,
+              borderRadius: borderRadiusData,
+            ),
       padding: padding,
       child: Column(
         mainAxisAlignment: mainAxisAlignment,

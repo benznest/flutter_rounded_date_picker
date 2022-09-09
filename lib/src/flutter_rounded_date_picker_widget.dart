@@ -120,7 +120,8 @@ Future<DateTime?> showRoundedDatePicker(
     OnTapDay? onTapDay,
     Function? onMonthChange,
     Color? yearColor,
-    Color? dayColor }) async {
+    Color? dayColor,
+    BoxDecoration? headerDecoration}) async {
   initialDate ??= DateTime.now();
   firstDate ??= DateTime(initialDate.year - 1);
   lastDate ??= DateTime(initialDate.year + 1);
@@ -187,6 +188,7 @@ Future<DateTime?> showRoundedDatePicker(
           onMonthChange: onMonthChange,
           dayColor: dayColor,
           yearColor: yearColor,
+          headerDecoration: headerDecoration,
         ),
       ),
     ),
