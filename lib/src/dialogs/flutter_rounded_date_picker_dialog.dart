@@ -33,9 +33,7 @@ class FlutterRoundedDatePickerDialog extends StatefulWidget {
       this.builderDay,
       this.listDateDisabled,
       this.onTapDay,
-      this.onMonthChange, 
-      this.yearColor, 
-      this.dayColor, 
+      this.onMonthChange,
       this.headerDecoration})
       : super(key: key);
 
@@ -82,12 +80,6 @@ class FlutterRoundedDatePickerDialog extends StatefulWidget {
   final OnTapDay? onTapDay;
 
   final Function? onMonthChange;
-
-  /// Year text color
-  final Color? yearColor;
-
-  /// Day text color
-  final Color? dayColor;
 
   // Decoration of the header container
   final BoxDecoration? headerDecoration;
@@ -269,8 +261,8 @@ class _FlutterRoundedDatePickerDialogState
             imageHeader: widget.imageHeader,
             description: widget.description,
             fontFamily: widget.fontFamily,
-            dayColor: widget.dayColor,
-            yearColor: widget.yearColor,
+            dayColor: widget.styleDatePicker?.dayColor,
+            yearColor: widget.styleDatePicker?.yearColor,
             headerDecoration: widget.headerDecoration,
             style: widget.styleDatePicker);
         switch (orientation) {

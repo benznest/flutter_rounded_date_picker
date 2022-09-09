@@ -28,6 +28,8 @@ class MaterialRoundedDatePickerStyle {
   TextStyle? textStyleButtonPositive;
   TextStyle? textStyleButtonNegative;
   TextStyle? textStyleButtonAction;
+  Color? yearColor;
+  Color? dayColor;
 
   MaterialRoundedDatePickerStyle({
     this.textStyleYearButton,
@@ -57,5 +59,7 @@ class MaterialRoundedDatePickerStyle {
     this.backgroundPicker,
     this.backgroundHeader,
     this.backgroundHeaderMonth,
+    this.yearColor,
+    this.dayColor
   });
 }
