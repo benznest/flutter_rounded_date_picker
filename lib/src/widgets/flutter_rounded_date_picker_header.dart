@@ -150,6 +150,11 @@ class FlutterRoundedDatePickerHeader extends StatelessWidget {
       ),
     );
 
+    String getFormatedDay() {
+      final String day = localizations.formatMediumDate(selectedDate);
+      return '${day.toUpperCase().substring(0, 1)}${day.toUpperCase().substring(1).toLowerCase()}';
+
+    }
     final Widget dayButton = IgnorePointer(
       ignoring: mode == DatePickerMode.day,
       ignoringSemantics: false,
@@ -162,7 +167,7 @@ class FlutterRoundedDatePickerHeader extends StatelessWidget {
         child: Semantics(
           selected: mode == DatePickerMode.day,
           child: Text(
-            '${localizations.formatMediumDate(selectedDate).toUpperCase()}${localizations.formatMediumDate(selectedDate).toUpperCase().substring(1).toLowerCase()}',
+            getFormatedDay(),
             textScaleFactor: 1,
             style: dayStyle,
           ),
