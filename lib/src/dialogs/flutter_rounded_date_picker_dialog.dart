@@ -3,8 +3,6 @@ import 'package:flutter/semantics.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_rounded_date_picker/flutter_rounded_date_picker.dart';
 import 'package:flutter_rounded_date_picker/src/flutter_rounded_button_action.dart';
-import 'package:flutter_rounded_date_picker/src/material_rounded_date_picker_style.dart';
-import 'package:flutter_rounded_date_picker/src/material_rounded_year_picker_style.dart';
 import 'package:flutter_rounded_date_picker/src/widgets/flutter_rounded_date_picker_header.dart';
 import 'package:flutter_rounded_date_picker/src/widgets/flutter_rounded_day_picker.dart';
 import 'package:flutter_rounded_date_picker/src/widgets/flutter_rounded_month_picker.dart';
@@ -35,7 +33,7 @@ class FlutterRoundedDatePickerDialog extends StatefulWidget {
       this.builderDay,
       this.listDateDisabled,
       this.onTapDay,
-      this.onMonthChange})
+      this.onMonthChange, this.yearColor, this.dayColor})
       : super(key: key);
 
   final DateTime initialDate;
@@ -81,6 +79,12 @@ class FlutterRoundedDatePickerDialog extends StatefulWidget {
   final OnTapDay? onTapDay;
 
   final Function? onMonthChange;
+
+  /// Year text color
+  final Color? yearColor;
+
+  /// Day text color
+  final Color? dayColor;
 
   @override
   _FlutterRoundedDatePickerDialogState createState() =>
@@ -259,6 +263,8 @@ class _FlutterRoundedDatePickerDialogState
             imageHeader: widget.imageHeader,
             description: widget.description,
             fontFamily: widget.fontFamily,
+            dayColor: widget.dayColor,
+            yearColor: widget.yearColor,
             style: widget.styleDatePicker);
         switch (orientation) {
           case Orientation.landscape:

@@ -14,7 +14,10 @@ class FlutterRoundedDatePickerHeader extends StatelessWidget {
       this.imageHeader,
       this.description = "",
       this.fontFamily,
-      this.style})
+      this.style, 
+      this.yearColor, 
+      this.dayColor
+    })
       : super(key: key);
 
   final DateTime selectedDate;
@@ -38,6 +41,12 @@ class FlutterRoundedDatePickerHeader extends StatelessWidget {
   /// Font
   final String? fontFamily;
 
+  /// Year text color
+  final Color? yearColor;
+
+  /// Day text color
+  final Color? dayColor;
+
   void _handleChangeMode(DatePickerMode value) {
     if (value != mode) onModeChanged(value);
   }
@@ -50,16 +59,27 @@ class FlutterRoundedDatePickerHeader extends StatelessWidget {
     final TextTheme headerTextTheme = themeData.primaryTextTheme;
     Color? dayColor;
     Color? yearColor;
-    switch (themeData.primaryColorBrightness) {
-      case Brightness.light:
-        dayColor = mode == DatePickerMode.day ? Colors.black87 : Colors.black54;
-        yearColor =
-            mode == DatePickerMode.year ? Colors.black87 : Colors.black54;
-        break;
-      case Brightness.dark:
-        dayColor = mode == DatePickerMode.day ? Colors.white : Colors.white70;
-        yearColor = mode == DatePickerMode.year ? Colors.white : Colors.white70;
-        break;
+    
+    if(yearColor == null) {
+      switch (themeData.brightness) {
+        case Brightness.light:
+          yearColor =
+              mode == DatePickerMode.year ? Colors.black87 : Colors.black54;
+          break;
+        case Brightness.dark:
+          yearColor = mode == DatePickerMode.year ? Colors.white : Colors.white70;
+          break;
+      }
+    }
+    if(dayColor == null) {
+      switch (themeData.brightness) {
+        case Brightness.light:
+          dayColor = mode == DatePickerMode.day ? Colors.black87 : Colors.black54;
+          break;
+        case Brightness.dark:
+          dayColor = mode == DatePickerMode.day ? Colors.white : Colors.white70;
+          break;
+      }
     }
 
     if (style?.textStyleDayButton?.color != null) {
