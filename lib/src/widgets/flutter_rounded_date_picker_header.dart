@@ -183,17 +183,13 @@ class FlutterRoundedDatePickerHeader extends StatelessWidget {
     }
 
     return Container(
-      decoration: headerDecoration != null
-          ? headerDecoration?.copyWith(
-              borderRadius: borderRadiusData,
-            )
-          : BoxDecoration(
-              image: imageHeader != null
-                  ? DecorationImage(image: imageHeader!, fit: BoxFit.cover)
-                  : null,
-              color: backgroundColor,
-              borderRadius: borderRadiusData,
-            ),
+      decoration: BoxDecoration(
+        image: imageHeader != null
+            ? DecorationImage(image: imageHeader!, fit: BoxFit.cover)
+            : null,
+        color: backgroundColor,
+        borderRadius: borderRadiusData,
+      ),
       padding: padding,
       child: Column(
         mainAxisAlignment: mainAxisAlignment,
@@ -214,6 +210,13 @@ class FlutterRoundedDatePickerHeader extends StatelessWidget {
                   fontFamily: fontFamily,
                 ),
               ),
+            ),
+          ),
+          FractionallySizedBox(
+            widthFactor: 1,
+            child: Container(
+              color: Colors.black54,
+              height: 1,
             ),
           )
         ],
