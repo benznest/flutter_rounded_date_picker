@@ -162,7 +162,8 @@ class FlutterRoundedDatePickerHeader extends StatelessWidget {
         child: Semantics(
           selected: mode == DatePickerMode.day,
           child: Text(
-            localizations.formatMediumDate(selectedDate),
+            // localizations.formatMediumDate(selectedDate),
+            localizations.formatShortMonthDay(selectedDate),
             textScaleFactor: 1,
             style: dayStyle,
           ),
