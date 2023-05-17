@@ -5,8 +5,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_rounded_date_picker/src/dialogs/flutter_rounded_date_picker_dialog.dart';
 import 'package:flutter_rounded_date_picker/src/era_mode.dart';
 import 'package:flutter_rounded_date_picker/src/material_rounded_date_picker_style.dart';

@@ -1,7 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter/semantics.dart';
 import 'package:flutter_rounded_date_picker/src/era_mode.dart';
 import 'package:flutter_rounded_date_picker/src/material_rounded_date_picker_style.dart';
 import 'package:flutter_rounded_date_picker/src/thai_date_utils.dart';
@@ -272,7 +271,7 @@ class FlutterRoundedDayPicker extends StatelessWidget {
       localizations,
     );
 
-    final List<Widget> labels = _getDayHeaders(style?.textStyleDayHeader ?? themeData.textTheme.caption, localizations);
+    final List<Widget> labels = _getDayHeaders(style?.textStyleDayHeader ?? themeData.textTheme.bodySmall, localizations);
     for (int i = 0; true; i += 1) {
       // 1-based day of month, e.g. 1-31 for January, and 1-29 for February on
       // a leap year.
@@ -295,7 +294,7 @@ class FlutterRoundedDayPicker extends StatelessWidget {
 
         BoxDecoration? decoration;
         TextStyle itemStyle = style?.textStyleDayOnCalendar ??
-            themeData.textTheme.bodyText2!.copyWith(
+            themeData.textTheme.bodyMedium!.copyWith(
               fontFamily: fontFamily,
             );
 
@@ -304,25 +303,25 @@ class FlutterRoundedDayPicker extends StatelessWidget {
         if (isSelectedDay) {
           // The selected day gets a circle background highlight, and a contrasting text color.
           itemStyle = style?.textStyleDayOnCalendarSelected ??
-              themeData.accentTextTheme.bodyText1!.copyWith(
+              themeData.textTheme.bodyLarge!.copyWith(
                 fontFamily: fontFamily,
               );
           decoration = style?.decorationDateSelected ??
               BoxDecoration(
-                color: themeData.accentColor,
+                color: themeData.colorScheme.primary,
                 shape: BoxShape.circle,
               );
         } else if (disabled) {
           itemStyle = style?.textStyleDayOnCalendarDisabled ??
-              themeData.textTheme.bodyText2!.copyWith(
+              themeData.textTheme.bodyMedium!.copyWith(
                 color: themeData.disabledColor,
                 fontFamily: fontFamily,
               );
         } else if (isCurrentDay) {
           // The current day gets a different text color.
           itemStyle = style?.textStyleCurrentDayOnCalendar ??
-              themeData.textTheme.bodyText1!.copyWith(
-                color: themeData.accentColor,
+              themeData.textTheme.bodyMedium!.copyWith(
+                color: themeData.colorScheme.primary,
                 fontFamily: fontFamily,
               );
         }
@@ -411,7 +410,7 @@ class FlutterRoundedDayPicker extends StatelessWidget {
                 child: Text(
                   monthYearHeader,
                   style: style?.textStyleMonthYearHeader ??
-                      themeData.textTheme.subtitle1!.copyWith(
+                      themeData.textTheme.titleMedium!.copyWith(
                         fontFamily: fontFamily,
                       ),
                 ),

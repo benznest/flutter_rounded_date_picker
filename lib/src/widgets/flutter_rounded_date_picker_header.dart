@@ -50,7 +50,7 @@ class FlutterRoundedDatePickerHeader extends StatelessWidget {
     final TextTheme headerTextTheme = themeData.primaryTextTheme;
     Color? dayColor;
     Color? yearColor;
-    switch (themeData.primaryColorBrightness) {
+    switch (themeData.brightness) {
       case Brightness.light:
         dayColor = mode == DatePickerMode.day ? Colors.black87 : Colors.black54;
         yearColor =
@@ -73,10 +73,10 @@ class FlutterRoundedDatePickerHeader extends StatelessWidget {
     }
 
     final TextStyle dayStyle = style?.textStyleDayButton ??
-        headerTextTheme.headline4!
+        headerTextTheme.headlineMedium!
             .copyWith(color: dayColor, fontFamily: fontFamily);
     final TextStyle yearStyle = style?.textStyleYearButton ??
-        headerTextTheme.subtitle1!
+        headerTextTheme.titleMedium!
             .copyWith(color: yearColor, fontFamily: fontFamily);
 
     Color? backgroundColor;
@@ -85,7 +85,7 @@ class FlutterRoundedDatePickerHeader extends StatelessWidget {
     } else {
       switch (themeData.brightness) {
         case Brightness.dark:
-          backgroundColor = themeData.backgroundColor;
+          backgroundColor = themeData.colorScheme.background;
           break;
         case Brightness.light:
           backgroundColor = themeData.primaryColor;

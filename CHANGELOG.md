@@ -1,4 +1,8 @@
 # Changelog
+
+## 3.0.3
+* Fixed Error: The getter 'accentTextTheme' isn't defined for the class 'ThemeData'.
+
 ## 3.0.2
 * Fixed warning Flutter 3.3
 

@@ -22,7 +22,32 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f9f9944-f66c-46c1-913f-9e30c85bf56e" name="Default Changelist" comment="Fixed dragable Cupertino date picker.&#10;Fixed warning Flutter 3.0." />
+    <list default="true" id="5f9f9944-f66c-46c1-913f-9e30c85bf56e" name="Default Changelist" comment="Fixed dragable Cupertino date picker.&#10;Fixed warning Flutter 3.0.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Flutter/AppFrameworkInfo.plist" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Flutter/AppFrameworkInfo.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Podfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/test/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/test/widget_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/cupertino_rounded_date_picker.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/cupertino_rounded_date_picker.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/cupertino_rounded_duration_picker.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/cupertino_rounded_duration_picker.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/dialogs/flutter_rounded_date_picker_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/dialogs/flutter_rounded_date_picker_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/flutter_cupertino_rounded_date_picker_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/flutter_cupertino_rounded_date_picker_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/flutter_rounded_date_picker_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/flutter_rounded_date_picker_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/flutter_rounded_time_picker_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/flutter_rounded_time_picker_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/material_rounded_date_picker_custom_Action_design_style.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/material_rounded_date_picker_custom_Action_design_style.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/flutter_rounded_date_picker_header.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/flutter_rounded_date_picker_header.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/flutter_rounded_day_picker.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/flutter_rounded_day_picker.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/flutter_rounded_year_picker.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/flutter_rounded_year_picker.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,6 +67,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1gtj2hrCJk7tegPgXQWQwmF7HvZ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -49,19 +77,18 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="cidr.known.project.marker" value="true" />
-    <property name="dart.analysis.tool.window.force.activate" value="false" />
-    <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
-    <property name="show.migrate.to.gradle.popup" value="false" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "last_opened_file_path": "/Users/benznest/Work/Flutter Project/flutter_rounded_date_picker",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "show.migrate.to.gradle.popup": "false"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Work\flutter project\flutter_rounded_date_picker\example\assets\images" />
@@ -252,7 +279,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="support font-family&#10;support image background header." />
