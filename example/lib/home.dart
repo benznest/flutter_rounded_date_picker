@@ -334,9 +334,10 @@ class _HomeState extends State<Home> {
                 FloatingActionButton.extended(
                   onPressed: () async {
                     DateTime? newDateTime = await showRoundedDatePicker(
-                      context: context,
-                      theme: ThemeData(primarySwatch: Colors.pink),
-                    );
+                        context: context,
+                        theme: ThemeData(primarySwatch: Colors.pink),
+                        styleDatePicker: MaterialRoundedDatePickerStyle(
+                            textStyleDayButton: TextStyle(color: Colors.white)));
                     if (newDateTime != null) {
                       setState(() => dateTime = newDateTime);
                     }

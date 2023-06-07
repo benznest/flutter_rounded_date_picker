@@ -63,8 +63,8 @@ class FlutterRoundedDatePickerHeader extends StatelessWidget {
     }
 
     if (style?.textStyleDayButton?.color != null) {
-      style?.textStyleDayButton =
-          style?.textStyleDayButton?.copyWith(color: dayColor);
+      style?.textStyleDayButton = style?.textStyleDayButton
+          ?.copyWith(color: style?.textStyleDayButton?.color ?? dayColor);
     }
 
     if (style?.textStyleDayButton?.fontFamily != null) {

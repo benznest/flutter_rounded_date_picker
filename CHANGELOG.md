@@ -1,4 +1,6 @@
 # Changelog
+## 3.04
+* Fixed bug textStyleDayButton display.
 
 ## 3.0.3
 * Fixed Error: The getter 'accentTextTheme' isn't defined for the class 'ThemeData'.
